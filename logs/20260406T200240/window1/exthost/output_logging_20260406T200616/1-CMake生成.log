@@ -1,0 +1,8 @@
+[proc] 执行命令: /usr/local/bin/cmake --version
+[proc] 执行命令: /usr/local/bin/cmake -E capabilities
+[variant] 已加载一组新变量
+[kit] 检测到工具包定义版本已从 undefined 更改为 2。扫描工具包但不显示提示。
+[proc] 执行命令: /usr/bin/gcc -v
+[proc] 执行命令: /usr/bin/x86_64-redhat-linux-gcc -v
+[kit] 已找到工具包(受信任): GCC 4.8.5 x86_64-redhat-linux
+[kit] 已找到工具包(受信任): GCC 4.8.5 x86_64-redhat-linux

@@ -1,0 +1,6 @@
+2026-04-06 20:00:52.675 [error] browser #7: https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery - error POST Canceled
+2026-04-06 20:02:02.545 [error] browser #42: https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery - error POST Canceled
+2026-04-06 20:02:21.361 [error] browser #45: https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery - error POST XHR failed
+2026-04-06 20:02:21.385 [error] browser #43: https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery - error POST XHR failed
+2026-04-06 20:02:26.021 [error] browser #53: https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery - error POST Canceled
+2026-04-06 20:02:29.642 [error] browser #54: https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery - error POST Canceled

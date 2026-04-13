@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../src/network/base/InetAddress.h
+sys/socket.h
+-
+arpa/inet.h
+-
+netinet/in.h
+-
+string
+-
+cstdint
+-
+
+/root/tmms/src/network/net/tests/InetAddressTest.cpp
+network/base/InetAddress.h
+/root/tmms/src/network/net/tests/network/base/InetAddress.h
+string
+-
+iostream
+-
+

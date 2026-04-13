@@ -1,0 +1,9 @@
+{
+    "workbench.colorTheme": "Default Light Modern",
+    "git.ignoreLegacyWarning": true,
+    "cmake.pinnedCommands": [
+        "workbench.action.tasks.configureTaskRunner",
+        "workbench.action.tasks.runTask"
+    ],
+    "files.autoSave": "afterDelay"
+}

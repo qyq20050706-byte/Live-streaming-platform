@@ -1,0 +1,12 @@
+2026-04-06 19:58:54.269 [info] Extension host with pid 80452 started
+2026-04-06 19:58:54.438 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2026-04-06 19:58:54.685 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2026-04-06 19:58:55.163 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2026-04-06 19:58:55.615 [info] Eager extensions activated
+2026-04-06 19:58:55.682 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2026-04-06 19:58:55.689 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2026-04-06 19:58:58.181 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2026-04-06 19:58:58.294 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2026-04-06 19:58:58.409 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2026-04-06 20:02:39.764 [info] Extension host terminating: renderer closed the MessagePort
+2026-04-06 20:02:39.804 [info] Extension host with pid 80452 exiting with code 0

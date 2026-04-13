@@ -1,0 +1,6 @@
+aux_source_directory(. SRCS)
+add_executable(tmms ${SRCS})
+
+add_dependencies(tmms base jsoncpp)
+arget_link_libraries(tmms base jsoncpp)
+install(TARGETS tmms RUNTIME DESTINATION sbin)

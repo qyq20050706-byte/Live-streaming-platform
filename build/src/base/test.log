@@ -1,0 +1,16 @@
+2026-04-06T04-33-32 82162 DEBUG[TestLog.cpp:15] [operator():15] test debug!!! now:1775475212316
+2026-04-06T04-33-32 82162 INFO[TestLog.cpp:16] test info!!! now:1775475212317
+2026-04-06T04-33-32 82162 DEBUG[TestLog.cpp:15] [operator():15] test debug!!! now:1775475212832
+2026-04-06T04-33-32 82162 INFO[TestLog.cpp:16] test info!!! now:1775475212832
+2026-04-06T04-33-33 82162 DEBUG[TestLog.cpp:15] [operator():15] test debug!!! now:1775475213333
+2026-04-06T04-33-33 82162 INFO[TestLog.cpp:16] test info!!! now:1775475213333
+2026-04-06T04-33-33 82162 DEBUG[TestLog.cpp:15] [operator():15] test debug!!! now:1775475213849
+2026-04-06T04-33-33 82162 INFO[TestLog.cpp:16] test info!!! now:1775475213849
+2026-04-06T04-33-34 82162 DEBUG[TestLog.cpp:15] [operator():15] test debug!!! now:1775475214364
+2026-04-06T04-33-34 82162 INFO[TestLog.cpp:16] test info!!! now:1775475214364
+2026-04-06T04-33-34 82162 DEBUG[TestLog.cpp:15] [operator():15] test debug!!! now:1775475214866
+2026-04-06T04-33-34 82162 INFO[TestLog.cpp:16] test info!!! now:1775475214866
+2026-04-06T04-33-35 82162 DEBUG[TestLog.cpp:15] [operator():15] test debug!!! now:1775475215380
+2026-04-06T04-33-35 82162 INFO[TestLog.cpp:16] test info!!! now:1775475215380
+2026-04-06T04-33-35 82162 DEBUG[TestLog.cpp:15] [operator():15] test debug!!! now:1775475215881
+2026-04-06T04-33-35 82162 INFO[TestLog.cpp:16] test info!!! now:1775475215881

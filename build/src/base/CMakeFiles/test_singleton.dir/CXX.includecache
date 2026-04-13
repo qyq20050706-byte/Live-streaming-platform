@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/tmms/src/base/NonCopyable.h
+
+/root/tmms/src/base/Singleton.h
+NonCopyable.h
+/root/tmms/src/base/NonCopyable.h
+pthread.h
+-
+
+/root/tmms/src/base/TestSingleton.cpp
+Singleton.h
+/root/tmms/src/base/Singleton.h
+iostream
+-
+

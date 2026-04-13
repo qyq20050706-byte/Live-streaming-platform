@@ -1,0 +1,106 @@
+2026-04-06 19:58:53.440 [info] Started initializing default profile extensions in extensions installation folder. file:///root/.vscode/extensions
+2026-04-06 19:58:53.907 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/root/.vscode/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/root/.vscode/extensions/extensions.json.vsctmp'
+    at r.create (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:51:30056)
+    at a (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:51:30170)
+    at s.fb (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:36175)
+    at s.stat (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:28621)
+    at async E.stat (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:15732)
+    at async Y.tb (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:100:111319)
+2026-04-06 19:58:54.040 [warning] Failed to create default profile extensions manifest in extensions installation folder. file:///root/.vscode/extensions Unable to create file 'vscode-userdata:/root/.vscode/extensions/extensions.json' that already exists when overwrite flag is not set
+2026-04-06 19:58:54.040 [info] Completed initializing default profile extensions in extensions installation folder. file:///root/.vscode/extensions
+2026-04-06 20:01:03.466 [info] Getting Manifest... ms-vscode.cpptools
+2026-04-06 20:01:03.523 [info] Installing extension: ms-vscode.cpptools
+2026-04-06 20:01:06.924 [info] Getting Manifest... ms-vscode.cpptools-extension-pack
+2026-04-06 20:01:06.962 [info] Installing extension: ms-vscode.cpptools-extension-pack
+2026-04-06 20:01:08.653 [info] Getting Manifest... ms-vscode.cpptools
+2026-04-06 20:01:09.466 [info] Getting Manifest... ms-vscode.cmake-tools
+2026-04-06 20:01:10.298 [info] Getting Manifest... twxs.cmake
+2026-04-06 20:01:10.666 [info] Getting Manifest... ms-vscode.cpptools-themes
+2026-04-06 20:01:11.295 [info] Skipping the packed extension as it cannot be installed ms-vscode.cpp-devtools Can't install 'ms-vscode.cpp-devtools' extension because it is not compatible with the current version of Visual Studio Code (version 1.85.2).
+2026-04-06 20:01:11.761 [info] Waiting for already requested installing extension ms-vscode.cpptools ms-vscode.cpptools-extension-pack
+2026-04-06 20:01:11.762 [info] Installing extension: ms-vscode.cmake-tools ms-vscode.cpptools-extension-pack
+2026-04-06 20:01:11.762 [info] Installing extension: twxs.cmake ms-vscode.cpptools-extension-pack
+2026-04-06 20:01:11.762 [info] Installing extension: ms-vscode.cpptools-themes ms-vscode.cpptools-extension-pack
+2026-04-06 20:01:17.608 [info] Extension signature is verified: ms-vscode.cpptools-themes
+2026-04-06 20:01:17.749 [info] Extracted extension to file:///root/.vscode/extensions/ms-vscode.cpptools-themes-2.0.0: ms-vscode.cpptools-themes
+2026-04-06 20:01:17.754 [info] Renamed to /root/.vscode/extensions/ms-vscode.cpptools-themes-2.0.0
+2026-04-06 20:01:17.756 [info] Extracting extension completed. ms-vscode.cpptools-themes
+2026-04-06 20:01:17.854 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/root/.vscode/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/root/.vscode/extensions/extensions.json.vsctmp'
+    at r.create (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:51:30056)
+    at a (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:51:30170)
+    at s.fb (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:36175)
+    at s.stat (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:28621)
+    at async E.stat (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:15732)
+    at async Y.tb (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:100:111319)
+2026-04-06 20:01:18.077 [info] Extension signature is verified: ms-vscode.cmake-tools
+2026-04-06 20:01:18.332 [info] Extension signature is verified: twxs.cmake
+2026-04-06 20:01:22.593 [info] Extracted extension to file:///root/.vscode/extensions/twxs.cmake-0.0.17: twxs.cmake
+2026-04-06 20:01:22.595 [info] Renamed to /root/.vscode/extensions/twxs.cmake-0.0.17
+2026-04-06 20:01:22.595 [info] Extracting extension completed. twxs.cmake
+2026-04-06 20:01:22.598 [info] Extracted extension to file:///root/.vscode/extensions/ms-vscode.cmake-tools-1.19.52: ms-vscode.cmake-tools
+2026-04-06 20:01:22.599 [info] Renamed to /root/.vscode/extensions/ms-vscode.cmake-tools-1.19.52
+2026-04-06 20:01:22.599 [info] Extracting extension completed. ms-vscode.cmake-tools
+2026-04-06 20:01:24.318 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/root/.vscode/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/root/.vscode/extensions/extensions.json.vsctmp'
+    at r.create (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:51:30056)
+    at a (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:51:30170)
+    at s.fb (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:36175)
+    at s.stat (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:28621)
+    at async E.stat (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:15732)
+    at async Y.tb (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:100:111319)
+2026-04-06 20:01:28.927 [info] Extension signature is verified: ms-vscode.cpptools
+2026-04-06 20:01:29.538 [info] Extension signature is verified: ms-vscode.cpptools-extension-pack
+2026-04-06 20:01:29.607 [info] Extracted extension to file:///root/.vscode/extensions/ms-vscode.cpptools-extension-pack-1.5.1: ms-vscode.cpptools-extension-pack
+2026-04-06 20:01:29.612 [info] Renamed to /root/.vscode/extensions/ms-vscode.cpptools-extension-pack-1.5.1
+2026-04-06 20:01:29.620 [info] Extracting extension completed. ms-vscode.cpptools-extension-pack
+2026-04-06 20:01:29.710 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/root/.vscode/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/root/.vscode/extensions/extensions.json.vsctmp'
+    at r.create (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:51:30056)
+    at a (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:51:30170)
+    at s.fb (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:36175)
+    at s.stat (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:28621)
+    at async E.stat (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:15732)
+    at async Y.tb (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:100:111319)
+2026-04-06 20:01:36.717 [info] Extracted extension to file:///root/.vscode/extensions/ms-vscode.cpptools-1.31.4-linux-x64: ms-vscode.cpptools
+2026-04-06 20:01:36.731 [info] Renamed to /root/.vscode/extensions/ms-vscode.cpptools-1.31.4-linux-x64
+2026-04-06 20:01:36.755 [info] Extracting extension completed. ms-vscode.cpptools
+2026-04-06 20:01:36.800 [info] Extension installed successfully: ms-vscode.cpptools
+2026-04-06 20:01:36.803 [info] Finished waiting for already requested installing extension ms-vscode.cpptools ms-vscode.cpptools-extension-pack
+2026-04-06 20:01:36.811 [info] Extension installed successfully: ms-vscode.cpptools-themes
+2026-04-06 20:01:36.811 [info] Extension installed successfully: twxs.cmake
+2026-04-06 20:01:36.812 [info] Extension installed successfully: ms-vscode.cmake-tools
+2026-04-06 20:01:36.813 [info] Extension installed successfully: ms-vscode.cpptools-extension-pack
+2026-04-06 20:01:36.857 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/root/.vscode/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/root/.vscode/extensions/extensions.json.vsctmp'
+    at r.create (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:51:30056)
+    at a (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:51:30170)
+    at s.fb (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:36175)
+    at s.stat (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:28621)
+    at async E.stat (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:15732)
+    at async Y.tb (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:100:111319)
+2026-04-06 20:01:46.885 [info] Getting Manifest... austin.code-gnu-global
+2026-04-06 20:01:46.914 [info] Installing extension: austin.code-gnu-global
+2026-04-06 20:01:49.155 [info] Extension signature is verified: austin.code-gnu-global
+2026-04-06 20:01:49.220 [info] Extracted extension to file:///root/.vscode/extensions/austin.code-gnu-global-0.2.2: austin.code-gnu-global
+2026-04-06 20:01:49.222 [info] Renamed to /root/.vscode/extensions/austin.code-gnu-global-0.2.2
+2026-04-06 20:01:49.223 [info] Extracting extension completed. austin.code-gnu-global
+2026-04-06 20:01:49.229 [info] Extension installed successfully: austin.code-gnu-global
+2026-04-06 20:01:49.331 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/root/.vscode/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/root/.vscode/extensions/extensions.json.vsctmp'
+    at r.create (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:51:30056)
+    at a (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:51:30170)
+    at s.fb (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:36175)
+    at s.stat (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:28621)
+    at async E.stat (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:15732)
+    at async Y.tb (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:100:111319)
+2026-04-06 20:02:33.564 [info] Getting Manifest... ms-ceintl.vscode-language-pack-zh-hans
+2026-04-06 20:02:33.606 [info] Installing extension: ms-ceintl.vscode-language-pack-zh-hans
+2026-04-06 20:02:36.304 [info] Extension signature is verified: ms-ceintl.vscode-language-pack-zh-hans
+2026-04-06 20:02:36.571 [info] Extracted extension to file:///root/.vscode/extensions/ms-ceintl.vscode-language-pack-zh-hans-1.85.2024021409: ms-ceintl.vscode-language-pack-zh-hans
+2026-04-06 20:02:36.611 [info] Renamed to /root/.vscode/extensions/ms-ceintl.vscode-language-pack-zh-hans-1.85.2024021409
+2026-04-06 20:02:36.613 [info] Extracting extension completed. ms-ceintl.vscode-language-pack-zh-hans
+2026-04-06 20:02:36.620 [info] Adding language packs from the extension ms-ceintl.vscode-language-pack-zh-hans
+2026-04-06 20:02:36.784 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/root/.vscode/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/root/.vscode/extensions/extensions.json.vsctmp'
+    at r.create (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:51:30056)
+    at a (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:51:30170)
+    at s.fb (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:36175)
+    at s.stat (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:28621)
+    at async E.stat (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:15732)
+    at async Y.tb (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:100:111319)
+2026-04-06 20:02:36.814 [info] Extension installed successfully: ms-ceintl.vscode-language-pack-zh-hans

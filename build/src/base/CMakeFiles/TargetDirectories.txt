@@ -1,0 +1,3 @@
+/root/tmms/build/src/base/src/base/CMakeFiles/base.dir
+/root/tmms/build/src/base/src/base/CMakeFiles/test_log.dir
+/root/tmms/build/src/base/src/main/CMakeFiles/tmms.dir

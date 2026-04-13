@@ -1,0 +1,21 @@
+Determining if the function memset_s exists failed with the following output:
+Change Dir: /root/tmms/third_party/jsoncpp-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_4a675/fast && gmake[3]: Entering directory `/root/tmms/third_party/jsoncpp-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_4a675.dir/build.make CMakeFiles/cmTC_4a675.dir/build
+gmake[4]: Entering directory `/root/tmms/third_party/jsoncpp-build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_4a675.dir/CheckFunctionExists.cxx.o
+/usr/bin/c++    -DCHECK_FUNCTION_EXISTS=memset_s   -std=c++11 -o CMakeFiles/cmTC_4a675.dir/CheckFunctionExists.cxx.o -c /root/tmms/third_party/jsoncpp-build/CMakeFiles/CheckFunctionExists/CheckFunctionExists.cxx
+Linking CXX executable cmTC_4a675
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_4a675.dir/link.txt --verbose=1
+/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=memset_s    CMakeFiles/cmTC_4a675.dir/CheckFunctionExists.cxx.o  -o cmTC_4a675 
+CMakeFiles/cmTC_4a675.dir/CheckFunctionExists.cxx.o: In function `main':
+CheckFunctionExists.cxx:(.text+0x10): undefined reference to `memset_s'
+collect2: error: ld returned 1 exit status
+gmake[4]: *** [cmTC_4a675] Error 1
+gmake[4]: Leaving directory `/root/tmms/third_party/jsoncpp-build/CMakeFiles/CMakeTmp'
+gmake[3]: *** [cmTC_4a675/fast] Error 2
+gmake[3]: Leaving directory `/root/tmms/third_party/jsoncpp-build/CMakeFiles/CMakeTmp'
+
+
+
