@@ -18,6 +18,24 @@ src/network/CMakeFiles/network.dir/TcpClient.cpp.o: ../src/network/net/TimingWhe
 src/network/CMakeFiles/network.dir/TcpClient.cpp.o: ../src/network/TcpClient.cpp
 src/network/CMakeFiles/network.dir/TcpClient.cpp.o: ../src/network/TcpClient.h
 
+src/network/CMakeFiles/network.dir/TcpServer.cpp.o: ../src/base/FileLog.h
+src/network/CMakeFiles/network.dir/TcpServer.cpp.o: ../src/base/LogStream.h
+src/network/CMakeFiles/network.dir/TcpServer.cpp.o: ../src/base/Logger.h
+src/network/CMakeFiles/network.dir/TcpServer.cpp.o: ../src/base/NonCopyable.h
+src/network/CMakeFiles/network.dir/TcpServer.cpp.o: ../src/network/base/InetAddress.h
+src/network/CMakeFiles/network.dir/TcpServer.cpp.o: ../src/network/base/MsgBuffer.h
+src/network/CMakeFiles/network.dir/TcpServer.cpp.o: ../src/network/base/Network.h
+src/network/CMakeFiles/network.dir/TcpServer.cpp.o: ../src/network/base/SocketOpt.h
+src/network/CMakeFiles/network.dir/TcpServer.cpp.o: ../src/network/net/Acceptor.h
+src/network/CMakeFiles/network.dir/TcpServer.cpp.o: ../src/network/net/Connection.h
+src/network/CMakeFiles/network.dir/TcpServer.cpp.o: ../src/network/net/Event.h
+src/network/CMakeFiles/network.dir/TcpServer.cpp.o: ../src/network/net/EventLoop.h
+src/network/CMakeFiles/network.dir/TcpServer.cpp.o: ../src/network/net/PipeEvent.h
+src/network/CMakeFiles/network.dir/TcpServer.cpp.o: ../src/network/net/TcpConnection.h
+src/network/CMakeFiles/network.dir/TcpServer.cpp.o: ../src/network/net/TimingWheel.h
+src/network/CMakeFiles/network.dir/TcpServer.cpp.o: ../src/network/TcpServer.cpp
+src/network/CMakeFiles/network.dir/TcpServer.cpp.o: ../src/network/TcpServer.h
+
 src/network/CMakeFiles/network.dir/base/InetAddress.cpp.o: ../src/base/FileLog.h
 src/network/CMakeFiles/network.dir/base/InetAddress.cpp.o: ../src/base/LogStream.h
 src/network/CMakeFiles/network.dir/base/InetAddress.cpp.o: ../src/base/Logger.h
@@ -118,24 +136,6 @@ src/network/CMakeFiles/network.dir/net/TcpConnection.cpp.o: ../src/network/net/P
 src/network/CMakeFiles/network.dir/net/TcpConnection.cpp.o: ../src/network/net/TcpConnection.cpp
 src/network/CMakeFiles/network.dir/net/TcpConnection.cpp.o: ../src/network/net/TcpConnection.h
 src/network/CMakeFiles/network.dir/net/TcpConnection.cpp.o: ../src/network/net/TimingWheel.h
-
-src/network/CMakeFiles/network.dir/net/TcpServer.cpp.o: ../src/base/FileLog.h
-src/network/CMakeFiles/network.dir/net/TcpServer.cpp.o: ../src/base/LogStream.h
-src/network/CMakeFiles/network.dir/net/TcpServer.cpp.o: ../src/base/Logger.h
-src/network/CMakeFiles/network.dir/net/TcpServer.cpp.o: ../src/base/NonCopyable.h
-src/network/CMakeFiles/network.dir/net/TcpServer.cpp.o: ../src/network/base/InetAddress.h
-src/network/CMakeFiles/network.dir/net/TcpServer.cpp.o: ../src/network/base/MsgBuffer.h
-src/network/CMakeFiles/network.dir/net/TcpServer.cpp.o: ../src/network/base/Network.h
-src/network/CMakeFiles/network.dir/net/TcpServer.cpp.o: ../src/network/base/SocketOpt.h
-src/network/CMakeFiles/network.dir/net/TcpServer.cpp.o: ../src/network/net/Acceptor.h
-src/network/CMakeFiles/network.dir/net/TcpServer.cpp.o: ../src/network/net/Connection.h
-src/network/CMakeFiles/network.dir/net/TcpServer.cpp.o: ../src/network/net/Event.h
-src/network/CMakeFiles/network.dir/net/TcpServer.cpp.o: ../src/network/net/EventLoop.h
-src/network/CMakeFiles/network.dir/net/TcpServer.cpp.o: ../src/network/net/PipeEvent.h
-src/network/CMakeFiles/network.dir/net/TcpServer.cpp.o: ../src/network/net/TcpConnection.h
-src/network/CMakeFiles/network.dir/net/TcpServer.cpp.o: ../src/network/net/TimingWheel.h
-src/network/CMakeFiles/network.dir/net/TcpServer.cpp.o: ../src/network/net/TcpServer.cpp
-src/network/CMakeFiles/network.dir/net/TcpServer.cpp.o: ../src/network/net/TcpServer.h
 
 src/network/CMakeFiles/network.dir/net/TimingWheel.cpp.o: ../src/base/FileLog.h
 src/network/CMakeFiles/network.dir/net/TimingWheel.cpp.o: ../src/base/LogStream.h

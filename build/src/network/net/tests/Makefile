@@ -252,19 +252,19 @@ TcpConnectionTest/fast:
 .PHONY : TcpConnectionTest/fast
 
 # Convenience name for target.
-src/network/net/tests/CMakeFiles/Tcpservertest.dir/rule:
-	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/network/net/tests/CMakeFiles/Tcpservertest.dir/rule
-.PHONY : src/network/net/tests/CMakeFiles/Tcpservertest.dir/rule
+src/network/net/tests/CMakeFiles/TcpserverTest.dir/rule:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/network/net/tests/CMakeFiles/TcpserverTest.dir/rule
+.PHONY : src/network/net/tests/CMakeFiles/TcpserverTest.dir/rule
 
 # Convenience name for target.
-Tcpservertest: src/network/net/tests/CMakeFiles/Tcpservertest.dir/rule
+TcpserverTest: src/network/net/tests/CMakeFiles/TcpserverTest.dir/rule
 
-.PHONY : Tcpservertest
+.PHONY : TcpserverTest
 
 # fast build rule for target.
-Tcpservertest/fast:
-	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/Tcpservertest.dir/build.make src/network/net/tests/CMakeFiles/Tcpservertest.dir/build
-.PHONY : Tcpservertest/fast
+TcpserverTest/fast:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/TcpserverTest.dir/build.make src/network/net/tests/CMakeFiles/TcpserverTest.dir/build
+.PHONY : TcpserverTest/fast
 
 AcceptorTest.o: AcceptorTest.cpp.o
 
@@ -401,32 +401,32 @@ TcpConnectionTest.cpp.s:
 	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/TcpConnectionTest.dir/build.make src/network/net/tests/CMakeFiles/TcpConnectionTest.dir/TcpConnectionTest.cpp.s
 .PHONY : TcpConnectionTest.cpp.s
 
-Tcpservertest.o: Tcpservertest.cpp.o
+TcpserverTest.o: TcpserverTest.cpp.o
 
-.PHONY : Tcpservertest.o
+.PHONY : TcpserverTest.o
 
 # target to build an object file
-Tcpservertest.cpp.o:
-	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/Tcpservertest.dir/build.make src/network/net/tests/CMakeFiles/Tcpservertest.dir/Tcpservertest.cpp.o
-.PHONY : Tcpservertest.cpp.o
+TcpserverTest.cpp.o:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/TcpserverTest.dir/build.make src/network/net/tests/CMakeFiles/TcpserverTest.dir/TcpserverTest.cpp.o
+.PHONY : TcpserverTest.cpp.o
 
-Tcpservertest.i: Tcpservertest.cpp.i
+TcpserverTest.i: TcpserverTest.cpp.i
 
-.PHONY : Tcpservertest.i
+.PHONY : TcpserverTest.i
 
 # target to preprocess a source file
-Tcpservertest.cpp.i:
-	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/Tcpservertest.dir/build.make src/network/net/tests/CMakeFiles/Tcpservertest.dir/Tcpservertest.cpp.i
-.PHONY : Tcpservertest.cpp.i
+TcpserverTest.cpp.i:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/TcpserverTest.dir/build.make src/network/net/tests/CMakeFiles/TcpserverTest.dir/TcpserverTest.cpp.i
+.PHONY : TcpserverTest.cpp.i
 
-Tcpservertest.s: Tcpservertest.cpp.s
+TcpserverTest.s: TcpserverTest.cpp.s
 
-.PHONY : Tcpservertest.s
+.PHONY : TcpserverTest.s
 
 # target to generate assembly for a file
-Tcpservertest.cpp.s:
-	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/Tcpservertest.dir/build.make src/network/net/tests/CMakeFiles/Tcpservertest.dir/Tcpservertest.cpp.s
-.PHONY : Tcpservertest.cpp.s
+TcpserverTest.cpp.s:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/TcpserverTest.dir/build.make src/network/net/tests/CMakeFiles/TcpserverTest.dir/TcpserverTest.cpp.s
+.PHONY : TcpserverTest.cpp.s
 
 # Help Target
 help:
@@ -445,7 +445,7 @@ help:
 	@echo "... InetAddressTest"
 	@echo "... SocketOptTest"
 	@echo "... TcpConnectionTest"
-	@echo "... Tcpservertest"
+	@echo "... TcpserverTest"
 	@echo "... AcceptorTest.o"
 	@echo "... AcceptorTest.i"
 	@echo "... AcceptorTest.s"
@@ -461,9 +461,9 @@ help:
 	@echo "... TcpConnectionTest.o"
 	@echo "... TcpConnectionTest.i"
 	@echo "... TcpConnectionTest.s"
-	@echo "... Tcpservertest.o"
-	@echo "... Tcpservertest.i"
-	@echo "... Tcpservertest.s"
+	@echo "... TcpserverTest.o"
+	@echo "... TcpserverTest.i"
+	@echo "... TcpserverTest.s"
 .PHONY : help
 
 

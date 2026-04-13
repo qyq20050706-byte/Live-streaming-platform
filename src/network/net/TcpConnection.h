@@ -24,7 +24,7 @@ namespace tmms
                 : addr(buf), size(s)
             {
             }
-            ~BufferNode() { free(addr); }
+            ~BufferNode() { if (addr) std::free(addr); }
             void *addr{nullptr};
             size_t size;
         };

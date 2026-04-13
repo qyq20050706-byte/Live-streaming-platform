@@ -90,9 +90,22 @@ src/network/CMakeFiles/network.dir/TcpClient.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/network.dir/TcpClient.cpp.s"
 	cd /root/tmms/build/src/network && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/tmms/src/network/TcpClient.cpp -o CMakeFiles/network.dir/TcpClient.cpp.s
 
+src/network/CMakeFiles/network.dir/TcpServer.cpp.o: src/network/CMakeFiles/network.dir/flags.make
+src/network/CMakeFiles/network.dir/TcpServer.cpp.o: ../src/network/TcpServer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/tmms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/network/CMakeFiles/network.dir/TcpServer.cpp.o"
+	cd /root/tmms/build/src/network && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/network.dir/TcpServer.cpp.o -c /root/tmms/src/network/TcpServer.cpp
+
+src/network/CMakeFiles/network.dir/TcpServer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/network.dir/TcpServer.cpp.i"
+	cd /root/tmms/build/src/network && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/tmms/src/network/TcpServer.cpp > CMakeFiles/network.dir/TcpServer.cpp.i
+
+src/network/CMakeFiles/network.dir/TcpServer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/network.dir/TcpServer.cpp.s"
+	cd /root/tmms/build/src/network && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/tmms/src/network/TcpServer.cpp -o CMakeFiles/network.dir/TcpServer.cpp.s
+
 src/network/CMakeFiles/network.dir/base/InetAddress.cpp.o: src/network/CMakeFiles/network.dir/flags.make
 src/network/CMakeFiles/network.dir/base/InetAddress.cpp.o: ../src/network/base/InetAddress.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/tmms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/network/CMakeFiles/network.dir/base/InetAddress.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/tmms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/network/CMakeFiles/network.dir/base/InetAddress.cpp.o"
 	cd /root/tmms/build/src/network && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/network.dir/base/InetAddress.cpp.o -c /root/tmms/src/network/base/InetAddress.cpp
 
 src/network/CMakeFiles/network.dir/base/InetAddress.cpp.i: cmake_force
@@ -105,7 +118,7 @@ src/network/CMakeFiles/network.dir/base/InetAddress.cpp.s: cmake_force
 
 src/network/CMakeFiles/network.dir/base/MsgBuffer.cpp.o: src/network/CMakeFiles/network.dir/flags.make
 src/network/CMakeFiles/network.dir/base/MsgBuffer.cpp.o: ../src/network/base/MsgBuffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/tmms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/network/CMakeFiles/network.dir/base/MsgBuffer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/tmms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/network/CMakeFiles/network.dir/base/MsgBuffer.cpp.o"
 	cd /root/tmms/build/src/network && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/network.dir/base/MsgBuffer.cpp.o -c /root/tmms/src/network/base/MsgBuffer.cpp
 
 src/network/CMakeFiles/network.dir/base/MsgBuffer.cpp.i: cmake_force
@@ -118,7 +131,7 @@ src/network/CMakeFiles/network.dir/base/MsgBuffer.cpp.s: cmake_force
 
 src/network/CMakeFiles/network.dir/base/SocketOpt.cpp.o: src/network/CMakeFiles/network.dir/flags.make
 src/network/CMakeFiles/network.dir/base/SocketOpt.cpp.o: ../src/network/base/SocketOpt.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/tmms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/network/CMakeFiles/network.dir/base/SocketOpt.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/tmms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/network/CMakeFiles/network.dir/base/SocketOpt.cpp.o"
 	cd /root/tmms/build/src/network && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/network.dir/base/SocketOpt.cpp.o -c /root/tmms/src/network/base/SocketOpt.cpp
 
 src/network/CMakeFiles/network.dir/base/SocketOpt.cpp.i: cmake_force
@@ -131,7 +144,7 @@ src/network/CMakeFiles/network.dir/base/SocketOpt.cpp.s: cmake_force
 
 src/network/CMakeFiles/network.dir/net/Acceptor.cpp.o: src/network/CMakeFiles/network.dir/flags.make
 src/network/CMakeFiles/network.dir/net/Acceptor.cpp.o: ../src/network/net/Acceptor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/tmms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/network/CMakeFiles/network.dir/net/Acceptor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/tmms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/network/CMakeFiles/network.dir/net/Acceptor.cpp.o"
 	cd /root/tmms/build/src/network && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/network.dir/net/Acceptor.cpp.o -c /root/tmms/src/network/net/Acceptor.cpp
 
 src/network/CMakeFiles/network.dir/net/Acceptor.cpp.i: cmake_force
@@ -144,7 +157,7 @@ src/network/CMakeFiles/network.dir/net/Acceptor.cpp.s: cmake_force
 
 src/network/CMakeFiles/network.dir/net/Connection.cpp.o: src/network/CMakeFiles/network.dir/flags.make
 src/network/CMakeFiles/network.dir/net/Connection.cpp.o: ../src/network/net/Connection.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/tmms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/network/CMakeFiles/network.dir/net/Connection.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/tmms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/network/CMakeFiles/network.dir/net/Connection.cpp.o"
 	cd /root/tmms/build/src/network && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/network.dir/net/Connection.cpp.o -c /root/tmms/src/network/net/Connection.cpp
 
 src/network/CMakeFiles/network.dir/net/Connection.cpp.i: cmake_force
@@ -157,7 +170,7 @@ src/network/CMakeFiles/network.dir/net/Connection.cpp.s: cmake_force
 
 src/network/CMakeFiles/network.dir/net/Event.cpp.o: src/network/CMakeFiles/network.dir/flags.make
 src/network/CMakeFiles/network.dir/net/Event.cpp.o: ../src/network/net/Event.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/tmms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/network/CMakeFiles/network.dir/net/Event.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/tmms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/network/CMakeFiles/network.dir/net/Event.cpp.o"
 	cd /root/tmms/build/src/network && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/network.dir/net/Event.cpp.o -c /root/tmms/src/network/net/Event.cpp
 
 src/network/CMakeFiles/network.dir/net/Event.cpp.i: cmake_force
@@ -170,7 +183,7 @@ src/network/CMakeFiles/network.dir/net/Event.cpp.s: cmake_force
 
 src/network/CMakeFiles/network.dir/net/EventLoop.cpp.o: src/network/CMakeFiles/network.dir/flags.make
 src/network/CMakeFiles/network.dir/net/EventLoop.cpp.o: ../src/network/net/EventLoop.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/tmms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/network/CMakeFiles/network.dir/net/EventLoop.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/tmms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/network/CMakeFiles/network.dir/net/EventLoop.cpp.o"
 	cd /root/tmms/build/src/network && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/network.dir/net/EventLoop.cpp.o -c /root/tmms/src/network/net/EventLoop.cpp
 
 src/network/CMakeFiles/network.dir/net/EventLoop.cpp.i: cmake_force
@@ -183,7 +196,7 @@ src/network/CMakeFiles/network.dir/net/EventLoop.cpp.s: cmake_force
 
 src/network/CMakeFiles/network.dir/net/EventLoopThread.cpp.o: src/network/CMakeFiles/network.dir/flags.make
 src/network/CMakeFiles/network.dir/net/EventLoopThread.cpp.o: ../src/network/net/EventLoopThread.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/tmms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/network/CMakeFiles/network.dir/net/EventLoopThread.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/tmms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/network/CMakeFiles/network.dir/net/EventLoopThread.cpp.o"
 	cd /root/tmms/build/src/network && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/network.dir/net/EventLoopThread.cpp.o -c /root/tmms/src/network/net/EventLoopThread.cpp
 
 src/network/CMakeFiles/network.dir/net/EventLoopThread.cpp.i: cmake_force
@@ -196,7 +209,7 @@ src/network/CMakeFiles/network.dir/net/EventLoopThread.cpp.s: cmake_force
 
 src/network/CMakeFiles/network.dir/net/EventLoopThreadPool.cpp.o: src/network/CMakeFiles/network.dir/flags.make
 src/network/CMakeFiles/network.dir/net/EventLoopThreadPool.cpp.o: ../src/network/net/EventLoopThreadPool.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/tmms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/network/CMakeFiles/network.dir/net/EventLoopThreadPool.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/tmms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object src/network/CMakeFiles/network.dir/net/EventLoopThreadPool.cpp.o"
 	cd /root/tmms/build/src/network && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/network.dir/net/EventLoopThreadPool.cpp.o -c /root/tmms/src/network/net/EventLoopThreadPool.cpp
 
 src/network/CMakeFiles/network.dir/net/EventLoopThreadPool.cpp.i: cmake_force
@@ -209,7 +222,7 @@ src/network/CMakeFiles/network.dir/net/EventLoopThreadPool.cpp.s: cmake_force
 
 src/network/CMakeFiles/network.dir/net/PipeEvent.cpp.o: src/network/CMakeFiles/network.dir/flags.make
 src/network/CMakeFiles/network.dir/net/PipeEvent.cpp.o: ../src/network/net/PipeEvent.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/tmms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object src/network/CMakeFiles/network.dir/net/PipeEvent.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/tmms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object src/network/CMakeFiles/network.dir/net/PipeEvent.cpp.o"
 	cd /root/tmms/build/src/network && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/network.dir/net/PipeEvent.cpp.o -c /root/tmms/src/network/net/PipeEvent.cpp
 
 src/network/CMakeFiles/network.dir/net/PipeEvent.cpp.i: cmake_force
@@ -222,7 +235,7 @@ src/network/CMakeFiles/network.dir/net/PipeEvent.cpp.s: cmake_force
 
 src/network/CMakeFiles/network.dir/net/TcpConnection.cpp.o: src/network/CMakeFiles/network.dir/flags.make
 src/network/CMakeFiles/network.dir/net/TcpConnection.cpp.o: ../src/network/net/TcpConnection.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/tmms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object src/network/CMakeFiles/network.dir/net/TcpConnection.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/tmms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object src/network/CMakeFiles/network.dir/net/TcpConnection.cpp.o"
 	cd /root/tmms/build/src/network && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/network.dir/net/TcpConnection.cpp.o -c /root/tmms/src/network/net/TcpConnection.cpp
 
 src/network/CMakeFiles/network.dir/net/TcpConnection.cpp.i: cmake_force
@@ -232,19 +245,6 @@ src/network/CMakeFiles/network.dir/net/TcpConnection.cpp.i: cmake_force
 src/network/CMakeFiles/network.dir/net/TcpConnection.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/network.dir/net/TcpConnection.cpp.s"
 	cd /root/tmms/build/src/network && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/tmms/src/network/net/TcpConnection.cpp -o CMakeFiles/network.dir/net/TcpConnection.cpp.s
-
-src/network/CMakeFiles/network.dir/net/TcpServer.cpp.o: src/network/CMakeFiles/network.dir/flags.make
-src/network/CMakeFiles/network.dir/net/TcpServer.cpp.o: ../src/network/net/TcpServer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/tmms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object src/network/CMakeFiles/network.dir/net/TcpServer.cpp.o"
-	cd /root/tmms/build/src/network && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/network.dir/net/TcpServer.cpp.o -c /root/tmms/src/network/net/TcpServer.cpp
-
-src/network/CMakeFiles/network.dir/net/TcpServer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/network.dir/net/TcpServer.cpp.i"
-	cd /root/tmms/build/src/network && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/tmms/src/network/net/TcpServer.cpp > CMakeFiles/network.dir/net/TcpServer.cpp.i
-
-src/network/CMakeFiles/network.dir/net/TcpServer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/network.dir/net/TcpServer.cpp.s"
-	cd /root/tmms/build/src/network && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/tmms/src/network/net/TcpServer.cpp -o CMakeFiles/network.dir/net/TcpServer.cpp.s
 
 src/network/CMakeFiles/network.dir/net/TimingWheel.cpp.o: src/network/CMakeFiles/network.dir/flags.make
 src/network/CMakeFiles/network.dir/net/TimingWheel.cpp.o: ../src/network/net/TimingWheel.cpp
@@ -262,6 +262,7 @@ src/network/CMakeFiles/network.dir/net/TimingWheel.cpp.s: cmake_force
 # Object files for target network
 network_OBJECTS = \
 "CMakeFiles/network.dir/TcpClient.cpp.o" \
+"CMakeFiles/network.dir/TcpServer.cpp.o" \
 "CMakeFiles/network.dir/base/InetAddress.cpp.o" \
 "CMakeFiles/network.dir/base/MsgBuffer.cpp.o" \
 "CMakeFiles/network.dir/base/SocketOpt.cpp.o" \
@@ -273,13 +274,13 @@ network_OBJECTS = \
 "CMakeFiles/network.dir/net/EventLoopThreadPool.cpp.o" \
 "CMakeFiles/network.dir/net/PipeEvent.cpp.o" \
 "CMakeFiles/network.dir/net/TcpConnection.cpp.o" \
-"CMakeFiles/network.dir/net/TcpServer.cpp.o" \
 "CMakeFiles/network.dir/net/TimingWheel.cpp.o"
 
 # External object files for target network
 network_EXTERNAL_OBJECTS =
 
 src/network/libnetwork.a: src/network/CMakeFiles/network.dir/TcpClient.cpp.o
+src/network/libnetwork.a: src/network/CMakeFiles/network.dir/TcpServer.cpp.o
 src/network/libnetwork.a: src/network/CMakeFiles/network.dir/base/InetAddress.cpp.o
 src/network/libnetwork.a: src/network/CMakeFiles/network.dir/base/MsgBuffer.cpp.o
 src/network/libnetwork.a: src/network/CMakeFiles/network.dir/base/SocketOpt.cpp.o
@@ -291,7 +292,6 @@ src/network/libnetwork.a: src/network/CMakeFiles/network.dir/net/EventLoopThread
 src/network/libnetwork.a: src/network/CMakeFiles/network.dir/net/EventLoopThreadPool.cpp.o
 src/network/libnetwork.a: src/network/CMakeFiles/network.dir/net/PipeEvent.cpp.o
 src/network/libnetwork.a: src/network/CMakeFiles/network.dir/net/TcpConnection.cpp.o
-src/network/libnetwork.a: src/network/CMakeFiles/network.dir/net/TcpServer.cpp.o
 src/network/libnetwork.a: src/network/CMakeFiles/network.dir/net/TimingWheel.cpp.o
 src/network/libnetwork.a: src/network/CMakeFiles/network.dir/build.make
 src/network/libnetwork.a: src/network/CMakeFiles/network.dir/link.txt

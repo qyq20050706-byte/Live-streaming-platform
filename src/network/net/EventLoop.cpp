@@ -62,11 +62,11 @@ void EventLoop::Loop()
                 {
                     event->OnClose();
                 }
-                else if (ev.events & (EPOLLIN | EPOLLPRI))
+                if (ev.events & (EPOLLIN | EPOLLPRI))
                 {
                     event->OnRead();
                 }
-                else if (ev.events & EPOLLOUT)
+                if (ev.events & EPOLLOUT)
                 {
                     event->OnWrite();
                 }

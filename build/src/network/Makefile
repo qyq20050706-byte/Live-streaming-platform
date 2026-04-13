@@ -218,6 +218,33 @@ TcpClient.cpp.s:
 	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/CMakeFiles/network.dir/build.make src/network/CMakeFiles/network.dir/TcpClient.cpp.s
 .PHONY : TcpClient.cpp.s
 
+TcpServer.o: TcpServer.cpp.o
+
+.PHONY : TcpServer.o
+
+# target to build an object file
+TcpServer.cpp.o:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/CMakeFiles/network.dir/build.make src/network/CMakeFiles/network.dir/TcpServer.cpp.o
+.PHONY : TcpServer.cpp.o
+
+TcpServer.i: TcpServer.cpp.i
+
+.PHONY : TcpServer.i
+
+# target to preprocess a source file
+TcpServer.cpp.i:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/CMakeFiles/network.dir/build.make src/network/CMakeFiles/network.dir/TcpServer.cpp.i
+.PHONY : TcpServer.cpp.i
+
+TcpServer.s: TcpServer.cpp.s
+
+.PHONY : TcpServer.s
+
+# target to generate assembly for a file
+TcpServer.cpp.s:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/CMakeFiles/network.dir/build.make src/network/CMakeFiles/network.dir/TcpServer.cpp.s
+.PHONY : TcpServer.cpp.s
+
 base/InetAddress.o: base/InetAddress.cpp.o
 
 .PHONY : base/InetAddress.o
@@ -515,33 +542,6 @@ net/TcpConnection.cpp.s:
 	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/CMakeFiles/network.dir/build.make src/network/CMakeFiles/network.dir/net/TcpConnection.cpp.s
 .PHONY : net/TcpConnection.cpp.s
 
-net/TcpServer.o: net/TcpServer.cpp.o
-
-.PHONY : net/TcpServer.o
-
-# target to build an object file
-net/TcpServer.cpp.o:
-	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/CMakeFiles/network.dir/build.make src/network/CMakeFiles/network.dir/net/TcpServer.cpp.o
-.PHONY : net/TcpServer.cpp.o
-
-net/TcpServer.i: net/TcpServer.cpp.i
-
-.PHONY : net/TcpServer.i
-
-# target to preprocess a source file
-net/TcpServer.cpp.i:
-	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/CMakeFiles/network.dir/build.make src/network/CMakeFiles/network.dir/net/TcpServer.cpp.i
-.PHONY : net/TcpServer.cpp.i
-
-net/TcpServer.s: net/TcpServer.cpp.s
-
-.PHONY : net/TcpServer.s
-
-# target to generate assembly for a file
-net/TcpServer.cpp.s:
-	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/CMakeFiles/network.dir/build.make src/network/CMakeFiles/network.dir/net/TcpServer.cpp.s
-.PHONY : net/TcpServer.cpp.s
-
 net/TimingWheel.o: net/TimingWheel.cpp.o
 
 .PHONY : net/TimingWheel.o
@@ -585,6 +585,9 @@ help:
 	@echo "... TcpClient.o"
 	@echo "... TcpClient.i"
 	@echo "... TcpClient.s"
+	@echo "... TcpServer.o"
+	@echo "... TcpServer.i"
+	@echo "... TcpServer.s"
 	@echo "... base/InetAddress.o"
 	@echo "... base/InetAddress.i"
 	@echo "... base/InetAddress.s"
@@ -618,9 +621,6 @@ help:
 	@echo "... net/TcpConnection.o"
 	@echo "... net/TcpConnection.i"
 	@echo "... net/TcpConnection.s"
-	@echo "... net/TcpServer.o"
-	@echo "... net/TcpServer.i"
-	@echo "... net/TcpServer.s"
 	@echo "... net/TimingWheel.o"
 	@echo "... net/TimingWheel.i"
 	@echo "... net/TimingWheel.s"

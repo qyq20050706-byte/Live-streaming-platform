@@ -294,17 +294,17 @@ TcpConnectionTest/fast:
 .PHONY : TcpConnectionTest/fast
 
 #=============================================================================
-# Target rules for targets named Tcpservertest
+# Target rules for targets named TcpserverTest
 
 # Build rule for target.
-Tcpservertest: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Tcpservertest
-.PHONY : Tcpservertest
+TcpserverTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TcpserverTest
+.PHONY : TcpserverTest
 
 # fast build rule for target.
-Tcpservertest/fast:
-	$(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/Tcpservertest.dir/build.make src/network/net/tests/CMakeFiles/Tcpservertest.dir/build
-.PHONY : Tcpservertest/fast
+TcpserverTest/fast:
+	$(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/TcpserverTest.dir/build.make src/network/net/tests/CMakeFiles/TcpserverTest.dir/build
+.PHONY : TcpserverTest/fast
 
 #=============================================================================
 # Target rules for targets named tmms
@@ -337,7 +337,7 @@ help:
 	@echo "... InetAddressTest"
 	@echo "... SocketOptTest"
 	@echo "... TcpConnectionTest"
-	@echo "... Tcpservertest"
+	@echo "... TcpserverTest"
 	@echo "... base"
 	@echo "... network"
 	@echo "... test_log"

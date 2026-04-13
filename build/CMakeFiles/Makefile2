@@ -180,7 +180,7 @@ src/network/net/tests/all: src/network/net/tests/CMakeFiles/InetAddressTest.dir/
 src/network/net/tests/all: src/network/net/tests/CMakeFiles/SocketOptTest.dir/all
 src/network/net/tests/all: src/network/net/tests/CMakeFiles/AcceptorTest.dir/all
 src/network/net/tests/all: src/network/net/tests/CMakeFiles/TcpConnectionTest.dir/all
-src/network/net/tests/all: src/network/net/tests/CMakeFiles/Tcpservertest.dir/all
+src/network/net/tests/all: src/network/net/tests/CMakeFiles/TcpserverTest.dir/all
 
 .PHONY : src/network/net/tests/all
 
@@ -195,7 +195,7 @@ src/network/net/tests/clean: src/network/net/tests/CMakeFiles/InetAddressTest.di
 src/network/net/tests/clean: src/network/net/tests/CMakeFiles/SocketOptTest.dir/clean
 src/network/net/tests/clean: src/network/net/tests/CMakeFiles/AcceptorTest.dir/clean
 src/network/net/tests/clean: src/network/net/tests/CMakeFiles/TcpConnectionTest.dir/clean
-src/network/net/tests/clean: src/network/net/tests/CMakeFiles/Tcpservertest.dir/clean
+src/network/net/tests/clean: src/network/net/tests/CMakeFiles/TcpserverTest.dir/clean
 
 .PHONY : src/network/net/tests/clean
 
@@ -448,32 +448,32 @@ src/network/net/tests/CMakeFiles/TcpConnectionTest.dir/clean:
 .PHONY : src/network/net/tests/CMakeFiles/TcpConnectionTest.dir/clean
 
 #=============================================================================
-# Target rules for target src/network/net/tests/CMakeFiles/Tcpservertest.dir
+# Target rules for target src/network/net/tests/CMakeFiles/TcpserverTest.dir
 
 # All Build rule for target.
-src/network/net/tests/CMakeFiles/Tcpservertest.dir/all: src/base/CMakeFiles/base.dir/all
-src/network/net/tests/CMakeFiles/Tcpservertest.dir/all: src/network/CMakeFiles/network.dir/all
-	$(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/Tcpservertest.dir/build.make src/network/net/tests/CMakeFiles/Tcpservertest.dir/depend
-	$(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/Tcpservertest.dir/build.make src/network/net/tests/CMakeFiles/Tcpservertest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/tmms/build/CMakeFiles --progress-num=11,12 "Built target Tcpservertest"
-.PHONY : src/network/net/tests/CMakeFiles/Tcpservertest.dir/all
+src/network/net/tests/CMakeFiles/TcpserverTest.dir/all: src/base/CMakeFiles/base.dir/all
+src/network/net/tests/CMakeFiles/TcpserverTest.dir/all: src/network/CMakeFiles/network.dir/all
+	$(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/TcpserverTest.dir/build.make src/network/net/tests/CMakeFiles/TcpserverTest.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/TcpserverTest.dir/build.make src/network/net/tests/CMakeFiles/TcpserverTest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/tmms/build/CMakeFiles --progress-num=11,12 "Built target TcpserverTest"
+.PHONY : src/network/net/tests/CMakeFiles/TcpserverTest.dir/all
 
 # Build rule for subdir invocation for target.
-src/network/net/tests/CMakeFiles/Tcpservertest.dir/rule: cmake_check_build_system
+src/network/net/tests/CMakeFiles/TcpserverTest.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/tmms/build/CMakeFiles 30
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/network/net/tests/CMakeFiles/Tcpservertest.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/network/net/tests/CMakeFiles/TcpserverTest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/tmms/build/CMakeFiles 0
-.PHONY : src/network/net/tests/CMakeFiles/Tcpservertest.dir/rule
+.PHONY : src/network/net/tests/CMakeFiles/TcpserverTest.dir/rule
 
 # Convenience name for target.
-Tcpservertest: src/network/net/tests/CMakeFiles/Tcpservertest.dir/rule
+TcpserverTest: src/network/net/tests/CMakeFiles/TcpserverTest.dir/rule
 
-.PHONY : Tcpservertest
+.PHONY : TcpserverTest
 
 # clean rule for target.
-src/network/net/tests/CMakeFiles/Tcpservertest.dir/clean:
-	$(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/Tcpservertest.dir/build.make src/network/net/tests/CMakeFiles/Tcpservertest.dir/clean
-.PHONY : src/network/net/tests/CMakeFiles/Tcpservertest.dir/clean
+src/network/net/tests/CMakeFiles/TcpserverTest.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/TcpserverTest.dir/build.make src/network/net/tests/CMakeFiles/TcpserverTest.dir/clean
+.PHONY : src/network/net/tests/CMakeFiles/TcpserverTest.dir/clean
 
 #=============================================================================
 # Target rules for target src/main/CMakeFiles/tmms.dir
