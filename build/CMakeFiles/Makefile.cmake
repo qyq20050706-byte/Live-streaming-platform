@@ -65,8 +65,12 @@ set(CMAKE_DEPEND_INFO_FILES
   "src/network/net/tests/CMakeFiles/EventLoopThreadTest.dir/DependInfo.cmake"
   "src/network/net/tests/CMakeFiles/InetAddressTest.dir/DependInfo.cmake"
   "src/network/net/tests/CMakeFiles/SocketOptTest.dir/DependInfo.cmake"
+  "src/network/net/tests/CMakeFiles/UdpClientTest.dir/DependInfo.cmake"
   "src/network/net/tests/CMakeFiles/AcceptorTest.dir/DependInfo.cmake"
   "src/network/net/tests/CMakeFiles/TcpConnectionTest.dir/DependInfo.cmake"
-  "src/network/net/tests/CMakeFiles/TcpserverTest.dir/DependInfo.cmake"
+  "src/network/net/tests/CMakeFiles/DnsServiceTest.dir/DependInfo.cmake"
+  "src/network/net/tests/CMakeFiles/TcpClientTest.dir/DependInfo.cmake"
+  "src/network/net/tests/CMakeFiles/TcpServerTest.dir/DependInfo.cmake"
+  "src/network/net/tests/CMakeFiles/UdpServerTest.dir/DependInfo.cmake"
   "src/main/CMakeFiles/tmms.dir/DependInfo.cmake"
   )

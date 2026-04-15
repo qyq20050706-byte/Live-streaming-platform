@@ -268,6 +268,19 @@ SocketOptTest/fast:
 .PHONY : SocketOptTest/fast
 
 #=============================================================================
+# Target rules for targets named UdpClientTest
+
+# Build rule for target.
+UdpClientTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 UdpClientTest
+.PHONY : UdpClientTest
+
+# fast build rule for target.
+UdpClientTest/fast:
+	$(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/UdpClientTest.dir/build.make src/network/net/tests/CMakeFiles/UdpClientTest.dir/build
+.PHONY : UdpClientTest/fast
+
+#=============================================================================
 # Target rules for targets named AcceptorTest
 
 # Build rule for target.
@@ -294,17 +307,56 @@ TcpConnectionTest/fast:
 .PHONY : TcpConnectionTest/fast
 
 #=============================================================================
-# Target rules for targets named TcpserverTest
+# Target rules for targets named DnsServiceTest
 
 # Build rule for target.
-TcpserverTest: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TcpserverTest
-.PHONY : TcpserverTest
+DnsServiceTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 DnsServiceTest
+.PHONY : DnsServiceTest
 
 # fast build rule for target.
-TcpserverTest/fast:
-	$(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/TcpserverTest.dir/build.make src/network/net/tests/CMakeFiles/TcpserverTest.dir/build
-.PHONY : TcpserverTest/fast
+DnsServiceTest/fast:
+	$(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/DnsServiceTest.dir/build.make src/network/net/tests/CMakeFiles/DnsServiceTest.dir/build
+.PHONY : DnsServiceTest/fast
+
+#=============================================================================
+# Target rules for targets named TcpClientTest
+
+# Build rule for target.
+TcpClientTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TcpClientTest
+.PHONY : TcpClientTest
+
+# fast build rule for target.
+TcpClientTest/fast:
+	$(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/TcpClientTest.dir/build.make src/network/net/tests/CMakeFiles/TcpClientTest.dir/build
+.PHONY : TcpClientTest/fast
+
+#=============================================================================
+# Target rules for targets named TcpServerTest
+
+# Build rule for target.
+TcpServerTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TcpServerTest
+.PHONY : TcpServerTest
+
+# fast build rule for target.
+TcpServerTest/fast:
+	$(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/TcpServerTest.dir/build.make src/network/net/tests/CMakeFiles/TcpServerTest.dir/build
+.PHONY : TcpServerTest/fast
+
+#=============================================================================
+# Target rules for targets named UdpServerTest
+
+# Build rule for target.
+UdpServerTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 UdpServerTest
+.PHONY : UdpServerTest
+
+# fast build rule for target.
+UdpServerTest/fast:
+	$(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/UdpServerTest.dir/build.make src/network/net/tests/CMakeFiles/UdpServerTest.dir/build
+.PHONY : UdpServerTest/fast
 
 #=============================================================================
 # Target rules for targets named tmms
@@ -333,11 +385,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... jsoncpp"
 	@echo "... AcceptorTest"
+	@echo "... DnsServiceTest"
 	@echo "... EventLoopThreadTest"
 	@echo "... InetAddressTest"
 	@echo "... SocketOptTest"
+	@echo "... TcpClientTest"
 	@echo "... TcpConnectionTest"
-	@echo "... TcpserverTest"
+	@echo "... TcpServerTest"
+	@echo "... UdpClientTest"
+	@echo "... UdpServerTest"
 	@echo "... base"
 	@echo "... network"
 	@echo "... test_log"

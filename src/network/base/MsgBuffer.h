@@ -22,7 +22,7 @@ namespace network {
 class MsgBuffer {
 public:
     static const size_t kCheapPrepend = 8;     // 预留头部大小
-    static const size_t kInitialSize = 1024;   // 初始缓冲区大小
+    static const size_t kInitialSize = 65535;   // 初始缓冲区大小
 
     explicit MsgBuffer(size_t initialSize = kInitialSize)
         : buffer_(kCheapPrepend + initialSize),

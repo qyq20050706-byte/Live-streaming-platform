@@ -1,6 +1,9 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/network.dir/DnsService.cpp.o"
   "CMakeFiles/network.dir/TcpClient.cpp.o"
   "CMakeFiles/network.dir/TcpServer.cpp.o"
+  "CMakeFiles/network.dir/UdpClient.cpp.o"
+  "CMakeFiles/network.dir/UdpServer.cpp.o"
   "CMakeFiles/network.dir/base/InetAddress.cpp.o"
   "CMakeFiles/network.dir/base/MsgBuffer.cpp.o"
   "CMakeFiles/network.dir/base/SocketOpt.cpp.o"
@@ -13,6 +16,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/network.dir/net/PipeEvent.cpp.o"
   "CMakeFiles/network.dir/net/TcpConnection.cpp.o"
   "CMakeFiles/network.dir/net/TimingWheel.cpp.o"
+  "CMakeFiles/network.dir/net/UdpSocket.cpp.o"
   "libnetwork.a"
   "libnetwork.pdb"
 )

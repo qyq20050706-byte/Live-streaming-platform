@@ -4,8 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/root/tmms/src/network/DnsService.cpp" "/root/tmms/build/src/network/CMakeFiles/network.dir/DnsService.cpp.o"
   "/root/tmms/src/network/TcpClient.cpp" "/root/tmms/build/src/network/CMakeFiles/network.dir/TcpClient.cpp.o"
   "/root/tmms/src/network/TcpServer.cpp" "/root/tmms/build/src/network/CMakeFiles/network.dir/TcpServer.cpp.o"
+  "/root/tmms/src/network/UdpClient.cpp" "/root/tmms/build/src/network/CMakeFiles/network.dir/UdpClient.cpp.o"
+  "/root/tmms/src/network/UdpServer.cpp" "/root/tmms/build/src/network/CMakeFiles/network.dir/UdpServer.cpp.o"
   "/root/tmms/src/network/base/InetAddress.cpp" "/root/tmms/build/src/network/CMakeFiles/network.dir/base/InetAddress.cpp.o"
   "/root/tmms/src/network/base/MsgBuffer.cpp" "/root/tmms/build/src/network/CMakeFiles/network.dir/base/MsgBuffer.cpp.o"
   "/root/tmms/src/network/base/SocketOpt.cpp" "/root/tmms/build/src/network/CMakeFiles/network.dir/base/SocketOpt.cpp.o"
@@ -18,6 +21,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/root/tmms/src/network/net/PipeEvent.cpp" "/root/tmms/build/src/network/CMakeFiles/network.dir/net/PipeEvent.cpp.o"
   "/root/tmms/src/network/net/TcpConnection.cpp" "/root/tmms/build/src/network/CMakeFiles/network.dir/net/TcpConnection.cpp.o"
   "/root/tmms/src/network/net/TimingWheel.cpp" "/root/tmms/build/src/network/CMakeFiles/network.dir/net/TimingWheel.cpp.o"
+  "/root/tmms/src/network/net/UdpSocket.cpp" "/root/tmms/build/src/network/CMakeFiles/network.dir/net/UdpSocket.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

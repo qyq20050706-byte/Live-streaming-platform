@@ -5,6 +5,7 @@
 #include <fcntl.h>
 #include <sys/socket.h>
 #include "base/TTime.h"
+#include <iostream>
 using namespace tmms::network;
 
 static thread_local EventLoop *t_local_eventloop = nullptr;
@@ -43,6 +44,7 @@ void EventLoop::Loop()
                 {
                     continue;
                 }
+
                 auto iter = events_.find(ev.data.fd);
                 if (iter == events_.end())
                 {

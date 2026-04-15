@@ -191,6 +191,33 @@ network/fast:
 	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/CMakeFiles/network.dir/build.make src/network/CMakeFiles/network.dir/build
 .PHONY : network/fast
 
+DnsService.o: DnsService.cpp.o
+
+.PHONY : DnsService.o
+
+# target to build an object file
+DnsService.cpp.o:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/CMakeFiles/network.dir/build.make src/network/CMakeFiles/network.dir/DnsService.cpp.o
+.PHONY : DnsService.cpp.o
+
+DnsService.i: DnsService.cpp.i
+
+.PHONY : DnsService.i
+
+# target to preprocess a source file
+DnsService.cpp.i:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/CMakeFiles/network.dir/build.make src/network/CMakeFiles/network.dir/DnsService.cpp.i
+.PHONY : DnsService.cpp.i
+
+DnsService.s: DnsService.cpp.s
+
+.PHONY : DnsService.s
+
+# target to generate assembly for a file
+DnsService.cpp.s:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/CMakeFiles/network.dir/build.make src/network/CMakeFiles/network.dir/DnsService.cpp.s
+.PHONY : DnsService.cpp.s
+
 TcpClient.o: TcpClient.cpp.o
 
 .PHONY : TcpClient.o
@@ -244,6 +271,60 @@ TcpServer.s: TcpServer.cpp.s
 TcpServer.cpp.s:
 	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/CMakeFiles/network.dir/build.make src/network/CMakeFiles/network.dir/TcpServer.cpp.s
 .PHONY : TcpServer.cpp.s
+
+UdpClient.o: UdpClient.cpp.o
+
+.PHONY : UdpClient.o
+
+# target to build an object file
+UdpClient.cpp.o:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/CMakeFiles/network.dir/build.make src/network/CMakeFiles/network.dir/UdpClient.cpp.o
+.PHONY : UdpClient.cpp.o
+
+UdpClient.i: UdpClient.cpp.i
+
+.PHONY : UdpClient.i
+
+# target to preprocess a source file
+UdpClient.cpp.i:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/CMakeFiles/network.dir/build.make src/network/CMakeFiles/network.dir/UdpClient.cpp.i
+.PHONY : UdpClient.cpp.i
+
+UdpClient.s: UdpClient.cpp.s
+
+.PHONY : UdpClient.s
+
+# target to generate assembly for a file
+UdpClient.cpp.s:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/CMakeFiles/network.dir/build.make src/network/CMakeFiles/network.dir/UdpClient.cpp.s
+.PHONY : UdpClient.cpp.s
+
+UdpServer.o: UdpServer.cpp.o
+
+.PHONY : UdpServer.o
+
+# target to build an object file
+UdpServer.cpp.o:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/CMakeFiles/network.dir/build.make src/network/CMakeFiles/network.dir/UdpServer.cpp.o
+.PHONY : UdpServer.cpp.o
+
+UdpServer.i: UdpServer.cpp.i
+
+.PHONY : UdpServer.i
+
+# target to preprocess a source file
+UdpServer.cpp.i:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/CMakeFiles/network.dir/build.make src/network/CMakeFiles/network.dir/UdpServer.cpp.i
+.PHONY : UdpServer.cpp.i
+
+UdpServer.s: UdpServer.cpp.s
+
+.PHONY : UdpServer.s
+
+# target to generate assembly for a file
+UdpServer.cpp.s:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/CMakeFiles/network.dir/build.make src/network/CMakeFiles/network.dir/UdpServer.cpp.s
+.PHONY : UdpServer.cpp.s
 
 base/InetAddress.o: base/InetAddress.cpp.o
 
@@ -569,6 +650,33 @@ net/TimingWheel.cpp.s:
 	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/CMakeFiles/network.dir/build.make src/network/CMakeFiles/network.dir/net/TimingWheel.cpp.s
 .PHONY : net/TimingWheel.cpp.s
 
+net/UdpSocket.o: net/UdpSocket.cpp.o
+
+.PHONY : net/UdpSocket.o
+
+# target to build an object file
+net/UdpSocket.cpp.o:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/CMakeFiles/network.dir/build.make src/network/CMakeFiles/network.dir/net/UdpSocket.cpp.o
+.PHONY : net/UdpSocket.cpp.o
+
+net/UdpSocket.i: net/UdpSocket.cpp.i
+
+.PHONY : net/UdpSocket.i
+
+# target to preprocess a source file
+net/UdpSocket.cpp.i:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/CMakeFiles/network.dir/build.make src/network/CMakeFiles/network.dir/net/UdpSocket.cpp.i
+.PHONY : net/UdpSocket.cpp.i
+
+net/UdpSocket.s: net/UdpSocket.cpp.s
+
+.PHONY : net/UdpSocket.s
+
+# target to generate assembly for a file
+net/UdpSocket.cpp.s:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/CMakeFiles/network.dir/build.make src/network/CMakeFiles/network.dir/net/UdpSocket.cpp.s
+.PHONY : net/UdpSocket.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -582,12 +690,21 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... network"
+	@echo "... DnsService.o"
+	@echo "... DnsService.i"
+	@echo "... DnsService.s"
 	@echo "... TcpClient.o"
 	@echo "... TcpClient.i"
 	@echo "... TcpClient.s"
 	@echo "... TcpServer.o"
 	@echo "... TcpServer.i"
 	@echo "... TcpServer.s"
+	@echo "... UdpClient.o"
+	@echo "... UdpClient.i"
+	@echo "... UdpClient.s"
+	@echo "... UdpServer.o"
+	@echo "... UdpServer.i"
+	@echo "... UdpServer.s"
 	@echo "... base/InetAddress.o"
 	@echo "... base/InetAddress.i"
 	@echo "... base/InetAddress.s"
@@ -624,6 +741,9 @@ help:
 	@echo "... net/TimingWheel.o"
 	@echo "... net/TimingWheel.i"
 	@echo "... net/TimingWheel.s"
+	@echo "... net/UdpSocket.o"
+	@echo "... net/UdpSocket.i"
+	@echo "... net/UdpSocket.s"
 .PHONY : help
 
 

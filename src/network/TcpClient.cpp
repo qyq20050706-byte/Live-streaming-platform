@@ -26,6 +26,7 @@ void tmms::network::TcpClient::ConnectInLoop()
     {
         return;
     }
+    closed_ = false;
     fd_ = SocketOpt::CreateNonblockingTcpSocket(AF_INET);
     if (fd_ < 0)
     {
@@ -34,6 +35,8 @@ void tmms::network::TcpClient::ConnectInLoop()
     }
     status_ = kTcpConStatusConnecting;
     loop_->AddEvent(std::dynamic_pointer_cast<TcpClient>(shared_from_this()));
+    EnableWriting(true);
+
     SocketOpt opt(fd_);
     auto ret = opt.Connect(server_addr_);
     if (ret == 0)
@@ -50,7 +53,6 @@ void tmms::network::TcpClient::ConnectInLoop()
             return;
         }
     }
-    EnableWriting(true);
 }
 
 void tmms::network::TcpClient::SetConnectCallback(const ConnectionCallback &cb)
@@ -75,7 +77,18 @@ void tmms::network::TcpClient::UpdateConnectionStatus()
 
 void tmms::network::TcpClient::OnRead()
 {
-    if (status_ == kTcpConStatusConnected)
+    if (status_ == kTcpConStatusConnecting)
+    {
+        if (CheckError())
+        {
+            NETWORK_ERROR << "connection to server:" << server_addr_.ToIpPort() << "error:" << errno;
+            OnClose();
+            return;
+        }
+        UpdateConnectionStatus();
+        return;
+    }
+    else if (status_ == kTcpConStatusConnected)
     {
         TcpConnection::OnRead();
     }
@@ -112,15 +125,17 @@ void tmms::network::TcpClient::OnClose()
 
 void tmms::network::TcpClient::Send(std::list<BufferNodePtr> &list)
 {
-    if(status_==kTcpConStatusConnected){
+    if (status_ == kTcpConStatusConnected)
+    {
         TcpConnection::Send(list);
     }
 }
 
 void tmms::network::TcpClient::Send(const char *buf, size_t size)
 {
-    if(status_==kTcpConStatusConnected){
-        TcpConnection::Send(buf,size);
+    if (status_ == kTcpConStatusConnected)
+    {
+        TcpConnection::Send(buf, size);
     }
 }
 

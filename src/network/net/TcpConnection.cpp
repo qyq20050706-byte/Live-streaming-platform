@@ -2,7 +2,9 @@
 #include "network/base/Network.h"
 #include <unistd.h>
 #include <cstdlib>
-#include <cstring>
+#include <cstring> 
+#include <algorithm>     
+#include <limits.h>
 
 using namespace tmms::network;
 
@@ -74,6 +76,7 @@ void tmms::network::TcpConnection::OnRead()
                 if (closed_)
                     return;
             }
+            message_buffer_.retrieveAll();
         }
         else if (ret == 0)
         {
@@ -126,9 +129,10 @@ void tmms::network::TcpConnection::OnWrite()
         return;
     }
 
-    while (true)
+    while (write_index_ < io_vec_list_.size())
     {
-        int iovcnt = static_cast<int>(io_vec_list_.size() - write_index_);
+        size_t total_iov = io_vec_list_.size() - write_index_;
+        int iovcnt = static_cast<int>(std::min(total_iov, (size_t)IOV_MAX));
         auto ret = ::writev(fd_, io_vec_list_.data() + write_index_, iovcnt);
 
         if (ret > 0)
@@ -260,7 +264,8 @@ void tmms::network::TcpConnection::SendInLoop(std::list<BufferNodePtr> &list)
         io_vec_list_.push_back({l->addr, l->size});
         pending_buffers_.push_back(l);
     }
-    int iovcnt = static_cast<int>(io_vec_list_.size() - write_index_);
+    size_t total_iov = io_vec_list_.size() - write_index_;
+    int iovcnt = static_cast<int>(std::min(total_iov, (size_t)IOV_MAX));
     auto ret = ::writev(fd_, io_vec_list_.data() + write_index_, iovcnt);
     if (ret > 0)
     {
@@ -304,59 +309,6 @@ void tmms::network::TcpConnection::SendInLoop(std::list<BufferNodePtr> &list)
     }
     if (need_enable && !io_vec_list_.empty())
     {
-        EnableWriting(true);
-    }
-}
-
-void tmms::network::TcpConnection::SendInLoop(const char *buf, size_t size)
-{
-    if (closed_)
-    {
-        NETWORK_TRACE << "host:" << peer_addr_.ToIpPort() << "had closed.";
-        return;
-    }
-    size_t send_len = 0;
-    if (io_vec_list_.empty())
-    {
-        send_len = ::write(fd_, buf, size);
-        if (send_len < 0)
-        {
-            if (errno != EINTR && errno != EAGAIN && errno != EWOULDBLOCK)
-            {
-                NETWORK_ERROR << "host:" << peer_addr_.ToIpPort() << "write err:" << errno;
-                OnClose();
-                return;
-            }
-            send_len = 0;
-        }
-        size -= send_len;
-        if (size == 0)
-        {
-            if (write_complete_cb_)
-            {
-                write_complete_cb_(std::dynamic_pointer_cast<TcpConnection>(shared_from_this()));
-            }
-            return;
-        }
-    }
-    if (size > 0)
-    {
-        void *mem = std::malloc(size);
-        if (!mem)
-        {
-            NETWORK_ERROR << "malloc failed in SendInLoop";
-            return;
-        }
-        auto node = std::make_shared<BufferNode>(mem, size);
-        std::memcpy(node->addr, static_cast<const char *>(buf) + send_len, size);
-
-        pending_buffers_.push_back(node);
-
-        struct iovec vec;
-        vec.iov_base = static_cast<char *>(node->addr);
-        vec.iov_len = node->size;
-
-        io_vec_list_.push_back(vec);
         EnableWriting(true);
     }
 }

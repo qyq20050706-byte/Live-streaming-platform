@@ -13,8 +13,17 @@ target_link_libraries(AcceptorTest base network)
 add_executable(TcpConnectionTest TcpConnectionTest.cpp)
 target_link_libraries(TcpConnectionTest base network)
 
-# add_executable(TcpClientTest TcpClientTest.cpp)
-# target_link_libraries(TcpClientTest base network)
+add_executable(TcpClientTest TcpClientTest.cpp)
+target_link_libraries(TcpClientTest base network)
 
-add_executable(TcpserverTest TcpserverTest.cpp)
-target_link_libraries(TcpserverTest base network)
+add_executable(TcpServerTest TcpServerTest.cpp)
+target_link_libraries(TcpServerTest base network)
+
+add_executable(DnsServiceTest DnsServiceTest.cpp)
+target_link_libraries(DnsServiceTest base network)
+
+add_executable(UdpClientTest UdpClientTest.cpp)
+target_link_libraries(UdpClientTest base network)
+
+add_executable(UdpServerTest UdpServerTest.cpp)
+target_link_libraries(UdpServerTest base network)

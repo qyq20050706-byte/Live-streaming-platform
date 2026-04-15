@@ -76,28 +76,17 @@ CMAKE_BINARY_DIR = /root/tmms/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake3 -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake3 -P cmake_install.cmake
+.PHONY : install
 
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake3 -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake3 --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake3 -P cmake_install.cmake
+.PHONY : install/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -121,17 +110,16 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake3 -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake3 --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake3 -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -143,6 +131,18 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake3 -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake3 -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -222,6 +222,21 @@ SocketOptTest/fast:
 .PHONY : SocketOptTest/fast
 
 # Convenience name for target.
+src/network/net/tests/CMakeFiles/UdpClientTest.dir/rule:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/network/net/tests/CMakeFiles/UdpClientTest.dir/rule
+.PHONY : src/network/net/tests/CMakeFiles/UdpClientTest.dir/rule
+
+# Convenience name for target.
+UdpClientTest: src/network/net/tests/CMakeFiles/UdpClientTest.dir/rule
+
+.PHONY : UdpClientTest
+
+# fast build rule for target.
+UdpClientTest/fast:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/UdpClientTest.dir/build.make src/network/net/tests/CMakeFiles/UdpClientTest.dir/build
+.PHONY : UdpClientTest/fast
+
+# Convenience name for target.
 src/network/net/tests/CMakeFiles/AcceptorTest.dir/rule:
 	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/network/net/tests/CMakeFiles/AcceptorTest.dir/rule
 .PHONY : src/network/net/tests/CMakeFiles/AcceptorTest.dir/rule
@@ -252,19 +267,64 @@ TcpConnectionTest/fast:
 .PHONY : TcpConnectionTest/fast
 
 # Convenience name for target.
-src/network/net/tests/CMakeFiles/TcpserverTest.dir/rule:
-	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/network/net/tests/CMakeFiles/TcpserverTest.dir/rule
-.PHONY : src/network/net/tests/CMakeFiles/TcpserverTest.dir/rule
+src/network/net/tests/CMakeFiles/DnsServiceTest.dir/rule:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/network/net/tests/CMakeFiles/DnsServiceTest.dir/rule
+.PHONY : src/network/net/tests/CMakeFiles/DnsServiceTest.dir/rule
 
 # Convenience name for target.
-TcpserverTest: src/network/net/tests/CMakeFiles/TcpserverTest.dir/rule
+DnsServiceTest: src/network/net/tests/CMakeFiles/DnsServiceTest.dir/rule
 
-.PHONY : TcpserverTest
+.PHONY : DnsServiceTest
 
 # fast build rule for target.
-TcpserverTest/fast:
-	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/TcpserverTest.dir/build.make src/network/net/tests/CMakeFiles/TcpserverTest.dir/build
-.PHONY : TcpserverTest/fast
+DnsServiceTest/fast:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/DnsServiceTest.dir/build.make src/network/net/tests/CMakeFiles/DnsServiceTest.dir/build
+.PHONY : DnsServiceTest/fast
+
+# Convenience name for target.
+src/network/net/tests/CMakeFiles/TcpClientTest.dir/rule:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/network/net/tests/CMakeFiles/TcpClientTest.dir/rule
+.PHONY : src/network/net/tests/CMakeFiles/TcpClientTest.dir/rule
+
+# Convenience name for target.
+TcpClientTest: src/network/net/tests/CMakeFiles/TcpClientTest.dir/rule
+
+.PHONY : TcpClientTest
+
+# fast build rule for target.
+TcpClientTest/fast:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/TcpClientTest.dir/build.make src/network/net/tests/CMakeFiles/TcpClientTest.dir/build
+.PHONY : TcpClientTest/fast
+
+# Convenience name for target.
+src/network/net/tests/CMakeFiles/TcpServerTest.dir/rule:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/network/net/tests/CMakeFiles/TcpServerTest.dir/rule
+.PHONY : src/network/net/tests/CMakeFiles/TcpServerTest.dir/rule
+
+# Convenience name for target.
+TcpServerTest: src/network/net/tests/CMakeFiles/TcpServerTest.dir/rule
+
+.PHONY : TcpServerTest
+
+# fast build rule for target.
+TcpServerTest/fast:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/TcpServerTest.dir/build.make src/network/net/tests/CMakeFiles/TcpServerTest.dir/build
+.PHONY : TcpServerTest/fast
+
+# Convenience name for target.
+src/network/net/tests/CMakeFiles/UdpServerTest.dir/rule:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/network/net/tests/CMakeFiles/UdpServerTest.dir/rule
+.PHONY : src/network/net/tests/CMakeFiles/UdpServerTest.dir/rule
+
+# Convenience name for target.
+UdpServerTest: src/network/net/tests/CMakeFiles/UdpServerTest.dir/rule
+
+.PHONY : UdpServerTest
+
+# fast build rule for target.
+UdpServerTest/fast:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/UdpServerTest.dir/build.make src/network/net/tests/CMakeFiles/UdpServerTest.dir/build
+.PHONY : UdpServerTest/fast
 
 AcceptorTest.o: AcceptorTest.cpp.o
 
@@ -292,6 +352,33 @@ AcceptorTest.s: AcceptorTest.cpp.s
 AcceptorTest.cpp.s:
 	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/AcceptorTest.dir/build.make src/network/net/tests/CMakeFiles/AcceptorTest.dir/AcceptorTest.cpp.s
 .PHONY : AcceptorTest.cpp.s
+
+DnsServiceTest.o: DnsServiceTest.cpp.o
+
+.PHONY : DnsServiceTest.o
+
+# target to build an object file
+DnsServiceTest.cpp.o:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/DnsServiceTest.dir/build.make src/network/net/tests/CMakeFiles/DnsServiceTest.dir/DnsServiceTest.cpp.o
+.PHONY : DnsServiceTest.cpp.o
+
+DnsServiceTest.i: DnsServiceTest.cpp.i
+
+.PHONY : DnsServiceTest.i
+
+# target to preprocess a source file
+DnsServiceTest.cpp.i:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/DnsServiceTest.dir/build.make src/network/net/tests/CMakeFiles/DnsServiceTest.dir/DnsServiceTest.cpp.i
+.PHONY : DnsServiceTest.cpp.i
+
+DnsServiceTest.s: DnsServiceTest.cpp.s
+
+.PHONY : DnsServiceTest.s
+
+# target to generate assembly for a file
+DnsServiceTest.cpp.s:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/DnsServiceTest.dir/build.make src/network/net/tests/CMakeFiles/DnsServiceTest.dir/DnsServiceTest.cpp.s
+.PHONY : DnsServiceTest.cpp.s
 
 EventLoopThreadTest.o: EventLoopThreadTest.cpp.o
 
@@ -374,6 +461,33 @@ SocketOptTest.cpp.s:
 	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/SocketOptTest.dir/build.make src/network/net/tests/CMakeFiles/SocketOptTest.dir/SocketOptTest.cpp.s
 .PHONY : SocketOptTest.cpp.s
 
+TcpClientTest.o: TcpClientTest.cpp.o
+
+.PHONY : TcpClientTest.o
+
+# target to build an object file
+TcpClientTest.cpp.o:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/TcpClientTest.dir/build.make src/network/net/tests/CMakeFiles/TcpClientTest.dir/TcpClientTest.cpp.o
+.PHONY : TcpClientTest.cpp.o
+
+TcpClientTest.i: TcpClientTest.cpp.i
+
+.PHONY : TcpClientTest.i
+
+# target to preprocess a source file
+TcpClientTest.cpp.i:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/TcpClientTest.dir/build.make src/network/net/tests/CMakeFiles/TcpClientTest.dir/TcpClientTest.cpp.i
+.PHONY : TcpClientTest.cpp.i
+
+TcpClientTest.s: TcpClientTest.cpp.s
+
+.PHONY : TcpClientTest.s
+
+# target to generate assembly for a file
+TcpClientTest.cpp.s:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/TcpClientTest.dir/build.make src/network/net/tests/CMakeFiles/TcpClientTest.dir/TcpClientTest.cpp.s
+.PHONY : TcpClientTest.cpp.s
+
 TcpConnectionTest.o: TcpConnectionTest.cpp.o
 
 .PHONY : TcpConnectionTest.o
@@ -401,32 +515,86 @@ TcpConnectionTest.cpp.s:
 	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/TcpConnectionTest.dir/build.make src/network/net/tests/CMakeFiles/TcpConnectionTest.dir/TcpConnectionTest.cpp.s
 .PHONY : TcpConnectionTest.cpp.s
 
-TcpserverTest.o: TcpserverTest.cpp.o
+TcpServerTest.o: TcpServerTest.cpp.o
 
-.PHONY : TcpserverTest.o
+.PHONY : TcpServerTest.o
 
 # target to build an object file
-TcpserverTest.cpp.o:
-	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/TcpserverTest.dir/build.make src/network/net/tests/CMakeFiles/TcpserverTest.dir/TcpserverTest.cpp.o
-.PHONY : TcpserverTest.cpp.o
+TcpServerTest.cpp.o:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/TcpServerTest.dir/build.make src/network/net/tests/CMakeFiles/TcpServerTest.dir/TcpServerTest.cpp.o
+.PHONY : TcpServerTest.cpp.o
 
-TcpserverTest.i: TcpserverTest.cpp.i
+TcpServerTest.i: TcpServerTest.cpp.i
 
-.PHONY : TcpserverTest.i
+.PHONY : TcpServerTest.i
 
 # target to preprocess a source file
-TcpserverTest.cpp.i:
-	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/TcpserverTest.dir/build.make src/network/net/tests/CMakeFiles/TcpserverTest.dir/TcpserverTest.cpp.i
-.PHONY : TcpserverTest.cpp.i
+TcpServerTest.cpp.i:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/TcpServerTest.dir/build.make src/network/net/tests/CMakeFiles/TcpServerTest.dir/TcpServerTest.cpp.i
+.PHONY : TcpServerTest.cpp.i
 
-TcpserverTest.s: TcpserverTest.cpp.s
+TcpServerTest.s: TcpServerTest.cpp.s
 
-.PHONY : TcpserverTest.s
+.PHONY : TcpServerTest.s
 
 # target to generate assembly for a file
-TcpserverTest.cpp.s:
-	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/TcpserverTest.dir/build.make src/network/net/tests/CMakeFiles/TcpserverTest.dir/TcpserverTest.cpp.s
-.PHONY : TcpserverTest.cpp.s
+TcpServerTest.cpp.s:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/TcpServerTest.dir/build.make src/network/net/tests/CMakeFiles/TcpServerTest.dir/TcpServerTest.cpp.s
+.PHONY : TcpServerTest.cpp.s
+
+UdpClientTest.o: UdpClientTest.cpp.o
+
+.PHONY : UdpClientTest.o
+
+# target to build an object file
+UdpClientTest.cpp.o:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/UdpClientTest.dir/build.make src/network/net/tests/CMakeFiles/UdpClientTest.dir/UdpClientTest.cpp.o
+.PHONY : UdpClientTest.cpp.o
+
+UdpClientTest.i: UdpClientTest.cpp.i
+
+.PHONY : UdpClientTest.i
+
+# target to preprocess a source file
+UdpClientTest.cpp.i:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/UdpClientTest.dir/build.make src/network/net/tests/CMakeFiles/UdpClientTest.dir/UdpClientTest.cpp.i
+.PHONY : UdpClientTest.cpp.i
+
+UdpClientTest.s: UdpClientTest.cpp.s
+
+.PHONY : UdpClientTest.s
+
+# target to generate assembly for a file
+UdpClientTest.cpp.s:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/UdpClientTest.dir/build.make src/network/net/tests/CMakeFiles/UdpClientTest.dir/UdpClientTest.cpp.s
+.PHONY : UdpClientTest.cpp.s
+
+UdpServerTest.o: UdpServerTest.cpp.o
+
+.PHONY : UdpServerTest.o
+
+# target to build an object file
+UdpServerTest.cpp.o:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/UdpServerTest.dir/build.make src/network/net/tests/CMakeFiles/UdpServerTest.dir/UdpServerTest.cpp.o
+.PHONY : UdpServerTest.cpp.o
+
+UdpServerTest.i: UdpServerTest.cpp.i
+
+.PHONY : UdpServerTest.i
+
+# target to preprocess a source file
+UdpServerTest.cpp.i:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/UdpServerTest.dir/build.make src/network/net/tests/CMakeFiles/UdpServerTest.dir/UdpServerTest.cpp.i
+.PHONY : UdpServerTest.cpp.i
+
+UdpServerTest.s: UdpServerTest.cpp.s
+
+.PHONY : UdpServerTest.s
+
+# target to generate assembly for a file
+UdpServerTest.cpp.s:
+	cd /root/tmms/build && $(MAKE) $(MAKESILENT) -f src/network/net/tests/CMakeFiles/UdpServerTest.dir/build.make src/network/net/tests/CMakeFiles/UdpServerTest.dir/UdpServerTest.cpp.s
+.PHONY : UdpServerTest.cpp.s
 
 # Help Target
 help:
@@ -441,14 +609,21 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... AcceptorTest"
+	@echo "... DnsServiceTest"
 	@echo "... EventLoopThreadTest"
 	@echo "... InetAddressTest"
 	@echo "... SocketOptTest"
+	@echo "... TcpClientTest"
 	@echo "... TcpConnectionTest"
-	@echo "... TcpserverTest"
+	@echo "... TcpServerTest"
+	@echo "... UdpClientTest"
+	@echo "... UdpServerTest"
 	@echo "... AcceptorTest.o"
 	@echo "... AcceptorTest.i"
 	@echo "... AcceptorTest.s"
+	@echo "... DnsServiceTest.o"
+	@echo "... DnsServiceTest.i"
+	@echo "... DnsServiceTest.s"
 	@echo "... EventLoopThreadTest.o"
 	@echo "... EventLoopThreadTest.i"
 	@echo "... EventLoopThreadTest.s"
@@ -458,12 +633,21 @@ help:
 	@echo "... SocketOptTest.o"
 	@echo "... SocketOptTest.i"
 	@echo "... SocketOptTest.s"
+	@echo "... TcpClientTest.o"
+	@echo "... TcpClientTest.i"
+	@echo "... TcpClientTest.s"
 	@echo "... TcpConnectionTest.o"
 	@echo "... TcpConnectionTest.i"
 	@echo "... TcpConnectionTest.s"
-	@echo "... TcpserverTest.o"
-	@echo "... TcpserverTest.i"
-	@echo "... TcpserverTest.s"
+	@echo "... TcpServerTest.o"
+	@echo "... TcpServerTest.i"
+	@echo "... TcpServerTest.s"
+	@echo "... UdpClientTest.o"
+	@echo "... UdpClientTest.i"
+	@echo "... UdpClientTest.s"
+	@echo "... UdpServerTest.o"
+	@echo "... UdpServerTest.i"
+	@echo "... UdpServerTest.s"
 .PHONY : help
 
 

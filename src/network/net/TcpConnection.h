@@ -16,20 +16,8 @@ namespace tmms
         using CloseConnectionCallback = std::function<void(const TcpConnectionPtr &)>;
         using MessageCallback = std::function<void(const TcpConnectionPtr &, MsgBuffer &buffer)>;
         using WriteCompleteCallback = std::function<void(const TcpConnectionPtr &)>;
-        using TimeoutCallback=std::function<void(const TcpConnectionPtr &)>;
+        using TimeoutCallback = std::function<void(const TcpConnectionPtr &)>;
         struct TimeoutEntry;
-        struct BufferNode
-        {
-            BufferNode(void *buf, size_t s)
-                : addr(buf), size(s)
-            {
-            }
-            ~BufferNode() { if (addr) std::free(addr); }
-            void *addr{nullptr};
-            size_t size;
-        };
-        using BufferNodePtr = std::shared_ptr<BufferNode>;
-
         class TcpConnection : public Connection
         {
         public:
@@ -50,15 +38,16 @@ namespace tmms
             void Send(std::list<BufferNodePtr> list);
             void Send(const char *buf, size_t size);
             void OnTimeout();
-            void SetTimeoutCallback(int timeout,TimeoutCallback cb);
+            void SetTimeoutCallback(int timeout, TimeoutCallback cb);
             void EnableCheckIdleTimeout(int32_t max_time);
+
+        protected:
+            bool closed_{false};
 
         private:
             void SendInLoop(std::list<BufferNodePtr> &list);
-            void SendInLoop(const char *buf, size_t size);
             void ExtenLife();
 
-            bool closed_{false};
             CloseConnectionCallback close_cb_;
             MsgBuffer message_buffer_;
             MessageCallback message_cb_;
@@ -70,19 +59,20 @@ namespace tmms
             int32_t max_idle_time_{30};
         };
 
-
-struct TimeoutEntry{
-            public:
-            TimeoutEntry(const TcpConnectionPtr &c):conn(c){}
-            TimeoutEntry(TcpConnectionPtr &&c):conn(std::move(c)){}
-            ~TimeoutEntry(){
-                auto c=conn.lock();
-                if(c){
+        struct TimeoutEntry
+        {
+        public:
+            TimeoutEntry(const TcpConnectionPtr &c) : conn(c) {}
+            TimeoutEntry(TcpConnectionPtr &&c) : conn(std::move(c)) {}
+            ~TimeoutEntry()
+            {
+                auto c = conn.lock();
+                if (c)
+                {
                     c->OnTimeout();
                 }
             }
             std::weak_ptr<TcpConnection> conn;
-
         };
     }
 }
