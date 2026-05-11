@@ -40,7 +40,7 @@ void EventLoop::Loop()
             for (int i = 0; i < ret; ++i)
             {
                 struct epoll_event &ev = epoll_events_[i];
-                if (ev.data.fd <= 0)
+                if (ev.data.fd < 0)
                 {
                     continue;
                 }

@@ -19,7 +19,7 @@ bool Config::LoadConfig(const std::string &file){
   if(!nameObj.isNull()){
     name_=nameObj.asString();
   }
-  Json::Value cpuObj=root["cpu_start_"];
+  Json::Value cpuObj=root["cpu_start"];
   if(!cpuObj.isNull()){
     cpu_start_=cpuObj.asInt();
   }

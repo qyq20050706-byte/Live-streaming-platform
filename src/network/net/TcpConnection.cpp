@@ -37,11 +37,12 @@ void tmms::network::TcpConnection::OnClose()
 
     closed_ = true;
     loop_->DelEvent(shared_from_this());
+    EnableWriting(false);
     Event::Close();
     io_vec_list_.clear();
     pending_buffers_.clear();
     write_index_ = 0;
-    EnableWriting(false);
+   
 
     if (close_cb_)
     {

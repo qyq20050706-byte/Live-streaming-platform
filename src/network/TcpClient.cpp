@@ -117,7 +117,10 @@ void tmms::network::TcpClient::OnClose()
 {
     if (status_ == kTcpConStatusConnecting || status_ == kTcpConStatusConnected)
     {
-        connected_cb_(std::dynamic_pointer_cast<TcpClient>(shared_from_this()), false);
+        if (connected_cb_)
+        {
+            connected_cb_(std::dynamic_pointer_cast<TcpClient>(shared_from_this()), false);
+        }
     }
     status_ = kTcpConStatusDisConnected;
     TcpConnection::OnClose();
