@@ -26,6 +26,9 @@ namespace tmms{
         bool LoadConfig(const std::string &file);
         LogInfoPtr& GetLogInfo();
 
+        //AI豆包使用
+        static bool LoadFile(const std::string &file, Json::Value &cfg);
+
         std::string name_;
         std::int32_t cpu_start_{0};
         std::int32_t thread_nums_{1};

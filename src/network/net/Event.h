@@ -28,6 +28,8 @@ namespace tmms
             int Fd() const;
             void Close();
 
+            EventLoop *GetLoop() const { return loop_; }
+
         protected:
             EventLoop *loop_{nullptr};
             int fd_{-1};

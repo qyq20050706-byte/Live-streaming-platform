@@ -41,6 +41,9 @@ namespace tmms
             void SetTimeoutCallback(int timeout, TimeoutCallback cb);
             void EnableCheckIdleTimeout(int32_t max_time);
 
+            bool IsConnected() const { return !closed_; } 
+            void CloseAfterWrite();
+
         protected:
             bool closed_{false};
 
@@ -57,6 +60,8 @@ namespace tmms
             size_t write_index_{0};
             std::weak_ptr<TimeoutEntry> timeout_entry_;
             int32_t max_idle_time_{30};
+
+            bool close_after_write_{false};
         };
 
         struct TimeoutEntry

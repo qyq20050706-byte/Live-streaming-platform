@@ -50,7 +50,7 @@ void EventLoop::Loop()
                 {
                     continue;
                 }
-                EventPtr &event = iter->second;
+                EventPtr event = iter->second;
 
                 if (ev.events & EPOLLERR)
                 {
@@ -83,6 +83,11 @@ void EventLoop::Loop()
         }
         else if (ret < 0)
         {
+            if (errno == EINTR)
+            {
+                // 被信号中断，正常情况，直接继续
+                continue;
+            }
             NETWORK_ERROR << "epoll wait error." << errno;
         }
     }

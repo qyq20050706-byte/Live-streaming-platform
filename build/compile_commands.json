@@ -1,0 +1,386 @@
+[
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/base",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/base.dir/AIConfig.cpp.o -c /home/qyq/Live-streaming-platform/src/base/AIConfig.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/base/AIConfig.cpp",
+  "output": "src/base/CMakeFiles/base.dir/AIConfig.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/base",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/base.dir/Config.cpp.o -c /home/qyq/Live-streaming-platform/src/base/Config.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/base/Config.cpp",
+  "output": "src/base/CMakeFiles/base.dir/Config.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/base",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/base.dir/FileLog.cpp.o -c /home/qyq/Live-streaming-platform/src/base/FileLog.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/base/FileLog.cpp",
+  "output": "src/base/CMakeFiles/base.dir/FileLog.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/base",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/base.dir/FileMgr.cpp.o -c /home/qyq/Live-streaming-platform/src/base/FileMgr.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/base/FileMgr.cpp",
+  "output": "src/base/CMakeFiles/base.dir/FileMgr.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/base",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/base.dir/LogStream.cpp.o -c /home/qyq/Live-streaming-platform/src/base/LogStream.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/base/LogStream.cpp",
+  "output": "src/base/CMakeFiles/base.dir/LogStream.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/base",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/base.dir/Logger.cpp.o -c /home/qyq/Live-streaming-platform/src/base/Logger.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/base/Logger.cpp",
+  "output": "src/base/CMakeFiles/base.dir/Logger.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/base",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/base.dir/StringUtils.cpp.o -c /home/qyq/Live-streaming-platform/src/base/StringUtils.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/base/StringUtils.cpp",
+  "output": "src/base/CMakeFiles/base.dir/StringUtils.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/base",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/base.dir/TTime.cpp.o -c /home/qyq/Live-streaming-platform/src/base/TTime.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/base/TTime.cpp",
+  "output": "src/base/CMakeFiles/base.dir/TTime.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/base",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/base.dir/Task.cpp.o -c /home/qyq/Live-streaming-platform/src/base/Task.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/base/Task.cpp",
+  "output": "src/base/CMakeFiles/base.dir/Task.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/base",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/base.dir/TaskMgr.cpp.o -c /home/qyq/Live-streaming-platform/src/base/TaskMgr.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/base/TaskMgr.cpp",
+  "output": "src/base/CMakeFiles/base.dir/TaskMgr.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/base",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/base.dir/TestLog.cpp.o -c /home/qyq/Live-streaming-platform/src/base/TestLog.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/base/TestLog.cpp",
+  "output": "src/base/CMakeFiles/base.dir/TestLog.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/base",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/base.dir/TestSingleton.cpp.o -c /home/qyq/Live-streaming-platform/src/base/TestSingleton.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/base/TestSingleton.cpp",
+  "output": "src/base/CMakeFiles/base.dir/TestSingleton.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/base",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/base.dir/TestTask.cpp.o -c /home/qyq/Live-streaming-platform/src/base/TestTask.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/base/TestTask.cpp",
+  "output": "src/base/CMakeFiles/base.dir/TestTask.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/base",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/base.dir/ThreadPool.cpp.o -c /home/qyq/Live-streaming-platform/src/base/ThreadPool.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/base/ThreadPool.cpp",
+  "output": "src/base/CMakeFiles/base.dir/ThreadPool.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/base",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/test_log.dir/TestLog.cpp.o -c /home/qyq/Live-streaming-platform/src/base/TestLog.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/base/TestLog.cpp",
+  "output": "src/base/CMakeFiles/test_log.dir/TestLog.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/network",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/network.dir/DnsService.cpp.o -c /home/qyq/Live-streaming-platform/src/network/DnsService.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/network/DnsService.cpp",
+  "output": "src/network/CMakeFiles/network.dir/DnsService.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/network",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/network.dir/TcpClient.cpp.o -c /home/qyq/Live-streaming-platform/src/network/TcpClient.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/network/TcpClient.cpp",
+  "output": "src/network/CMakeFiles/network.dir/TcpClient.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/network",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/network.dir/TcpServer.cpp.o -c /home/qyq/Live-streaming-platform/src/network/TcpServer.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/network/TcpServer.cpp",
+  "output": "src/network/CMakeFiles/network.dir/TcpServer.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/network",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/network.dir/UdpClient.cpp.o -c /home/qyq/Live-streaming-platform/src/network/UdpClient.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/network/UdpClient.cpp",
+  "output": "src/network/CMakeFiles/network.dir/UdpClient.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/network",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/network.dir/UdpServer.cpp.o -c /home/qyq/Live-streaming-platform/src/network/UdpServer.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/network/UdpServer.cpp",
+  "output": "src/network/CMakeFiles/network.dir/UdpServer.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/network",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/network.dir/base/InetAddress.cpp.o -c /home/qyq/Live-streaming-platform/src/network/base/InetAddress.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/network/base/InetAddress.cpp",
+  "output": "src/network/CMakeFiles/network.dir/base/InetAddress.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/network",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/network.dir/base/MsgBuffer.cpp.o -c /home/qyq/Live-streaming-platform/src/network/base/MsgBuffer.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/network/base/MsgBuffer.cpp",
+  "output": "src/network/CMakeFiles/network.dir/base/MsgBuffer.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/network",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/network.dir/base/SocketOpt.cpp.o -c /home/qyq/Live-streaming-platform/src/network/base/SocketOpt.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/network/base/SocketOpt.cpp",
+  "output": "src/network/CMakeFiles/network.dir/base/SocketOpt.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/network",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/network.dir/net/Acceptor.cpp.o -c /home/qyq/Live-streaming-platform/src/network/net/Acceptor.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/network/net/Acceptor.cpp",
+  "output": "src/network/CMakeFiles/network.dir/net/Acceptor.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/network",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/network.dir/net/Connection.cpp.o -c /home/qyq/Live-streaming-platform/src/network/net/Connection.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/network/net/Connection.cpp",
+  "output": "src/network/CMakeFiles/network.dir/net/Connection.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/network",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/network.dir/net/Event.cpp.o -c /home/qyq/Live-streaming-platform/src/network/net/Event.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/network/net/Event.cpp",
+  "output": "src/network/CMakeFiles/network.dir/net/Event.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/network",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/network.dir/net/EventLoop.cpp.o -c /home/qyq/Live-streaming-platform/src/network/net/EventLoop.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/network/net/EventLoop.cpp",
+  "output": "src/network/CMakeFiles/network.dir/net/EventLoop.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/network",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/network.dir/net/EventLoopThread.cpp.o -c /home/qyq/Live-streaming-platform/src/network/net/EventLoopThread.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/network/net/EventLoopThread.cpp",
+  "output": "src/network/CMakeFiles/network.dir/net/EventLoopThread.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/network",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/network.dir/net/EventLoopThreadPool.cpp.o -c /home/qyq/Live-streaming-platform/src/network/net/EventLoopThreadPool.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/network/net/EventLoopThreadPool.cpp",
+  "output": "src/network/CMakeFiles/network.dir/net/EventLoopThreadPool.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/network",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/network.dir/net/PipeEvent.cpp.o -c /home/qyq/Live-streaming-platform/src/network/net/PipeEvent.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/network/net/PipeEvent.cpp",
+  "output": "src/network/CMakeFiles/network.dir/net/PipeEvent.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/network",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/network.dir/net/TcpConnection.cpp.o -c /home/qyq/Live-streaming-platform/src/network/net/TcpConnection.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/network/net/TcpConnection.cpp",
+  "output": "src/network/CMakeFiles/network.dir/net/TcpConnection.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/network",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/network.dir/net/TimingWheel.cpp.o -c /home/qyq/Live-streaming-platform/src/network/net/TimingWheel.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/network/net/TimingWheel.cpp",
+  "output": "src/network/CMakeFiles/network.dir/net/TimingWheel.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/network",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/network.dir/net/UdpSocket.cpp.o -c /home/qyq/Live-streaming-platform/src/network/net/UdpSocket.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/network/net/UdpSocket.cpp",
+  "output": "src/network/CMakeFiles/network.dir/net/UdpSocket.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/network/net/tests",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/EventLoopThreadTest.dir/EventLoopThreadTest.cpp.o -c /home/qyq/Live-streaming-platform/src/network/net/tests/EventLoopThreadTest.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/network/net/tests/EventLoopThreadTest.cpp",
+  "output": "src/network/net/tests/CMakeFiles/EventLoopThreadTest.dir/EventLoopThreadTest.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/network/net/tests",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/InetAddressTest.dir/InetAddressTest.cpp.o -c /home/qyq/Live-streaming-platform/src/network/net/tests/InetAddressTest.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/network/net/tests/InetAddressTest.cpp",
+  "output": "src/network/net/tests/CMakeFiles/InetAddressTest.dir/InetAddressTest.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/network/net/tests",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/SocketOptTest.dir/SocketOptTest.cpp.o -c /home/qyq/Live-streaming-platform/src/network/net/tests/SocketOptTest.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/network/net/tests/SocketOptTest.cpp",
+  "output": "src/network/net/tests/CMakeFiles/SocketOptTest.dir/SocketOptTest.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/network/net/tests",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/AcceptorTest.dir/AcceptorTest.cpp.o -c /home/qyq/Live-streaming-platform/src/network/net/tests/AcceptorTest.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/network/net/tests/AcceptorTest.cpp",
+  "output": "src/network/net/tests/CMakeFiles/AcceptorTest.dir/AcceptorTest.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/network/net/tests",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/TcpConnectionTest.dir/TcpConnectionTest.cpp.o -c /home/qyq/Live-streaming-platform/src/network/net/tests/TcpConnectionTest.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/network/net/tests/TcpConnectionTest.cpp",
+  "output": "src/network/net/tests/CMakeFiles/TcpConnectionTest.dir/TcpConnectionTest.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/network/net/tests",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/TcpClientTest.dir/TcpClientTest.cpp.o -c /home/qyq/Live-streaming-platform/src/network/net/tests/TcpClientTest.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/network/net/tests/TcpClientTest.cpp",
+  "output": "src/network/net/tests/CMakeFiles/TcpClientTest.dir/TcpClientTest.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/network/net/tests",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/TcpServerTest.dir/TcpServerTest.cpp.o -c /home/qyq/Live-streaming-platform/src/network/net/tests/TcpServerTest.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/network/net/tests/TcpServerTest.cpp",
+  "output": "src/network/net/tests/CMakeFiles/TcpServerTest.dir/TcpServerTest.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/network/net/tests",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/DnsServiceTest.dir/DnsServiceTest.cpp.o -c /home/qyq/Live-streaming-platform/src/network/net/tests/DnsServiceTest.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/network/net/tests/DnsServiceTest.cpp",
+  "output": "src/network/net/tests/CMakeFiles/DnsServiceTest.dir/DnsServiceTest.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/network/net/tests",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/UdpClientTest.dir/UdpClientTest.cpp.o -c /home/qyq/Live-streaming-platform/src/network/net/tests/UdpClientTest.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/network/net/tests/UdpClientTest.cpp",
+  "output": "src/network/net/tests/CMakeFiles/UdpClientTest.dir/UdpClientTest.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/network/net/tests",
+  "command": "/usr/bin/c++  -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/UdpServerTest.dir/UdpServerTest.cpp.o -c /home/qyq/Live-streaming-platform/src/network/net/tests/UdpServerTest.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/network/net/tests/UdpServerTest.cpp",
+  "output": "src/network/net/tests/CMakeFiles/UdpServerTest.dir/UdpServerTest.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/main",
+  "command": "/usr/bin/c++ -DPROJECT_ROOT=\\\"/home/qyq/Live-streaming-platform\\\" -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/tmms.dir/main.cpp.o -c /home/qyq/Live-streaming-platform/src/main/main.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/main/main.cpp",
+  "output": "src/main/CMakeFiles/tmms.dir/main.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/main",
+  "command": "/usr/bin/c++ -DPROJECT_ROOT=\\\"/home/qyq/Live-streaming-platform\\\" -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/ai_server.dir/ai_main/ai_server.cpp.o -c /home/qyq/Live-streaming-platform/src/main/ai_main/ai_server.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/main/ai_main/ai_server.cpp",
+  "output": "src/main/CMakeFiles/ai_server.dir/ai_main/ai_server.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/main",
+  "command": "/usr/bin/c++ -DPROJECT_ROOT=\\\"/home/qyq/Live-streaming-platform\\\" -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/ai_server.dir/__/ai/AIModule.cpp.o -c /home/qyq/Live-streaming-platform/src/ai/AIModule.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/ai/AIModule.cpp",
+  "output": "src/main/CMakeFiles/ai_server.dir/__/ai/AIModule.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/main",
+  "command": "/usr/bin/c++ -DPROJECT_ROOT=\\\"/home/qyq/Live-streaming-platform\\\" -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/ai_server.dir/__/ai/server/AIServer.cpp.o -c /home/qyq/Live-streaming-platform/src/ai/server/AIServer.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/ai/server/AIServer.cpp",
+  "output": "src/main/CMakeFiles/ai_server.dir/__/ai/server/AIServer.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/main",
+  "command": "/usr/bin/c++ -DPROJECT_ROOT=\\\"/home/qyq/Live-streaming-platform\\\" -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/ai_server.dir/__/ai/http/HttpRequest.cpp.o -c /home/qyq/Live-streaming-platform/src/ai/http/HttpRequest.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/ai/http/HttpRequest.cpp",
+  "output": "src/main/CMakeFiles/ai_server.dir/__/ai/http/HttpRequest.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/main",
+  "command": "/usr/bin/c++ -DPROJECT_ROOT=\\\"/home/qyq/Live-streaming-platform\\\" -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/ai_server.dir/__/ai/http/HttpResponse.cpp.o -c /home/qyq/Live-streaming-platform/src/ai/http/HttpResponse.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/ai/http/HttpResponse.cpp",
+  "output": "src/main/CMakeFiles/ai_server.dir/__/ai/http/HttpResponse.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/main",
+  "command": "/usr/bin/c++ -DPROJECT_ROOT=\\\"/home/qyq/Live-streaming-platform\\\" -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/ai_server.dir/__/ai/http/HttpContext.cpp.o -c /home/qyq/Live-streaming-platform/src/ai/http/HttpContext.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/ai/http/HttpContext.cpp",
+  "output": "src/main/CMakeFiles/ai_server.dir/__/ai/http/HttpContext.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/main",
+  "command": "/usr/bin/c++ -DPROJECT_ROOT=\\\"/home/qyq/Live-streaming-platform\\\" -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/ai_server.dir/__/ai/http/HttpClient.cpp.o -c /home/qyq/Live-streaming-platform/src/ai/http/HttpClient.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/ai/http/HttpClient.cpp",
+  "output": "src/main/CMakeFiles/ai_server.dir/__/ai/http/HttpClient.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/main",
+  "command": "/usr/bin/c++ -DPROJECT_ROOT=\\\"/home/qyq/Live-streaming-platform\\\" -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/ai_server.dir/__/ai/llm/DoubaoLLM.cpp.o -c /home/qyq/Live-streaming-platform/src/ai/llm/DoubaoLLM.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/ai/llm/DoubaoLLM.cpp",
+  "output": "src/main/CMakeFiles/ai_server.dir/__/ai/llm/DoubaoLLM.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/main",
+  "command": "/usr/bin/c++ -DPROJECT_ROOT=\\\"/home/qyq/Live-streaming-platform\\\" -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/ai_server.dir/__/ai/embedding/DoubaoEmbedding.cpp.o -c /home/qyq/Live-streaming-platform/src/ai/embedding/DoubaoEmbedding.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/ai/embedding/DoubaoEmbedding.cpp",
+  "output": "src/main/CMakeFiles/ai_server.dir/__/ai/embedding/DoubaoEmbedding.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/main",
+  "command": "/usr/bin/c++ -DPROJECT_ROOT=\\\"/home/qyq/Live-streaming-platform\\\" -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/ai_server.dir/__/ai/vector/SQLiteVectorStore.cpp.o -c /home/qyq/Live-streaming-platform/src/ai/vector/SQLiteVectorStore.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/ai/vector/SQLiteVectorStore.cpp",
+  "output": "src/main/CMakeFiles/ai_server.dir/__/ai/vector/SQLiteVectorStore.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/main",
+  "command": "/usr/bin/c++ -DPROJECT_ROOT=\\\"/home/qyq/Live-streaming-platform\\\" -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/ai_server.dir/__/ai/rag/TextSplitter.cpp.o -c /home/qyq/Live-streaming-platform/src/ai/rag/TextSplitter.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/ai/rag/TextSplitter.cpp",
+  "output": "src/main/CMakeFiles/ai_server.dir/__/ai/rag/TextSplitter.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/main",
+  "command": "/usr/bin/c++ -DPROJECT_ROOT=\\\"/home/qyq/Live-streaming-platform\\\" -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/ai_server.dir/__/ai/rag/PromptTemplate.cpp.o -c /home/qyq/Live-streaming-platform/src/ai/rag/PromptTemplate.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/ai/rag/PromptTemplate.cpp",
+  "output": "src/main/CMakeFiles/ai_server.dir/__/ai/rag/PromptTemplate.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/main",
+  "command": "/usr/bin/c++ -DPROJECT_ROOT=\\\"/home/qyq/Live-streaming-platform\\\" -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/ai_server.dir/__/ai/rag/RAGService.cpp.o -c /home/qyq/Live-streaming-platform/src/ai/rag/RAGService.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/ai/rag/RAGService.cpp",
+  "output": "src/main/CMakeFiles/ai_server.dir/__/ai/rag/RAGService.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/main",
+  "command": "/usr/bin/c++ -DPROJECT_ROOT=\\\"/home/qyq/Live-streaming-platform\\\" -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/ai_server.dir/__/ai/storage/MySQLClient.cpp.o -c /home/qyq/Live-streaming-platform/src/ai/storage/MySQLClient.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/ai/storage/MySQLClient.cpp",
+  "output": "src/main/CMakeFiles/ai_server.dir/__/ai/storage/MySQLClient.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/main",
+  "command": "/usr/bin/c++ -DPROJECT_ROOT=\\\"/home/qyq/Live-streaming-platform\\\" -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/ai_server.dir/__/ai/auth/PasswordHasher.cpp.o -c /home/qyq/Live-streaming-platform/src/ai/auth/PasswordHasher.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/ai/auth/PasswordHasher.cpp",
+  "output": "src/main/CMakeFiles/ai_server.dir/__/ai/auth/PasswordHasher.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/main",
+  "command": "/usr/bin/c++ -DPROJECT_ROOT=\\\"/home/qyq/Live-streaming-platform\\\" -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/ai_server.dir/__/ai/auth/JWT.cpp.o -c /home/qyq/Live-streaming-platform/src/ai/auth/JWT.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/ai/auth/JWT.cpp",
+  "output": "src/main/CMakeFiles/ai_server.dir/__/ai/auth/JWT.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/main",
+  "command": "/usr/bin/c++ -DPROJECT_ROOT=\\\"/home/qyq/Live-streaming-platform\\\" -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/ai_server.dir/__/ai/auth/AuthService.cpp.o -c /home/qyq/Live-streaming-platform/src/ai/auth/AuthService.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/ai/auth/AuthService.cpp",
+  "output": "src/main/CMakeFiles/ai_server.dir/__/ai/auth/AuthService.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/main",
+  "command": "/usr/bin/c++ -DPROJECT_ROOT=\\\"/home/qyq/Live-streaming-platform\\\" -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/ai_server.dir/__/ai/storage/UserRepo.cpp.o -c /home/qyq/Live-streaming-platform/src/ai/storage/UserRepo.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/ai/storage/UserRepo.cpp",
+  "output": "src/main/CMakeFiles/ai_server.dir/__/ai/storage/UserRepo.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/main",
+  "command": "/usr/bin/c++ -DPROJECT_ROOT=\\\"/home/qyq/Live-streaming-platform\\\" -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/ai_server.dir/__/ai/storage/ConversationRepo.cpp.o -c /home/qyq/Live-streaming-platform/src/ai/storage/ConversationRepo.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/ai/storage/ConversationRepo.cpp",
+  "output": "src/main/CMakeFiles/ai_server.dir/__/ai/storage/ConversationRepo.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/main",
+  "command": "/usr/bin/c++ -DPROJECT_ROOT=\\\"/home/qyq/Live-streaming-platform\\\" -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/ai_server.dir/__/ai/storage/MessageRepo.cpp.o -c /home/qyq/Live-streaming-platform/src/ai/storage/MessageRepo.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/ai/storage/MessageRepo.cpp",
+  "output": "src/main/CMakeFiles/ai_server.dir/__/ai/storage/MessageRepo.cpp.o"
+}
+]

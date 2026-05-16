@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/DnsServiceTest.dir/DnsServiceTest.cpp.o"
+  "CMakeFiles/DnsServiceTest.dir/DnsServiceTest.cpp.o.d"
   "DnsServiceTest"
   "DnsServiceTest.pdb"
 )

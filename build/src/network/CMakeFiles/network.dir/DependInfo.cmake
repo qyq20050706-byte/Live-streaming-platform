@@ -1,39 +1,39 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
-  )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/root/tmms/src/network/DnsService.cpp" "/root/tmms/build/src/network/CMakeFiles/network.dir/DnsService.cpp.o"
-  "/root/tmms/src/network/TcpClient.cpp" "/root/tmms/build/src/network/CMakeFiles/network.dir/TcpClient.cpp.o"
-  "/root/tmms/src/network/TcpServer.cpp" "/root/tmms/build/src/network/CMakeFiles/network.dir/TcpServer.cpp.o"
-  "/root/tmms/src/network/UdpClient.cpp" "/root/tmms/build/src/network/CMakeFiles/network.dir/UdpClient.cpp.o"
-  "/root/tmms/src/network/UdpServer.cpp" "/root/tmms/build/src/network/CMakeFiles/network.dir/UdpServer.cpp.o"
-  "/root/tmms/src/network/base/InetAddress.cpp" "/root/tmms/build/src/network/CMakeFiles/network.dir/base/InetAddress.cpp.o"
-  "/root/tmms/src/network/base/MsgBuffer.cpp" "/root/tmms/build/src/network/CMakeFiles/network.dir/base/MsgBuffer.cpp.o"
-  "/root/tmms/src/network/base/SocketOpt.cpp" "/root/tmms/build/src/network/CMakeFiles/network.dir/base/SocketOpt.cpp.o"
-  "/root/tmms/src/network/net/Acceptor.cpp" "/root/tmms/build/src/network/CMakeFiles/network.dir/net/Acceptor.cpp.o"
-  "/root/tmms/src/network/net/Connection.cpp" "/root/tmms/build/src/network/CMakeFiles/network.dir/net/Connection.cpp.o"
-  "/root/tmms/src/network/net/Event.cpp" "/root/tmms/build/src/network/CMakeFiles/network.dir/net/Event.cpp.o"
-  "/root/tmms/src/network/net/EventLoop.cpp" "/root/tmms/build/src/network/CMakeFiles/network.dir/net/EventLoop.cpp.o"
-  "/root/tmms/src/network/net/EventLoopThread.cpp" "/root/tmms/build/src/network/CMakeFiles/network.dir/net/EventLoopThread.cpp.o"
-  "/root/tmms/src/network/net/EventLoopThreadPool.cpp" "/root/tmms/build/src/network/CMakeFiles/network.dir/net/EventLoopThreadPool.cpp.o"
-  "/root/tmms/src/network/net/PipeEvent.cpp" "/root/tmms/build/src/network/CMakeFiles/network.dir/net/PipeEvent.cpp.o"
-  "/root/tmms/src/network/net/TcpConnection.cpp" "/root/tmms/build/src/network/CMakeFiles/network.dir/net/TcpConnection.cpp.o"
-  "/root/tmms/src/network/net/TimingWheel.cpp" "/root/tmms/build/src/network/CMakeFiles/network.dir/net/TimingWheel.cpp.o"
-  "/root/tmms/src/network/net/UdpSocket.cpp" "/root/tmms/build/src/network/CMakeFiles/network.dir/net/UdpSocket.cpp.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
-
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../lib/jsoncpp/include"
-  "../src"
   )
 
-# Targets to which this target links.
-set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/root/tmms/build/src/base/CMakeFiles/base.dir/DependInfo.cmake"
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/qyq/Live-streaming-platform/src/network/DnsService.cpp" "src/network/CMakeFiles/network.dir/DnsService.cpp.o" "gcc" "src/network/CMakeFiles/network.dir/DnsService.cpp.o.d"
+  "/home/qyq/Live-streaming-platform/src/network/TcpClient.cpp" "src/network/CMakeFiles/network.dir/TcpClient.cpp.o" "gcc" "src/network/CMakeFiles/network.dir/TcpClient.cpp.o.d"
+  "/home/qyq/Live-streaming-platform/src/network/TcpServer.cpp" "src/network/CMakeFiles/network.dir/TcpServer.cpp.o" "gcc" "src/network/CMakeFiles/network.dir/TcpServer.cpp.o.d"
+  "/home/qyq/Live-streaming-platform/src/network/UdpClient.cpp" "src/network/CMakeFiles/network.dir/UdpClient.cpp.o" "gcc" "src/network/CMakeFiles/network.dir/UdpClient.cpp.o.d"
+  "/home/qyq/Live-streaming-platform/src/network/UdpServer.cpp" "src/network/CMakeFiles/network.dir/UdpServer.cpp.o" "gcc" "src/network/CMakeFiles/network.dir/UdpServer.cpp.o.d"
+  "/home/qyq/Live-streaming-platform/src/network/base/InetAddress.cpp" "src/network/CMakeFiles/network.dir/base/InetAddress.cpp.o" "gcc" "src/network/CMakeFiles/network.dir/base/InetAddress.cpp.o.d"
+  "/home/qyq/Live-streaming-platform/src/network/base/MsgBuffer.cpp" "src/network/CMakeFiles/network.dir/base/MsgBuffer.cpp.o" "gcc" "src/network/CMakeFiles/network.dir/base/MsgBuffer.cpp.o.d"
+  "/home/qyq/Live-streaming-platform/src/network/base/SocketOpt.cpp" "src/network/CMakeFiles/network.dir/base/SocketOpt.cpp.o" "gcc" "src/network/CMakeFiles/network.dir/base/SocketOpt.cpp.o.d"
+  "/home/qyq/Live-streaming-platform/src/network/net/Acceptor.cpp" "src/network/CMakeFiles/network.dir/net/Acceptor.cpp.o" "gcc" "src/network/CMakeFiles/network.dir/net/Acceptor.cpp.o.d"
+  "/home/qyq/Live-streaming-platform/src/network/net/Connection.cpp" "src/network/CMakeFiles/network.dir/net/Connection.cpp.o" "gcc" "src/network/CMakeFiles/network.dir/net/Connection.cpp.o.d"
+  "/home/qyq/Live-streaming-platform/src/network/net/Event.cpp" "src/network/CMakeFiles/network.dir/net/Event.cpp.o" "gcc" "src/network/CMakeFiles/network.dir/net/Event.cpp.o.d"
+  "/home/qyq/Live-streaming-platform/src/network/net/EventLoop.cpp" "src/network/CMakeFiles/network.dir/net/EventLoop.cpp.o" "gcc" "src/network/CMakeFiles/network.dir/net/EventLoop.cpp.o.d"
+  "/home/qyq/Live-streaming-platform/src/network/net/EventLoopThread.cpp" "src/network/CMakeFiles/network.dir/net/EventLoopThread.cpp.o" "gcc" "src/network/CMakeFiles/network.dir/net/EventLoopThread.cpp.o.d"
+  "/home/qyq/Live-streaming-platform/src/network/net/EventLoopThreadPool.cpp" "src/network/CMakeFiles/network.dir/net/EventLoopThreadPool.cpp.o" "gcc" "src/network/CMakeFiles/network.dir/net/EventLoopThreadPool.cpp.o.d"
+  "/home/qyq/Live-streaming-platform/src/network/net/PipeEvent.cpp" "src/network/CMakeFiles/network.dir/net/PipeEvent.cpp.o" "gcc" "src/network/CMakeFiles/network.dir/net/PipeEvent.cpp.o.d"
+  "/home/qyq/Live-streaming-platform/src/network/net/TcpConnection.cpp" "src/network/CMakeFiles/network.dir/net/TcpConnection.cpp.o" "gcc" "src/network/CMakeFiles/network.dir/net/TcpConnection.cpp.o.d"
+  "/home/qyq/Live-streaming-platform/src/network/net/TimingWheel.cpp" "src/network/CMakeFiles/network.dir/net/TimingWheel.cpp.o" "gcc" "src/network/CMakeFiles/network.dir/net/TimingWheel.cpp.o.d"
+  "/home/qyq/Live-streaming-platform/src/network/net/UdpSocket.cpp" "src/network/CMakeFiles/network.dir/net/UdpSocket.cpp.o" "gcc" "src/network/CMakeFiles/network.dir/net/UdpSocket.cpp.o.d"
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_FORWARD_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.

@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/SocketOptTest.dir/SocketOptTest.cpp.o"
+  "CMakeFiles/SocketOptTest.dir/SocketOptTest.cpp.o.d"
   "SocketOptTest"
   "SocketOptTest.pdb"
 )

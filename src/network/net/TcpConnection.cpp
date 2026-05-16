@@ -2,8 +2,8 @@
 #include "network/base/Network.h"
 #include <unistd.h>
 #include <cstdlib>
-#include <cstring> 
-#include <algorithm>     
+#include <cstring>
+#include <algorithm>
 #include <limits.h>
 
 using namespace tmms::network;
@@ -36,17 +36,27 @@ void tmms::network::TcpConnection::OnClose()
     }
 
     closed_ = true;
-    loop_->DelEvent(shared_from_this());
-    EnableWriting(false);
-    Event::Close();
+
+    // 1. 先清理发送缓冲区
     io_vec_list_.clear();
     pending_buffers_.clear();
     write_index_ = 0;
-   
 
-    if (close_cb_)
+    // 2. 从 epoll 删除，关闭 fd
+    loop_->DelEvent(shared_from_this());
+    Event::Close();
+
+    // 3. 最后触发回调（回调里可能会 erase 导致析构）
+    // 用局部变量保存 cb，防止 close_cb_ 被清空后悬空
+    auto cb = close_cb_;
+    auto self = std::dynamic_pointer_cast<TcpConnection>(shared_from_this());
+
+    // 先清空成员，再调用回调
+    close_cb_ = nullptr;
+
+    if (cb)
     {
-        close_cb_(std::dynamic_pointer_cast<TcpConnection>(shared_from_this()));
+        cb(self);
     }
 }
 
@@ -123,9 +133,24 @@ void tmms::network::TcpConnection::OnWrite()
     if (write_index_ >= io_vec_list_.size())
     {
         EnableWriting(false);
+
+        auto self = std::dynamic_pointer_cast<TcpConnection>(shared_from_this());
+
         if (write_complete_cb_)
         {
-            write_complete_cb_(std::dynamic_pointer_cast<TcpConnection>(shared_from_this()));
+            write_complete_cb_(self);
+        }
+
+        if (closed_)
+        {
+            return;
+        }
+
+        if (close_after_write_ &&
+            (io_vec_list_.empty() || write_index_ >= io_vec_list_.size()))
+        {
+            close_after_write_ = false;
+            OnClose();
         }
         return;
     }
@@ -165,9 +190,23 @@ void tmms::network::TcpConnection::OnWrite()
 
                 EnableWriting(false);
 
+                auto self = std::dynamic_pointer_cast<TcpConnection>(shared_from_this());
+
                 if (write_complete_cb_)
                 {
-                    write_complete_cb_(std::dynamic_pointer_cast<TcpConnection>(shared_from_this()));
+                    write_complete_cb_(self);
+                }
+
+                if (closed_)
+                {
+                    return;
+                }
+
+                // 发完再关
+                if (close_after_write_ && io_vec_list_.empty())
+                {
+                    close_after_write_ = false;
+                    OnClose();
                 }
                 return;
             }
@@ -207,8 +246,9 @@ void tmms::network::TcpConnection::SetWriteCompleteCallback(WriteCompleteCallbac
 void tmms::network::TcpConnection::Send(std::list<BufferNodePtr> list)
 {
     auto self = std::dynamic_pointer_cast<TcpConnection>(shared_from_this());
-    loop_->RunInLoop([self, list = std::move(list)]() mutable
-                     { self->SendInLoop(list); });
+    auto list_ptr = std::make_shared<std::list<BufferNodePtr>>(std::move(list));
+    loop_->RunInLoop([self, list_ptr]()
+                     { self->SendInLoop(*list_ptr); });
 }
 
 void tmms::network::TcpConnection::Send(const char *buf, size_t size)
@@ -252,6 +292,27 @@ void tmms::network::TcpConnection::EnableCheckIdleTimeout(int32_t max_time)
     loop_->InsertEntry(max_time, tp);
 }
 
+void tmms::network::TcpConnection::CloseAfterWrite()
+{
+    auto self = std::dynamic_pointer_cast<TcpConnection>(shared_from_this());
+    loop_->RunInLoop([self]()
+                     {
+        if (self->closed_)
+        {
+            return;
+        }
+
+        self->close_after_write_ = true;
+
+        // 如果当前没有任何待发送数据，直接关闭
+        if (self->io_vec_list_.empty() ||
+            self->write_index_ >= self->io_vec_list_.size())
+        {
+            self->close_after_write_ = false;
+            self->OnClose();
+        } });
+}
+
 void tmms::network::TcpConnection::SendInLoop(std::list<BufferNodePtr> &list)
 {
     if (closed_)
@@ -287,17 +348,32 @@ void tmms::network::TcpConnection::SendInLoop(std::list<BufferNodePtr> &list)
             }
         }
         if (write_index_ == io_vec_list_.size())
-        {
-            io_vec_list_.clear();
-            pending_buffers_.clear();
-            write_index_ = 0;
-
-            if (write_complete_cb_)
+            if (write_index_ == io_vec_list_.size())
             {
-                write_complete_cb_(std::dynamic_pointer_cast<TcpConnection>(shared_from_this()));
+                io_vec_list_.clear();
+                pending_buffers_.clear();
+                write_index_ = 0;
+
+                auto self = std::dynamic_pointer_cast<TcpConnection>(shared_from_this());
+
+                if (write_complete_cb_)
+                {
+                    write_complete_cb_(self);
+                }
+
+                if (closed_)
+                {
+                    return;
+                }
+
+                // 立即写完的情况，也要支持“发完再关”
+                if (close_after_write_ && io_vec_list_.empty())
+                {
+                    close_after_write_ = false;
+                    OnClose();
+                }
+                return;
             }
-            return;
-        }
     }
     else if (ret < 0)
     {

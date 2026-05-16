@@ -1,0 +1,12 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/qyq/Live-streaming-platform/build/cmake_install.cmake",
+		"/home/qyq/Live-streaming-platform/build/src/cmake_install.cmake",
+		"/home/qyq/Live-streaming-platform/build/src/base/cmake_install.cmake",
+		"/home/qyq/Live-streaming-platform/build/src/network/cmake_install.cmake",
+		"/home/qyq/Live-streaming-platform/build/src/network/net/tests/cmake_install.cmake",
+		"/home/qyq/Live-streaming-platform/build/src/main/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

@@ -1,6 +1,7 @@
 #pragma once
 #include "network/net/TcpConnection.h"
 #include "network/net/Acceptor.h"
+#include "network/net/EventLoopThreadPool.h"
 #include <memory>
 #include <functional>
 #include <unordered_set>
@@ -30,6 +31,9 @@ namespace tmms
             void OnAccept(int fd, const InetAddress &addr);
             void OnConnectionClose(const TcpConnectionPtr &con);
 
+            // 设置 IO 线程数，必须在 Start() 之前调用
+            void SetThreadNum(int num);
+
             virtual void Start();
             virtual void Stop();
 
@@ -43,6 +47,10 @@ namespace tmms
             ActiveCallback active_cb_;
             WriteCompleteCallback write_complete_cb_;
             DestoryConnectionCallback destory_connection_cb_;
+
+            // IO 线程池
+            std::shared_ptr<EventLoopThreadPool> io_thread_pool_;
+            int io_thread_num_{0};
         };
     }
 }

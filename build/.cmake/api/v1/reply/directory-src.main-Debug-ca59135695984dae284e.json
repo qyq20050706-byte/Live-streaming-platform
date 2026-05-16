@@ -1,0 +1,68 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"src/main/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 50,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 51,
+				"parent" : 0
+			}
+		]
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 10
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "sbin",
+			"paths" : 
+			[
+				"src/main/tmms"
+			],
+			"targetId" : "tmms::@5f1512723eddbe79ddaa",
+			"targetIndex" : 14,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "sbin",
+			"paths" : 
+			[
+				"src/main/ai_server"
+			],
+			"targetId" : "ai_server::@5f1512723eddbe79ddaa",
+			"targetIndex" : 10,
+			"type" : "target"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "src/main",
+		"source" : "src/main"
+	}
+}

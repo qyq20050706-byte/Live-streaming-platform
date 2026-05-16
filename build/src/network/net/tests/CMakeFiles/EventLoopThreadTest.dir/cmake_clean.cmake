@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/EventLoopThreadTest.dir/EventLoopThreadTest.cpp.o"
+  "CMakeFiles/EventLoopThreadTest.dir/EventLoopThreadTest.cpp.o.d"
   "EventLoopThreadTest"
   "EventLoopThreadTest.pdb"
 )

@@ -1,0 +1,290 @@
+{
+	"configurations" : 
+	[
+		{
+			"abstractTargets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "CURL::libcurl::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CURL__libcurl-Debug-3ea9fc2294c61dc369ed.json",
+					"name" : "CURL::libcurl",
+					"projectIndex" : 0
+				}
+			],
+			"directories" : 
+			[
+				{
+					"abstractTargetIndexes" : 
+					[
+						0
+					],
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-fd6451d79dc282e2f566.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "src",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						5
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-src-Debug-04ae5e23b13c6db1c31c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src"
+				},
+				{
+					"build" : "src/base",
+					"jsonFile" : "directory-src.base-Debug-a4d12587d9b3ef23cf06.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/base",
+					"targetIndexes" : 
+					[
+						11,
+						13
+					]
+				},
+				{
+					"build" : "src/network",
+					"childIndexes" : 
+					[
+						4
+					],
+					"jsonFile" : "directory-src.network-Debug-1e87d85fb01616dbf99b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/network",
+					"targetIndexes" : 
+					[
+						12
+					]
+				},
+				{
+					"build" : "src/network/net/tests",
+					"jsonFile" : "directory-src.network.net.tests-Debug-e786f2f9f2db5a5964a6.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 0,
+					"source" : "src/network/net/tests",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9
+					]
+				},
+				{
+					"build" : "src/main",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-src.main-Debug-ca59135695984dae284e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/main",
+					"targetIndexes" : 
+					[
+						10,
+						14
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"abstractTargetIndexes" : 
+					[
+						0
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"name" : "tmms",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 4,
+					"id" : "AcceptorTest::@7679694653cca9d955c7",
+					"jsonFile" : "target-AcceptorTest-Debug-1bc321848d4406978a93.json",
+					"name" : "AcceptorTest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "DnsServiceTest::@7679694653cca9d955c7",
+					"jsonFile" : "target-DnsServiceTest-Debug-4bfad6324cd2d52b3c0b.json",
+					"name" : "DnsServiceTest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "EventLoopThreadTest::@7679694653cca9d955c7",
+					"jsonFile" : "target-EventLoopThreadTest-Debug-64b03d04ca3aee068b7f.json",
+					"name" : "EventLoopThreadTest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "InetAddressTest::@7679694653cca9d955c7",
+					"jsonFile" : "target-InetAddressTest-Debug-ba8f0ce67a3c36803c86.json",
+					"name" : "InetAddressTest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "SocketOptTest::@7679694653cca9d955c7",
+					"jsonFile" : "target-SocketOptTest-Debug-754d7d739c584906b2e6.json",
+					"name" : "SocketOptTest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "TcpClientTest::@7679694653cca9d955c7",
+					"jsonFile" : "target-TcpClientTest-Debug-b960914336616416e3df.json",
+					"name" : "TcpClientTest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "TcpConnectionTest::@7679694653cca9d955c7",
+					"jsonFile" : "target-TcpConnectionTest-Debug-94db5a3676871bc543ec.json",
+					"name" : "TcpConnectionTest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "TcpServerTest::@7679694653cca9d955c7",
+					"jsonFile" : "target-TcpServerTest-Debug-827c36a7bcb2fd173cc8.json",
+					"name" : "TcpServerTest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "UdpClientTest::@7679694653cca9d955c7",
+					"jsonFile" : "target-UdpClientTest-Debug-41fa65feaccad8074510.json",
+					"name" : "UdpClientTest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "UdpServerTest::@7679694653cca9d955c7",
+					"jsonFile" : "target-UdpServerTest-Debug-f7bebc3a79c5510813db.json",
+					"name" : "UdpServerTest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "ai_server::@5f1512723eddbe79ddaa",
+					"jsonFile" : "target-ai_server-Debug-776308717d155ea5ff6f.json",
+					"name" : "ai_server",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "base::@da17c8cd1000ca7e4b79",
+					"jsonFile" : "target-base-Debug-4b1f254eb0a3340d06fd.json",
+					"name" : "base",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "network::@311edf953348ef8fadde",
+					"jsonFile" : "target-network-Debug-eed4de4374c7e1b1e2f9.json",
+					"name" : "network",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "test_log::@da17c8cd1000ca7e4b79",
+					"jsonFile" : "target-test_log-Debug-07a831f26fcb712433d5.json",
+					"name" : "test_log",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "tmms::@5f1512723eddbe79ddaa",
+					"jsonFile" : "target-tmms-Debug-03655ab1de2ac4747bfa.json",
+					"name" : "tmms",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/qyq/Live-streaming-platform/build",
+		"source" : "/home/qyq/Live-streaming-platform"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 10
+	}
+}

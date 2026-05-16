@@ -1,1 +1,0 @@
-/root/tmms/build/../bin/sbin/tmms

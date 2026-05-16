@@ -4,7 +4,7 @@
 using namespace tmms::network;
 
 tmms::network::Event::Event(EventLoop *loop)
-:loop_(loop)
+    : loop_(loop)
 {
 }
 
@@ -15,7 +15,7 @@ Event::Event(EventLoop *loop, int fd)
 
 Event::~Event()
 {
-    Close();
+    // Close();
 }
 
 bool Event::EnableWriting(bool enable)
@@ -35,8 +35,9 @@ int Event::Fd() const
 
 void tmms::network::Event::Close()
 {
-    if(fd_>0){
+    if (fd_ > 0)
+    {
         ::close(fd_);
-        fd_=-1;
+        fd_ = -1;
     }
 }

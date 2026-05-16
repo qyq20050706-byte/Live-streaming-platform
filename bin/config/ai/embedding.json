@@ -1,0 +1,7 @@
+{
+    "base_url": "https://ark.cn-beijing.volces.com/api/v3/embeddings/multimodal",
+    "api_key": "ark-84e04186-e570-4b38-982d-89ac8e42dff1-33e58",
+    "model": "doubao-embedding-vision-251215",
+    "timeout_ms": 30000,
+    "dimension": 2048
+}

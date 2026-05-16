@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/InetAddressTest.dir/InetAddressTest.cpp.o"
+  "CMakeFiles/InetAddressTest.dir/InetAddressTest.cpp.o.d"
   "InetAddressTest"
   "InetAddressTest.pdb"
 )

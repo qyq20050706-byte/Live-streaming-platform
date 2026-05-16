@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/TcpConnectionTest.dir/TcpConnectionTest.cpp.o"
+  "CMakeFiles/TcpConnectionTest.dir/TcpConnectionTest.cpp.o.d"
   "TcpConnectionTest"
   "TcpConnectionTest.pdb"
 )

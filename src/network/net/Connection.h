@@ -25,7 +25,11 @@ namespace tmms
                 : addr(buf), size(s)
             {
             }
-            ~BufferNode() { if (addr) std::free(addr); }
+            ~BufferNode()
+            {
+                if (addr)
+                    std::free(addr);
+            }
             void *addr{nullptr};
             size_t size;
         };
@@ -53,9 +57,9 @@ namespace tmms
                 auto iter = contexts_.find(type);
                 if (iter != contexts_.end())
                 {
-                    return std::dynamic_pointer_cast<T>(iter->second);
+                    return std::static_pointer_cast<T>(iter->second);
                 }
-                return std::make_shared<T>();
+                return nullptr;
             }
             void SetContext(int type, const std::shared_ptr<void> &context);
             void SetContext(int type, std::shared_ptr<void> &&context);

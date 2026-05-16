@@ -112,7 +112,7 @@ void tmms::network::Acceptor::Open()
     loop_->AddEvent(std::dynamic_pointer_cast<Event>(shared_from_this()));
     socket_opt_ = new SocketOpt(fd_);
     socket_opt_->SetReuseAddr(true);
-    socket_opt_->SetReusePort(true);
+    socket_opt_->SetReusePort(false);
     socket_opt_->BindAddress(addr_);
     socket_opt_->Listen();
 }
