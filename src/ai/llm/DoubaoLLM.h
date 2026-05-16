@@ -35,7 +35,10 @@ namespace tmms
             std::string base_url_;
             std::string api_key_;
             std::string model_;
-            int timeout_ms_{60000};
+            int timeout_ms_{60000};             // 非流式总超时（备用）
+            int connect_timeout_ms_{10000};     // 连接超时
+            int first_token_timeout_ms_{60000}; // 首包超时
+            int idle_stream_timeout_ms_{30000}; // 流中断超时
             HttpClient client_;
 
             // 内部公共方法：发起 HTTP 请求

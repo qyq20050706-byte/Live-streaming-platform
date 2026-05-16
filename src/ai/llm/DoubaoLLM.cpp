@@ -13,27 +13,32 @@ namespace tmms
                 LOG_ERROR << "DoubaoLLM: null config";
                 return;
             }
-            base_url_   = cfg->base_url;
-            api_key_    = cfg->api_key;
-            model_      = cfg->model;
+            base_url_ = cfg->base_url;
+            api_key_ = cfg->api_key;
+            model_ = cfg->model;
             timeout_ms_ = cfg->timeout_ms;
+            connect_timeout_ms_ = cfg->connect_timeout_ms;
+            first_token_timeout_ms_ = cfg->first_token_timeout_ms;
+            idle_stream_timeout_ms_ = cfg->idle_stream_timeout_ms;
 
             LOG_INFO << "DoubaoLLM initialized."
                      << " model=" << model_
-                     << " timeout_ms=" << timeout_ms_;
+                     << " connect_timeout=" << connect_timeout_ms_
+                     << " first_token_timeout=" << first_token_timeout_ms_
+                     << " idle_stream_timeout=" << idle_stream_timeout_ms_;
         }
 
         // ============================================================
         // 内部核心方法：所有接口都走这里
         // ============================================================
         bool DoubaoLLM::DoChat(const Json::Value &messages,
-                                bool stream,
-                                StreamCallback callback,
-                                std::string &answer,
-                                std::string &err)
+                               bool stream,
+                               StreamCallback callback,
+                               std::string &answer,
+                               std::string &err)
         {
             Json::Value root;
-            root["model"]  = model_;
+            root["model"] = model_;
             root["stream"] = stream;
             root["messages"] = messages;
 
@@ -43,8 +48,7 @@ namespace tmms
 
             std::vector<std::string> headers = {
                 "Content-Type: application/json",
-                "Authorization: Bearer " + api_key_
-            };
+                "Authorization: Bearer " + api_key_};
 
             if (!stream)
             {
@@ -61,8 +65,7 @@ namespace tmms
 
                 if (http_code != 200)
                 {
-                    err = "HTTP error " + std::to_string(http_code)
-                          + " body=" + response;
+                    err = "HTTP error " + std::to_string(http_code) + " body=" + response;
                     LOG_ERROR << "DoubaoLLM::DoChat " << err;
                     return false;
                 }
@@ -92,7 +95,10 @@ namespace tmms
                 long http_code = 0;
 
                 bool ret = client_.PostStream(
-                    base_url_, body, stream_headers, timeout_ms_,
+                    base_url_, body, stream_headers,
+                    connect_timeout_ms_,
+                    first_token_timeout_ms_,
+                    idle_stream_timeout_ms_,
                     [&](const std::string &chunk)
                     {
                         buffer += chunk;
@@ -157,13 +163,14 @@ namespace tmms
         {
             Json::Value messages(Json::arrayValue);
             Json::Value msg;
-            msg["role"]    = "user";
+            msg["role"] = "user";
             msg["content"] = prompt;
             messages.append(msg);
 
             std::string err;
             bool ok = DoChat(messages, false, nullptr, answer, err);
-            if (!ok) answer = err;
+            if (!ok)
+                answer = err;
             return ok;
         }
 
@@ -171,12 +178,12 @@ namespace tmms
         // 单轮流式问答（原有，保持兼容）
         // ============================================================
         bool DoubaoLLM::ChatStream(const std::string &prompt,
-                                    StreamCallback callback,
-                                    std::string &err_msg)
+                                   StreamCallback callback,
+                                   std::string &err_msg)
         {
             Json::Value messages(Json::arrayValue);
             Json::Value msg;
-            msg["role"]    = "user";
+            msg["role"] = "user";
             msg["content"] = prompt;
             messages.append(msg);
 
@@ -188,11 +195,12 @@ namespace tmms
         // 多轮普通问答（新增）
         // ============================================================
         bool DoubaoLLM::ChatWithMessages(const Json::Value &messages,
-                                          std::string &answer)
+                                         std::string &answer)
         {
             std::string err;
             bool ok = DoChat(messages, false, nullptr, answer, err);
-            if (!ok) answer = err;
+            if (!ok)
+                answer = err;
             return ok;
         }
 
@@ -200,8 +208,8 @@ namespace tmms
         // 多轮流式问答（新增）
         // ============================================================
         bool DoubaoLLM::ChatStreamWithMessages(const Json::Value &messages,
-                                                StreamCallback callback,
-                                                std::string &err_msg)
+                                               StreamCallback callback,
+                                               std::string &err_msg)
         {
             std::string answer;
             return DoChat(messages, true, callback, answer, err_msg);

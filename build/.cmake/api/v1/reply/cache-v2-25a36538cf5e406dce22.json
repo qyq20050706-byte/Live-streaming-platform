@@ -2255,7 +2255,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "AsynchDNS;GSS-API;HSTS;HTTP2;HTTPS-proxy;IDN;IPv6;Kerberos;Largefile;NTLM;NTLM_WB;PSL;SPNEGO;SSL;TLS-SRP;UnixSockets;alt-svc;brotli;libz;zstd"
+			"value" : "/usr/lib/x86_64-linux-gnu"
 		},
 		{
 			"name" : "tmms_BINARY_DIR",

@@ -2,5 +2,8 @@
   "base_url": "https://ark.cn-beijing.volces.com/api/v3/chat/completions",
   "api_key": "ark-84e04186-e570-4b38-982d-89ac8e42dff1-33e58",
   "model": "doubao-seed-1-8-251228",
-  "timeout_ms": 30000
+  "timeout_ms": 30000,
+  "connect_timeout_ms": 10000,
+  "first_token_timeout_ms": 60000,
+  "idle_stream_timeout_ms": 30000
 }

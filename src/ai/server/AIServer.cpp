@@ -225,6 +225,11 @@ namespace tmms
             return true;
         }
 
+        std::string AIServer::ChatInternalAggregated(const std::string &query, uint64_t user_id, uint64_t conv_id, bool is_rag, std::string &err)
+        {
+            return "";
+        }
+
         // =============================================================
         // Start / Stop
         // =============================================================
@@ -677,13 +682,6 @@ namespace tmms
                 return;
             }
 
-            if (req.Path() == "/chat")
-            {
-                ++chat_requests_;
-                HandleChat(conn, req);
-                return;
-            }
-
             if (req.Path() == "/stream_chat")
             {
                 ++stream_requests_;
@@ -694,12 +692,6 @@ namespace tmms
             if (req.Path() == "/rag/add")
             {
                 HandleRagAdd(conn, req);
-                return;
-            }
-
-            if (req.Path() == "/rag/chat")
-            {
-                HandleRagChat(conn, req);
                 return;
             }
 
@@ -858,231 +850,6 @@ namespace tmms
                                   });
             };
             (*sender)(0);
-        }
-
-        // =============================================================
-        // /chat
-        // =============================================================
-        void AIServer::HandleChat(const network::TcpConnectionPtr &conn,
-                                  const HttpRequest &req)
-        {
-            Json::Value body;
-            std::string parse_err;
-            if (!ParseJsonBody(req.Body(), body, parse_err))
-            {
-                ++failed_requests_;
-                SendError(conn, 400, "invalid json: " + parse_err);
-                return;
-            }
-
-            if (!body.isMember("query") || !body["query"].isString())
-            {
-                ++failed_requests_;
-                SendError(conn, 400, "missing or invalid 'query' field");
-                return;
-            }
-
-            std::string query = body["query"].asString();
-
-            // 获取可选的 conversation_id 和 token
-            uint64_t conv_id = 0;
-            uint64_t user_id = 0;
-            std::string username;
-            bool has_auth = false;
-
-            // 尝试解析 token（可选，没有 token 则走匿名单轮模式）
-            std::string token_err;
-            if (ParseAuthToken(req, user_id, username, token_err))
-            {
-                has_auth = true;
-                if (body.isMember("conversation_id") &&
-                    body["conversation_id"].isUInt64())
-                {
-                    conv_id = body["conversation_id"].asUInt64();
-                }
-            }
-
-            LOG_INFO << "Chat query_len=" << query.size()
-                     << " has_auth=" << has_auth
-                     << " user_id=" << user_id
-                     << " conv_id=" << conv_id;
-
-            std::weak_ptr<network::TcpConnection> weak_conn = conn;
-            network::EventLoop *io_loop = conn->GetLoop();
-
-            thread_pool_.AddTask(
-                [this, weak_conn, io_loop, query, has_auth, user_id, conv_id]()
-                {
-                    auto start = std::chrono::steady_clock::now();
-
-                    // ---- 1. 处理会话 ----
-                    uint64_t actual_conv_id = conv_id;
-                    std::string full_query_title = TruncateUtf8(query, 20);
-
-                    if (has_auth)
-                    {
-                        std::string err;
-
-                        if (actual_conv_id == 0 && conv_repo_)
-                        {
-                            // 自动创建会话，用 UTF-8 安全截断后的标题
-                            actual_conv_id = conv_repo_->Create(
-                                user_id, full_query_title, "chat", err);
-
-                            if (actual_conv_id == 0)
-                            {
-                                LOG_WARN << "Chat: create conversation failed: " << err;
-
-                                // 有登录态却创建会话失败，不要静默降级成匿名单轮
-                                io_loop->RunInLoop([this, weak_conn, err]()
-                                                   {
-                auto sp = weak_conn.lock();
-                if (!sp) return;
-                SendError(sp, 500, "create conversation failed: " + err); });
-                                return;
-                            }
-                        }
-                        else if (actual_conv_id != 0 && conv_repo_)
-                        {
-                            ConversationRecord conv;
-                            if (!conv_repo_->FindById(actual_conv_id, conv, err) ||
-                                conv.user_id != user_id)
-                            {
-                                LOG_WARN << "Chat: conversation access denied"
-                                         << " conv_id=" << actual_conv_id
-                                         << " user_id=" << user_id;
-
-                                io_loop->RunInLoop([this, weak_conn]()
-                                                   {
-                auto sp = weak_conn.lock();
-                if (!sp) return;
-                SendError(sp, 403, "conversation not found or access denied"); });
-                                return;
-                            }
-                        }
-
-                        // 保存用户消息
-                        if (actual_conv_id != 0 && msg_repo_)
-                        {
-                            if (msg_repo_->Insert(actual_conv_id, "user", query, err) == 0)
-                            {
-                                LOG_WARN << "Chat: insert user message failed: " << err;
-                            }
-                        }
-                    }
-
-                    // ---- 2. 构建 messages 数组 ----
-                    Json::Value messages(Json::arrayValue);
-
-                    if (has_auth && actual_conv_id != 0 && msg_repo_)
-                    {
-                        std::string err;
-                        std::vector<MessageRecord> history;
-                        // 读最近 12 条历史（不含当前刚插入的 user 消息）
-                        // 失败或为空都没关系，后面会追加当前 query
-                        msg_repo_->ListRecent(actual_conv_id, 12, history, err);
-
-                        if (!err.empty())
-                            LOG_WARN << "Chat: ListRecent failed: " << err;
-
-                        for (auto &h : history)
-                        {
-                            Json::Value m;
-                            m["role"] = h.role;
-                            m["content"] = h.content;
-                            messages.append(m);
-                        }
-                    }
-
-                    // 始终将当前用户消息作为最后一条追加，保证即使历史读取失败也能正常调用
-                    Json::Value current_msg;
-                    current_msg["role"] = "user";
-                    current_msg["content"] = query;
-                    messages.append(current_msg);
-
-                    // ---- 3. 调用豆包 ----
-                    std::string answer;
-                    bool ok = llm_.ChatWithMessages(messages, answer);
-
-                    double elapsed_ms = std::chrono::duration<double, std::milli>(
-                                            std::chrono::steady_clock::now() - start)
-                                            .count();
-
-                    // ---- 4. 保存 assistant 回答 ----
-                    if (ok && has_auth && actual_conv_id != 0 && msg_repo_)
-                    {
-                        std::string err;
-                        msg_repo_->Insert(actual_conv_id, "assistant", answer, err);
-
-                        // 更新会话活跃时间
-                        if (conv_repo_)
-                            conv_repo_->Touch(actual_conv_id, err);
-                    }
-
-                    // ---- 5. 回到 IO 线程发响应 ----
-                    io_loop->RunInLoop(
-                        [this, weak_conn, ok, answer, elapsed_ms,
-                         actual_conv_id]()
-                        {
-                            ++llm_calls_;
-                            if (ok)
-                            {
-                                ++llm_success_;
-                                std::lock_guard<std::mutex> lk(stats_mutex_);
-                                total_llm_time_ms_ += elapsed_ms;
-                            }
-                            else
-                            {
-                                ++llm_failures_;
-                            }
-
-                            auto sp = weak_conn.lock();
-                            if (!sp)
-                            {
-                                LOG_INFO << "Chat: conn closed before response.";
-                                return;
-                            }
-
-                            HttpResponse resp;
-                            if (ok)
-                            {
-                                Json::Value out;
-                                out["code"] = 0;
-                                out["message"] = "ok";
-                                out["answer"] = answer;
-                                if (actual_conv_id != 0)
-                                {
-                                    out["conversation_id"] =
-                                        static_cast<Json::UInt64>(actual_conv_id);
-                                }
-
-                                Json::StreamWriterBuilder writer;
-                                writer["indentation"] = "";
-                                writer["emitUTF8"] = true;
-
-                                resp.SetStatusCode(200);
-                                resp.SetStatusMessage("OK");
-                                resp.SetHeader("Content-Type", "application/json");
-                                resp.SetBody(Json::writeString(writer, out));
-
-                                LOG_INFO << "Chat success llm_ms=" << elapsed_ms
-                                         << " conv_id=" << actual_conv_id;
-                            }
-                            else
-                            {
-                                resp.SetStatusCode(500);
-                                resp.SetStatusMessage("Internal Server Error");
-                                resp.SetHeader("Content-Type", "application/json");
-                                resp.SetBody(BuildJsonResponse(
-                                    500, "Internal Server Error", answer));
-
-                                LOG_ERROR << "Chat failed llm_ms=" << elapsed_ms;
-                            }
-
-                            PrepareShortResponse(resp);
-                            SendAndClose(sp, resp.ToString());
-                        });
-                });
         }
 
         // =============================================================
@@ -1413,71 +1180,6 @@ namespace tmms
                 }); });
         }
 
-        // =============================================================
-        // /rag/chat
-        // =============================================================
-        void AIServer::HandleRagChat(const network::TcpConnectionPtr &conn,
-                                     const HttpRequest &req)
-        {
-            if (!rag_service_)
-            {
-                SendError(conn, 503, "RAG service not initialized");
-                return;
-            }
-
-            Json::Value body;
-            std::string parse_err;
-            if (!ParseJsonBody(req.Body(), body, parse_err))
-            {
-                ++failed_requests_;
-                SendError(conn, 400, "invalid json: " + parse_err);
-                return;
-            }
-            if (!body.isMember("query") || !body["query"].isString())
-            {
-                ++failed_requests_;
-                SendError(conn, 400, "missing 'query' field");
-                return;
-            }
-
-            std::string query = body["query"].asString();
-            LOG_INFO << "RAG /rag/chat query_len=" << query.size();
-
-            std::weak_ptr<network::TcpConnection> weak_conn = conn;
-            network::EventLoop *io_loop = conn->GetLoop();
-
-            thread_pool_.AddTask([this, weak_conn, io_loop, query]()
-                                 {
-                std::string answer, err;
-                bool ok = rag_service_->Chat(query, answer, err);
-
-                io_loop->RunInLoop([this, weak_conn, ok, answer, err]()
-                {
-                    auto sp = weak_conn.lock();
-                    if (!sp) return;
-
-                    HttpResponse resp;
-                    if (ok)
-                    {
-                        resp.SetStatusCode(200);
-                        resp.SetStatusMessage("OK");
-                        resp.SetHeader("Content-Type", "application/json");
-                        resp.SetBody(BuildJsonResponse(0, "ok", answer));
-                        LOG_INFO << "RAG chat success";
-                    }
-                    else
-                    {
-                        resp.SetStatusCode(500);
-                        resp.SetStatusMessage("Internal Server Error");
-                        resp.SetHeader("Content-Type", "application/json");
-                        resp.SetBody(BuildJsonResponse(500,
-                            "Internal Server Error", err));
-                        LOG_ERROR << "RAG chat failed: " << err;
-                    }
-                    PrepareShortResponse(resp);
-                    SendAndClose(sp, resp.ToString());
-                }); });
-        }
 
         // =============================================================
         // /rag/stream_chat

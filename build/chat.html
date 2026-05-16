@@ -717,7 +717,6 @@
         <div class="header-right">
             <div class="mode-switch">
                 <button class="mode-btn active" id="btnStream" onclick="setMode('stream')">💬 流式</button>
-                <button class="mode-btn" id="btnNormal" onclick="setMode('normal')">📝 普通</button>
                 <button class="mode-btn" id="btnRag" onclick="setMode('rag')">🔍 知识库</button>
             </div>
             <div class="user-info" id="userInfo" onclick="logout()" style="display:none">
@@ -1015,7 +1014,6 @@
             if (isGenerating) return;
             mode = m;
             document.getElementById('btnStream').className = 'mode-btn' + (m === 'stream' ? ' active' : '');
-            document.getElementById('btnNormal').className = 'mode-btn' + (m === 'normal' ? ' active' : '');
             document.getElementById('btnRag').className = 'mode-btn' + (m === 'rag' ? ' active' : '');
         }
 
@@ -1086,48 +1084,11 @@
             input.style.height = 'auto';
 
             if (mode === 'rag') await sendRag(query);
-            else if (mode === 'stream') await sendStream(query);
-            else await sendNormal(query);
+            else await sendStream(query);
 
             isGenerating = false;
             document.getElementById('sendBtn').disabled = false;
             input.focus();
-        }
-
-        // ===== 普通模式 =====
-        async function sendNormal(query) {
-            const loadingDiv = addLoadingMessage(false);
-            try {
-                const headers = { 'Content-Type': 'application/json' };
-                if (token) headers['Authorization'] = 'Bearer ' + token;
-                const body = { query };
-                if (token && currentConvId) body.conversation_id = currentConvId;
-
-                const resp = await fetch(API_BASE + '/chat', {
-                    method: 'POST', headers, body: JSON.stringify(body)
-                });
-                if (resp.status === 401) {
-                    loadingDiv.remove();
-                    handleUnauthorized();
-                    return;
-                }
-                const data = await resp.json();
-                loadingDiv.remove();
-                if (data.code === 0) {
-                    addMessage('assistant', data.answer);
-                    if (data.conversation_id) {
-                        currentConvId = data.conversation_id;
-                        updateConvHint();
-                        loadConversations();
-                    }
-                } else {
-                    addMessage('assistant', '❌ ' + (data.message || data.answer));
-                }
-            } catch (e) {
-                loadingDiv.remove();
-                addMessage('assistant', '❌ 网络错误: ' + e.message);
-                updateStatus(false);
-            }
         }
 
         // ===== 流式 SSE =====

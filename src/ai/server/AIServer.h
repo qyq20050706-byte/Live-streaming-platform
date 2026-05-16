@@ -53,8 +53,6 @@ namespace tmms
             // 路由处理（原有）
             // ---------------------------------------------------
             void HandleOptions(const network::TcpConnectionPtr &conn);
-            void HandleChat(const network::TcpConnectionPtr &conn,
-                            const HttpRequest &req);
             void HandleStreamChat(const network::TcpConnectionPtr &conn,
                                   const HttpRequest &req);
             void HandleHealth(const network::TcpConnectionPtr &conn);
@@ -68,8 +66,6 @@ namespace tmms
             // ---------------------------------------------------
             void HandleRagAdd(const network::TcpConnectionPtr &conn,
                               const HttpRequest &req);
-            void HandleRagChat(const network::TcpConnectionPtr &conn,
-                               const HttpRequest &req);
             void HandleRagStreamChat(const network::TcpConnectionPtr &conn,
                                      const HttpRequest &req);
             void HandleRagStats(const network::TcpConnectionPtr &conn);
@@ -106,6 +102,12 @@ namespace tmms
             bool InitRAG(const std::string &embedding_cfg,
                          const std::string &rag_cfg,
                          std::string &err);
+
+            std::string ChatInternalAggregated(const std::string &query,
+                                               uint64_t user_id,
+                                               uint64_t conv_id,
+                                               bool is_rag,
+                                               std::string &err);
 
         private:
             // ---------------------------------------------------

@@ -30,6 +30,16 @@ namespace tmms
                             StreamCallback callback,
                             long &http_code,
                             std::string &err_msg);
+
+            bool PostStream(const std::string &url,
+                            const std::string &body,
+                            const std::vector<std::string> &headers,
+                            long connect_timeout_ms,
+                            long first_token_timeout_ms,
+                            long idle_stream_timeout_ms,
+                            StreamCallback callback,
+                            long &http_code,
+                            std::string &err_msg);
         };
     }
 }
