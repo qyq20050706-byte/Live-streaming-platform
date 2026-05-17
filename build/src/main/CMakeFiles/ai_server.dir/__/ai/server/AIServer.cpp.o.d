@@ -339,4 +339,5 @@ src/main/CMakeFiles/ai_server.dir/__/ai/server/AIServer.cpp.o: \
  /home/qyq/Live-streaming-platform/src/ai/storage/UserRepo.h \
  /home/qyq/Live-streaming-platform/src/ai/storage/ConversationRepo.h \
  /home/qyq/Live-streaming-platform/src/ai/storage/MessageRepo.h \
+ /home/qyq/Live-streaming-platform/src/ai/storage/ProjectRepo.h \
  /home/qyq/Live-streaming-platform/src/base/Config.h

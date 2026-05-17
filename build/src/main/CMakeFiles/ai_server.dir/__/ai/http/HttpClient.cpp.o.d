@@ -189,4 +189,6 @@ src/main/CMakeFiles/ai_server.dir/__/ai/http/HttpClient.cpp.o: \
  /usr/include/x86_64-linux-gnu/curl/multi.h \
  /usr/include/x86_64-linux-gnu/curl/curl.h \
  /usr/include/x86_64-linux-gnu/curl/urlapi.h \
- /usr/include/x86_64-linux-gnu/curl/options.h
+ /usr/include/x86_64-linux-gnu/curl/options.h /usr/include/c++/11/chrono \
+ /usr/include/c++/11/ratio /usr/include/c++/11/limits \
+ /usr/include/c++/11/ctime /usr/include/c++/11/bits/parse_numbers.h

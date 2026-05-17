@@ -33,6 +33,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/ai_server.dir/__/ai/storage/MessageRepo.cpp.o.d"
   "CMakeFiles/ai_server.dir/__/ai/storage/MySQLClient.cpp.o"
   "CMakeFiles/ai_server.dir/__/ai/storage/MySQLClient.cpp.o.d"
+  "CMakeFiles/ai_server.dir/__/ai/storage/ProjectRepo.cpp.o"
+  "CMakeFiles/ai_server.dir/__/ai/storage/ProjectRepo.cpp.o.d"
   "CMakeFiles/ai_server.dir/__/ai/storage/UserRepo.cpp.o"
   "CMakeFiles/ai_server.dir/__/ai/storage/UserRepo.cpp.o.d"
   "CMakeFiles/ai_server.dir/__/ai/vector/SQLiteVectorStore.cpp.o"

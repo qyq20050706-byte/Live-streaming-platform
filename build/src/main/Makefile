@@ -597,6 +597,30 @@ __/ai/storage/MySQLClient.cpp.s:
 	cd /home/qyq/Live-streaming-platform/build && $(MAKE) $(MAKESILENT) -f src/main/CMakeFiles/ai_server.dir/build.make src/main/CMakeFiles/ai_server.dir/__/ai/storage/MySQLClient.cpp.s
 .PHONY : __/ai/storage/MySQLClient.cpp.s
 
+__/ai/storage/ProjectRepo.o: __/ai/storage/ProjectRepo.cpp.o
+.PHONY : __/ai/storage/ProjectRepo.o
+
+# target to build an object file
+__/ai/storage/ProjectRepo.cpp.o:
+	cd /home/qyq/Live-streaming-platform/build && $(MAKE) $(MAKESILENT) -f src/main/CMakeFiles/ai_server.dir/build.make src/main/CMakeFiles/ai_server.dir/__/ai/storage/ProjectRepo.cpp.o
+.PHONY : __/ai/storage/ProjectRepo.cpp.o
+
+__/ai/storage/ProjectRepo.i: __/ai/storage/ProjectRepo.cpp.i
+.PHONY : __/ai/storage/ProjectRepo.i
+
+# target to preprocess a source file
+__/ai/storage/ProjectRepo.cpp.i:
+	cd /home/qyq/Live-streaming-platform/build && $(MAKE) $(MAKESILENT) -f src/main/CMakeFiles/ai_server.dir/build.make src/main/CMakeFiles/ai_server.dir/__/ai/storage/ProjectRepo.cpp.i
+.PHONY : __/ai/storage/ProjectRepo.cpp.i
+
+__/ai/storage/ProjectRepo.s: __/ai/storage/ProjectRepo.cpp.s
+.PHONY : __/ai/storage/ProjectRepo.s
+
+# target to generate assembly for a file
+__/ai/storage/ProjectRepo.cpp.s:
+	cd /home/qyq/Live-streaming-platform/build && $(MAKE) $(MAKESILENT) -f src/main/CMakeFiles/ai_server.dir/build.make src/main/CMakeFiles/ai_server.dir/__/ai/storage/ProjectRepo.cpp.s
+.PHONY : __/ai/storage/ProjectRepo.cpp.s
+
 __/ai/storage/UserRepo.o: __/ai/storage/UserRepo.cpp.o
 .PHONY : __/ai/storage/UserRepo.o
 
@@ -758,6 +782,9 @@ help:
 	@echo "... __/ai/storage/MySQLClient.o"
 	@echo "... __/ai/storage/MySQLClient.i"
 	@echo "... __/ai/storage/MySQLClient.s"
+	@echo "... __/ai/storage/ProjectRepo.o"
+	@echo "... __/ai/storage/ProjectRepo.i"
+	@echo "... __/ai/storage/ProjectRepo.s"
 	@echo "... __/ai/storage/UserRepo.o"
 	@echo "... __/ai/storage/UserRepo.i"
 	@echo "... __/ai/storage/UserRepo.s"

@@ -158,6 +158,7 @@ src/main/CMakeFiles/ai_server.dir/__/ai/vector/SQLiteVectorStore.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/11/bits/error_constants.h \
  /usr/include/c++/11/stdexcept /usr/include/c++/11/bits/std_mutex.h \
  /usr/include/c++/11/bits/unique_lock.h \
+ /home/qyq/Live-streaming-platform/src/ai/RagScope.h \
  /home/qyq/Live-streaming-platform/src/base/LogStream.h \
  /home/qyq/Live-streaming-platform/src/base/Logger.h \
  /home/qyq/Live-streaming-platform/src/base/NonCopyable.h \

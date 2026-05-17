@@ -25,6 +25,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/qyq/Live-streaming-platform/src/ai/storage/ConversationRepo.cpp" "src/main/CMakeFiles/ai_server.dir/__/ai/storage/ConversationRepo.cpp.o" "gcc" "src/main/CMakeFiles/ai_server.dir/__/ai/storage/ConversationRepo.cpp.o.d"
   "/home/qyq/Live-streaming-platform/src/ai/storage/MessageRepo.cpp" "src/main/CMakeFiles/ai_server.dir/__/ai/storage/MessageRepo.cpp.o" "gcc" "src/main/CMakeFiles/ai_server.dir/__/ai/storage/MessageRepo.cpp.o.d"
   "/home/qyq/Live-streaming-platform/src/ai/storage/MySQLClient.cpp" "src/main/CMakeFiles/ai_server.dir/__/ai/storage/MySQLClient.cpp.o" "gcc" "src/main/CMakeFiles/ai_server.dir/__/ai/storage/MySQLClient.cpp.o.d"
+  "/home/qyq/Live-streaming-platform/src/ai/storage/ProjectRepo.cpp" "src/main/CMakeFiles/ai_server.dir/__/ai/storage/ProjectRepo.cpp.o" "gcc" "src/main/CMakeFiles/ai_server.dir/__/ai/storage/ProjectRepo.cpp.o.d"
   "/home/qyq/Live-streaming-platform/src/ai/storage/UserRepo.cpp" "src/main/CMakeFiles/ai_server.dir/__/ai/storage/UserRepo.cpp.o" "gcc" "src/main/CMakeFiles/ai_server.dir/__/ai/storage/UserRepo.cpp.o.d"
   "/home/qyq/Live-streaming-platform/src/ai/vector/SQLiteVectorStore.cpp" "src/main/CMakeFiles/ai_server.dir/__/ai/vector/SQLiteVectorStore.cpp.o" "gcc" "src/main/CMakeFiles/ai_server.dir/__/ai/vector/SQLiteVectorStore.cpp.o.d"
   "/home/qyq/Live-streaming-platform/src/main/ai_main/ai_server.cpp" "src/main/CMakeFiles/ai_server.dir/ai_main/ai_server.cpp.o" "gcc" "src/main/CMakeFiles/ai_server.dir/ai_main/ai_server.cpp.o.d"

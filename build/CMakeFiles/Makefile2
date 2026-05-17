@@ -224,7 +224,7 @@ src/network/net/tests/clean: src/network/net/tests/CMakeFiles/UdpServerTest.dir/
 src/base/CMakeFiles/base.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base.dir/build.make src/base/CMakeFiles/base.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base.dir/build.make src/base/CMakeFiles/base.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/qyq/Live-streaming-platform/build/CMakeFiles --progress-num=42,43,44,45,46,47,48,49,50,51,52,53,54,55,56 "Built target base"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/qyq/Live-streaming-platform/build/CMakeFiles --progress-num=43,44,45,46,47,48,49,50,51,52,53,54,55,56,57 "Built target base"
 .PHONY : src/base/CMakeFiles/base.dir/all
 
 # Build rule for subdir invocation for target.
@@ -241,7 +241,7 @@ base: src/base/CMakeFiles/base.dir/rule
 # codegen rule for target.
 src/base/CMakeFiles/base.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base.dir/build.make src/base/CMakeFiles/base.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/qyq/Live-streaming-platform/build/CMakeFiles --progress-num=42,43,44,45,46,47,48,49,50,51,52,53,54,55,56 "Finished codegen for target base"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/qyq/Live-streaming-platform/build/CMakeFiles --progress-num=43,44,45,46,47,48,49,50,51,52,53,54,55,56,57 "Finished codegen for target base"
 .PHONY : src/base/CMakeFiles/base.dir/codegen
 
 # clean rule for target.
@@ -256,7 +256,7 @@ src/base/CMakeFiles/base.dir/clean:
 src/base/CMakeFiles/test_log.dir/all: src/base/CMakeFiles/base.dir/all
 	$(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/test_log.dir/build.make src/base/CMakeFiles/test_log.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/test_log.dir/build.make src/base/CMakeFiles/test_log.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/qyq/Live-streaming-platform/build/CMakeFiles --progress-num=76,77 "Built target test_log"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/qyq/Live-streaming-platform/build/CMakeFiles --progress-num=77,78 "Built target test_log"
 .PHONY : src/base/CMakeFiles/test_log.dir/all
 
 # Build rule for subdir invocation for target.
@@ -273,7 +273,7 @@ test_log: src/base/CMakeFiles/test_log.dir/rule
 # codegen rule for target.
 src/base/CMakeFiles/test_log.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/test_log.dir/build.make src/base/CMakeFiles/test_log.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/qyq/Live-streaming-platform/build/CMakeFiles --progress-num=76,77 "Finished codegen for target test_log"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/qyq/Live-streaming-platform/build/CMakeFiles --progress-num=77,78 "Finished codegen for target test_log"
 .PHONY : src/base/CMakeFiles/test_log.dir/codegen
 
 # clean rule for target.
@@ -288,7 +288,7 @@ src/base/CMakeFiles/test_log.dir/clean:
 src/network/CMakeFiles/network.dir/all: src/base/CMakeFiles/base.dir/all
 	$(MAKE) $(MAKESILENT) -f src/network/CMakeFiles/network.dir/build.make src/network/CMakeFiles/network.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/network/CMakeFiles/network.dir/build.make src/network/CMakeFiles/network.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/qyq/Live-streaming-platform/build/CMakeFiles --progress-num=57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75 "Built target network"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/qyq/Live-streaming-platform/build/CMakeFiles --progress-num=58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76 "Built target network"
 .PHONY : src/network/CMakeFiles/network.dir/all
 
 # Build rule for subdir invocation for target.
@@ -305,7 +305,7 @@ network: src/network/CMakeFiles/network.dir/rule
 # codegen rule for target.
 src/network/CMakeFiles/network.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f src/network/CMakeFiles/network.dir/build.make src/network/CMakeFiles/network.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/qyq/Live-streaming-platform/build/CMakeFiles --progress-num=57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75 "Finished codegen for target network"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/qyq/Live-streaming-platform/build/CMakeFiles --progress-num=58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76 "Finished codegen for target network"
 .PHONY : src/network/CMakeFiles/network.dir/codegen
 
 # clean rule for target.
@@ -651,7 +651,7 @@ src/main/CMakeFiles/tmms.dir/all: src/base/CMakeFiles/base.dir/all
 src/main/CMakeFiles/tmms.dir/all: src/network/CMakeFiles/network.dir/all
 	$(MAKE) $(MAKESILENT) -f src/main/CMakeFiles/tmms.dir/build.make src/main/CMakeFiles/tmms.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/main/CMakeFiles/tmms.dir/build.make src/main/CMakeFiles/tmms.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/qyq/Live-streaming-platform/build/CMakeFiles --progress-num=78,79 "Built target tmms"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/qyq/Live-streaming-platform/build/CMakeFiles --progress-num=79,80 "Built target tmms"
 .PHONY : src/main/CMakeFiles/tmms.dir/all
 
 # Build rule for subdir invocation for target.
@@ -668,7 +668,7 @@ tmms: src/main/CMakeFiles/tmms.dir/rule
 # codegen rule for target.
 src/main/CMakeFiles/tmms.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f src/main/CMakeFiles/tmms.dir/build.make src/main/CMakeFiles/tmms.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/qyq/Live-streaming-platform/build/CMakeFiles --progress-num=78,79 "Finished codegen for target tmms"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/qyq/Live-streaming-platform/build/CMakeFiles --progress-num=79,80 "Finished codegen for target tmms"
 .PHONY : src/main/CMakeFiles/tmms.dir/codegen
 
 # clean rule for target.
@@ -684,12 +684,12 @@ src/main/CMakeFiles/ai_server.dir/all: src/base/CMakeFiles/base.dir/all
 src/main/CMakeFiles/ai_server.dir/all: src/network/CMakeFiles/network.dir/all
 	$(MAKE) $(MAKESILENT) -f src/main/CMakeFiles/ai_server.dir/build.make src/main/CMakeFiles/ai_server.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/main/CMakeFiles/ai_server.dir/build.make src/main/CMakeFiles/ai_server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/qyq/Live-streaming-platform/build/CMakeFiles --progress-num=21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41 "Built target ai_server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/qyq/Live-streaming-platform/build/CMakeFiles --progress-num=21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42 "Built target ai_server"
 .PHONY : src/main/CMakeFiles/ai_server.dir/all
 
 # Build rule for subdir invocation for target.
 src/main/CMakeFiles/ai_server.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/qyq/Live-streaming-platform/build/CMakeFiles 55
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/qyq/Live-streaming-platform/build/CMakeFiles 56
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/main/CMakeFiles/ai_server.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/qyq/Live-streaming-platform/build/CMakeFiles 0
 .PHONY : src/main/CMakeFiles/ai_server.dir/rule
@@ -701,7 +701,7 @@ ai_server: src/main/CMakeFiles/ai_server.dir/rule
 # codegen rule for target.
 src/main/CMakeFiles/ai_server.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f src/main/CMakeFiles/ai_server.dir/build.make src/main/CMakeFiles/ai_server.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/qyq/Live-streaming-platform/build/CMakeFiles --progress-num=21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41 "Finished codegen for target ai_server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/qyq/Live-streaming-platform/build/CMakeFiles --progress-num=21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42 "Finished codegen for target ai_server"
 .PHONY : src/main/CMakeFiles/ai_server.dir/codegen
 
 # clean rule for target.

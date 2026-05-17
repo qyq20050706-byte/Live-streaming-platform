@@ -382,5 +382,11 @@
   "command": "/usr/bin/c++ -DPROJECT_ROOT=\\\"/home/qyq/Live-streaming-platform\\\" -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/ai_server.dir/__/ai/storage/MessageRepo.cpp.o -c /home/qyq/Live-streaming-platform/src/ai/storage/MessageRepo.cpp",
   "file": "/home/qyq/Live-streaming-platform/src/ai/storage/MessageRepo.cpp",
   "output": "src/main/CMakeFiles/ai_server.dir/__/ai/storage/MessageRepo.cpp.o"
+},
+{
+  "directory": "/home/qyq/Live-streaming-platform/build/src/main",
+  "command": "/usr/bin/c++ -DPROJECT_ROOT=\\\"/home/qyq/Live-streaming-platform\\\" -I/usr/include/jsoncpp -I/home/qyq/Live-streaming-platform/src -Wno-error=unused-result -Werror=return-type  -std=c++23 -O0 -g -pipe -Wall -Werror -Wno-unused-variable -lrt -pthread -fno-strict-aliasing -Wno-error=shadow -Wno-sign-compare -g -o CMakeFiles/ai_server.dir/__/ai/storage/ProjectRepo.cpp.o -c /home/qyq/Live-streaming-platform/src/ai/storage/ProjectRepo.cpp",
+  "file": "/home/qyq/Live-streaming-platform/src/ai/storage/ProjectRepo.cpp",
+  "output": "src/main/CMakeFiles/ai_server.dir/__/ai/storage/ProjectRepo.cpp.o"
 }
 ]

@@ -671,6 +671,44 @@
             border-radius: 2px;
         }
 
+        .bubble pre {
+            background: #0a0a1a;
+            border: 1px solid #2a2a4a;
+            border-radius: 8px;
+            padding: 12px;
+            overflow-x: auto;
+            margin: 8px 0;
+        }
+
+        .bubble code {
+            font-family: 'Courier New', Consolas, monospace;
+            font-size: 13px;
+        }
+
+        .bubble p {
+            margin: 4px 0;
+        }
+
+        .bubble ul,
+        .bubble ol {
+            padding-left: 20px;
+            margin: 4px 0;
+        }
+
+        .bubble h1,
+        .bubble h2,
+        .bubble h3 {
+            margin: 8px 0 4px 0;
+        }
+
+        .bubble strong {
+            color: #a78bfa;
+        }
+
+        .bubble em {
+            color: #67e8f9;
+        }
+
         @media (max-width: 600px) {
             .sidebar {
                 display: none;
@@ -805,7 +843,7 @@
                 loadConversations();
             }
             checkStatus();
-            setInterval(() => { if (!isGenerating) checkStatus(); }, 30000);
+            setInterval(() => { if (!isGenerating) checkStatus(); }, 10000);
         };
 
         // ===== 登录/注册 =====
@@ -1041,12 +1079,31 @@
         function addMessage(role, content, isRag) {
             const welcome = document.getElementById('welcome');
             if (welcome) welcome.style.display = 'none';
+
             const chatInner = document.getElementById('chatInner');
             const div = document.createElement('div');
             div.className = 'message ' + role;
+
             const emoji = role === 'user' ? '🧑' : '🤖';
-            const badge = (isRag && role === 'assistant') ? '<div class="rag-badge">🔍 知识库</div>' : '';
-            div.innerHTML = `<div class="avatar">${emoji}</div><div class="bubble">${badge}${escapeHtml(content)}</div>`;
+            const badge = (isRag && role === 'assistant')
+                ? '<div class="rag-badge">🔍 知识库</div>' : '';
+
+            let renderedContent = '';
+            if (role === 'user') {
+                renderedContent = escapeHtml(content);
+            } else {
+                if (typeof marked !== 'undefined') {
+                    renderedContent = marked.parse(content);
+                } else {
+                    renderedContent = escapeHtml(content);
+                }
+            }
+
+            div.innerHTML = `
+        <div class="avatar">${emoji}</div>
+        <div class="bubble">${badge}${renderedContent}</div>
+    `;
+
             chatInner.appendChild(div);
             scrollToBottom();
             return div;
@@ -1172,6 +1229,14 @@
 
                     if (data === '[DONE]') {
                         cursor.remove();
+
+                        // 流结束后，把完整内容一次性渲染成 Markdown
+                        if (typeof marked !== 'undefined') {
+                            textSpan.innerHTML = marked.parse(fullText);
+                        } else {
+                            textSpan.textContent = fullText;
+                        }
+
                         scrollToBottom();
                         loadConversations();
                         return;
