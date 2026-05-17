@@ -23,6 +23,7 @@
 #include "ai/auth/AuthService.h"
 #include "ai/storage/ConversationRepo.h"
 #include "ai/storage/MessageRepo.h"
+#include "ai/storage/ProjectRepo.h"
 
 namespace tmms
 {
@@ -53,6 +54,26 @@ namespace tmms
             // 路由处理（原有）
             // ---------------------------------------------------
             void HandleOptions(const network::TcpConnectionPtr &conn);
+
+            void StartStatsTimer();
+            void LogStats();
+            void HandleUserRegister(const network::TcpConnectionPtr &conn,
+                                    const HttpRequest &req);
+            void HandleUserLogin(const network::TcpConnectionPtr &conn,
+                                 const HttpRequest &req);
+            void HandleConversationCreate(const network::TcpConnectionPtr &conn,
+                                          const HttpRequest &req);
+            void HandleConversationList(const network::TcpConnectionPtr &conn,
+                                        const HttpRequest &req);
+            void HandleMessageList(const network::TcpConnectionPtr &conn,
+                                   const HttpRequest &req);
+
+            void HandleProjectCreate(const network::TcpConnectionPtr &conn,
+                                     const HttpRequest &req);
+            void HandleProjectList(const network::TcpConnectionPtr &conn,
+                                   const HttpRequest &req);
+            void HandleProjectDelete(const network::TcpConnectionPtr &conn,
+                                     const HttpRequest &req);
             void HandleStreamChat(const network::TcpConnectionPtr &conn,
                                   const HttpRequest &req);
             void HandleHealth(const network::TcpConnectionPtr &conn);
@@ -103,11 +124,9 @@ namespace tmms
                          const std::string &rag_cfg,
                          std::string &err);
 
-            std::string ChatInternalAggregated(const std::string &query,
-                                               uint64_t user_id,
-                                               uint64_t conv_id,
-                                               bool is_rag,
-                                               std::string &err);
+            // 内部调试接口（仅 curl 测试用，不对外文档）
+            void HandleInternalChat(const network::TcpConnectionPtr &conn,
+                                    const HttpRequest &req);
 
         private:
             // ---------------------------------------------------
@@ -150,6 +169,7 @@ namespace tmms
 
             std::unique_ptr<ConversationRepo> conv_repo_;
             std::unique_ptr<MessageRepo> msg_repo_;
+            std::unique_ptr<ProjectRepo> project_repo_;
 
             // ---------------------------------------------------
             // 数据库 + 认证
@@ -164,19 +184,6 @@ namespace tmms
                         std::string &err);
 
             bool stopped_{false};
-
-            void StartStatsTimer();
-            void LogStats();
-            void HandleUserRegister(const network::TcpConnectionPtr &conn,
-                                    const HttpRequest &req);
-            void HandleUserLogin(const network::TcpConnectionPtr &conn,
-                                 const HttpRequest &req);
-            void HandleConversationCreate(const network::TcpConnectionPtr &conn,
-                                          const HttpRequest &req);
-            void HandleConversationList(const network::TcpConnectionPtr &conn,
-                                        const HttpRequest &req);
-            void HandleMessageList(const network::TcpConnectionPtr &conn,
-                                   const HttpRequest &req);
         };
 
     } // namespace ai

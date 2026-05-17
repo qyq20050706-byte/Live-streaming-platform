@@ -4,32 +4,34 @@
 
 using namespace tmms::ai;
 
-struct ProgressContext;
+// 1. 先完整定义 ProgressContext
+struct ProgressContext
+{
+    std::chrono::steady_clock::time_point start_time;
+    long first_token_timeout_ms;
+    bool first_token_received{false};
+};
 
+// 2. 再定义 StreamContext（它引用了 ProgressContext）
 namespace tmms
 {
     namespace ai
     {
-
         struct StreamContext
         {
             HttpClient::StreamCallback *cb;
             ProgressContext *progress_ctx{nullptr};
         };
 
-        static size_t WriteStreamCallback(void *contents, size_t size, size_t nmemb, void *userp)
+        static size_t WriteStreamCallback(void *contents, size_t size,
+                                          size_t nmemb, void *userp)
         {
             StreamContext *ctx = static_cast<StreamContext *>(userp);
             if (!ctx || !ctx->cb)
-            {
                 return 0;
-            }
 
-            // 标记首包已到达
             if (ctx->progress_ctx)
-            {
                 ctx->progress_ctx->first_token_received = true;
-            }
 
             std::string chunk(static_cast<char *>(contents), size * nmemb);
             (*ctx->cb)(chunk);
@@ -37,13 +39,6 @@ namespace tmms
         }
     }
 }
-
-struct ProgressContext
-{
-    std::chrono::steady_clock::time_point start_time;
-    long first_token_timeout_ms;
-    bool first_token_received{false};
-};
 
 static size_t WriteCallback(void *contents, size_t size, size_t nmemb, void *userp)
 {
@@ -164,7 +159,6 @@ static int ProgressCallback(void *clientp,
     if (!ctx)
         return 0;
 
-    // 如果已经收到过数据，不检查首包超时
     if (ctx->first_token_received)
         return 0;
 
@@ -172,35 +166,6 @@ static int ProgressCallback(void *clientp,
     auto elapsed_ms = std::chrono::duration_cast<std::chrono::milliseconds>(
                           now - ctx->start_time)
                           .count();
-    if (elapsed_ms > ctx->first_token_timeout_ms)
-    {
-        // 返回非0让 curl 中止请求
-        return 1;
-    }
-    return 0;
-}
-
-// 流式回调上下文扩展（携带进度上下文指针）
-struct StreamContextEx : public tmms::ai::StreamContext
-{
-    ProgressContext *progress_ctx{nullptr};
-};
-
-// CURLOPT_XFERINFOFUNCTION 回调
-static int ProgressCallback(void *clientp,
-                            curl_off_t dltotal,
-                            curl_off_t dlnow,
-                            curl_off_t ultotal,
-                            curl_off_t ulnow)
-{
-    ProgressContext *ctx = static_cast<ProgressContext *>(clientp);
-    if (!ctx) return 0;
-
-    if (ctx->first_token_received) return 0;
-
-    auto now = std::chrono::steady_clock::now();
-    auto elapsed_ms = std::chrono::duration_cast<std::chrono::milliseconds>(
-                          now - ctx->start_time).count();
     if (elapsed_ms > ctx->first_token_timeout_ms)
     {
         return 1; // 中止请求
@@ -252,7 +217,8 @@ bool tmms::ai::HttpClient::PostStream(
     // 三维超时设置
     curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT_MS, connect_timeout_ms);
     curl_easy_setopt(curl, CURLOPT_LOW_SPEED_LIMIT, 1L);
-    curl_easy_setopt(curl, CURLOPT_LOW_SPEED_TIME, idle_stream_timeout_ms / 1000);
+    long idle_s = std::max(1L, idle_stream_timeout_ms / 1000L);
+    curl_easy_setopt(curl, CURLOPT_LOW_SPEED_TIME, idle_s);
     curl_easy_setopt(curl, CURLOPT_XFERINFOFUNCTION, ProgressCallback);
     curl_easy_setopt(curl, CURLOPT_XFERINFODATA, &prog_ctx);
     curl_easy_setopt(curl, CURLOPT_NOPROGRESS, 0L);

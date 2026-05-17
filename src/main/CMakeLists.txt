@@ -23,6 +23,7 @@ ai_main/ai_server.cpp
 ../ai/storage/UserRepo.cpp
 ../ai/storage/ConversationRepo.cpp
 ../ai/storage/MessageRepo.cpp
+../ai/storage/ProjectRepo.cpp
 )
 
 target_link_libraries(tmms

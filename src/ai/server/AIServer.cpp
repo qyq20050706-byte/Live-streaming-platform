@@ -225,9 +225,199 @@ namespace tmms
             return true;
         }
 
-        std::string AIServer::ChatInternalAggregated(const std::string &query, uint64_t user_id, uint64_t conv_id, bool is_rag, std::string &err)
+        void AIServer::HandleInternalChat(const network::TcpConnectionPtr &conn,
+                                          const HttpRequest &req)
         {
-            return "";
+            Json::Value body;
+            std::string parse_err;
+            if (!ParseJsonBody(req.Body(), body, parse_err))
+            {
+                ++failed_requests_;
+                SendError(conn, 400, "invalid json: " + parse_err);
+                return;
+            }
+
+            if (!body.isMember("query") || !body["query"].isString())
+            {
+                ++failed_requests_;
+                SendError(conn, 400, "missing or invalid 'query' field");
+                return;
+            }
+
+            std::string query = body["query"].asString();
+
+            // 查询长度限制
+            if (query.size() > 16000)
+            {
+                ++failed_requests_;
+                SendError(conn, 413, "query too large (max 16000 chars), please upload to knowledge base");
+                return;
+            }
+
+            uint64_t conv_id = 0;
+            uint64_t user_id = 0;
+            std::string username;
+            bool has_auth = false;
+
+            std::string token_err;
+            if (ParseAuthToken(req, user_id, username, token_err))
+            {
+                has_auth = true;
+                if (body.isMember("conversation_id") && body["conversation_id"].isUInt64())
+                {
+                    conv_id = body["conversation_id"].asUInt64();
+                }
+            }
+
+            LOG_INFO << "InternalChat query_len=" << query.size()
+                     << " has_auth=" << has_auth;
+
+            std::weak_ptr<network::TcpConnection> weak_conn = conn;
+            network::EventLoop *io_loop = conn->GetLoop();
+
+            thread_pool_.AddTask(
+                [this, weak_conn, io_loop, query, has_auth, user_id, conv_id]()
+                {
+                    auto start = std::chrono::steady_clock::now();
+
+                    uint64_t actual_conv_id = conv_id;
+                    std::string full_query_title = TruncateUtf8(query, 20);
+
+                    if (has_auth)
+                    {
+                        std::string err;
+
+                        if (actual_conv_id == 0 && conv_repo_)
+                        {
+                            actual_conv_id = conv_repo_->Create(
+                                user_id, full_query_title, "chat", err);
+                            if (actual_conv_id == 0)
+                            {
+                                LOG_WARN << "InternalChat: create conversation failed: " << err;
+                                io_loop->RunInLoop([this, weak_conn, err]()
+                                                   {
+                        auto sp = weak_conn.lock(); if (!sp) return;
+                        SendError(sp, 500, "create conversation failed: " + err); });
+                                return;
+                            }
+                        }
+                        else if (actual_conv_id != 0 && conv_repo_)
+                        {
+                            ConversationRecord conv;
+                            if (!conv_repo_->FindById(actual_conv_id, conv, err) ||
+                                conv.user_id != user_id)
+                            {
+                                LOG_WARN << "InternalChat: conversation access denied";
+                                io_loop->RunInLoop([this, weak_conn]()
+                                                   {
+                        auto sp = weak_conn.lock(); if (!sp) return;
+                        SendError(sp, 403, "conversation not found or access denied"); });
+                                return;
+                            }
+                        }
+
+                        if (actual_conv_id != 0 && msg_repo_)
+                        {
+                            msg_repo_->Insert(actual_conv_id, "user", query, err);
+                        }
+                    }
+
+                    // 构建 messages
+                    Json::Value messages(Json::arrayValue);
+
+                    if (has_auth && actual_conv_id != 0 && msg_repo_)
+                    {
+                        std::string err;
+                        std::vector<MessageRecord> history;
+                        msg_repo_->ListRecent(actual_conv_id, 12, history, err);
+                        for (auto &h : history)
+                        {
+                            Json::Value m;
+                            m["role"] = h.role;
+                            m["content"] = h.content;
+                            messages.append(m);
+                        }
+                    }
+
+                    Json::Value current_msg;
+                    current_msg["role"] = "user";
+                    current_msg["content"] = query;
+                    messages.append(current_msg);
+
+                    // 流式上游，服务端聚合
+                    std::string answer;
+                    std::string err_msg;
+                    bool ok = llm_.ChatStreamWithMessages(
+                        messages,
+                        [&answer](const std::string &delta)
+                        { answer += delta; },
+                        err_msg);
+
+                    double elapsed_ms = std::chrono::duration<double, std::milli>(
+                                            std::chrono::steady_clock::now() - start)
+                                            .count();
+
+                    if (ok && has_auth && actual_conv_id != 0 && msg_repo_)
+                    {
+                        std::string err;
+                        msg_repo_->Insert(actual_conv_id, "assistant", answer, err);
+                        if (conv_repo_)
+                            conv_repo_->Touch(actual_conv_id, err);
+                    }
+
+                    io_loop->RunInLoop(
+                        [this, weak_conn, ok, answer, err_msg, elapsed_ms, actual_conv_id]()
+                        {
+                            ++llm_calls_;
+                            if (ok)
+                            {
+                                ++llm_success_;
+                                std::lock_guard<std::mutex> lk(stats_mutex_);
+                                total_llm_time_ms_ += elapsed_ms;
+                            }
+                            else
+                            {
+                                ++llm_failures_;
+                            }
+
+                            auto sp = weak_conn.lock();
+                            if (!sp)
+                                return;
+
+                            HttpResponse resp;
+                            if (ok)
+                            {
+                                Json::Value out;
+                                out["code"] = 0;
+                                out["message"] = "ok";
+                                out["answer"] = answer;
+                                if (actual_conv_id != 0)
+                                    out["conversation_id"] = static_cast<Json::UInt64>(actual_conv_id);
+
+                                Json::StreamWriterBuilder writer;
+                                writer["indentation"] = "";
+                                writer["emitUTF8"] = true;
+
+                                resp.SetStatusCode(200);
+                                resp.SetStatusMessage("OK");
+                                resp.SetHeader("Content-Type", "application/json");
+                                resp.SetBody(Json::writeString(writer, out));
+
+                                LOG_INFO << "InternalChat success llm_ms=" << elapsed_ms;
+                            }
+                            else
+                            {
+                                resp.SetStatusCode(500);
+                                resp.SetStatusMessage("Internal Server Error");
+                                resp.SetHeader("Content-Type", "application/json");
+                                resp.SetBody(BuildJsonResponse(500, "Internal Server Error", err_msg));
+                                LOG_ERROR << "InternalChat failed: " << err_msg;
+                            }
+
+                            PrepareShortResponse(resp);
+                            SendAndClose(sp, resp.ToString());
+                        });
+                });
         }
 
         // =============================================================
@@ -295,7 +485,10 @@ namespace tmms
 
             conv_repo_ = std::make_unique<ConversationRepo>(&db_);
             msg_repo_ = std::make_unique<MessageRepo>(&db_);
+            project_repo_ = std::make_unique<ProjectRepo>(&db_);
+
             LOG_INFO << "ConversationRepo and MessageRepo initialized.";
+            LOG_INFO << "ProjectRepo initialized.";
 
             return true;
         }
@@ -664,9 +857,33 @@ namespace tmms
                 return;
             }
 
+            if (req.Path() == "/project/create")
+            {
+                HandleProjectCreate(conn, req);
+                return;
+            }
+
+            if (req.Path() == "/project/list")
+            {
+                HandleProjectList(conn, req);
+                return;
+            }
+
+            if (req.Path() == "/project/delete")
+            {
+                HandleProjectDelete(conn, req);
+                return;
+            }
+
             if (req.Path() == "/message/list")
             {
                 HandleMessageList(conn, req);
+                return;
+            }
+
+            if (req.Path() == "/internal/chat")
+            {
+                HandleInternalChat(conn, req);
                 return;
             }
 
@@ -874,6 +1091,13 @@ namespace tmms
             }
 
             std::string query = body["query"].asString();
+
+            if (query.size() > 16000)
+            {
+                ++failed_requests_;
+                SendError(conn, 413, "query too large (max 16000 chars), please upload to knowledge base");
+                return;
+            }
 
             uint64_t conv_id = 0;
             uint64_t user_id = 0;
@@ -1180,7 +1404,6 @@ namespace tmms
                 }); });
         }
 
-
         // =============================================================
         // /rag/stream_chat
         // =============================================================
@@ -1210,6 +1433,12 @@ namespace tmms
             }
 
             std::string query = body["query"].asString();
+            if (query.size() > 16000)
+            {
+                ++failed_requests_;
+                SendError(conn, 413, "query too large (max 16000 chars), please upload to knowledge base");
+                return;
+            }
             LOG_INFO << "RAG /rag/stream_chat query_len=" << query.size();
 
             // 1. 发送 SSE 响应头
@@ -1647,6 +1876,293 @@ namespace tmms
             SendAndClose(sp, resp.ToString()); });
                 });
         }
+
+// =============================================================
+// /project/create
+// =============================================================
+void AIServer::HandleProjectCreate(const network::TcpConnectionPtr &conn,
+                                   const HttpRequest &req)
+{
+    if (!project_repo_)
+    {
+        SendError(conn, 503, "project service not initialized");
+        return;
+    }
+
+    uint64_t user_id = 0;
+    std::string username, token_err;
+    if (!ParseAuthToken(req, user_id, username, token_err))
+    {
+        SendError(conn, 401, token_err);
+        return;
+    }
+
+    Json::Value body;
+    std::string parse_err;
+    if (!ParseJsonBody(req.Body(), body, parse_err))
+    {
+        SendError(conn, 400, "invalid json: " + parse_err);
+        return;
+    }
+
+    if (!body.isMember("name") || !body["name"].isString() ||
+        body["name"].asString().empty())
+    {
+        SendError(conn, 400, "missing or empty 'name' field");
+        return;
+    }
+
+    std::string name = body["name"].asString();
+    std::string description = body.get("description", "").asString();
+
+    LOG_INFO << "HandleProjectCreate user_id=" << user_id
+             << " name=" << name;
+
+    std::weak_ptr<network::TcpConnection> weak_conn = conn;
+    network::EventLoop *io_loop = conn->GetLoop();
+
+    thread_pool_.AddTask([this, weak_conn, io_loop, user_id, name, description]()
+    {
+        std::string err;
+        uint64_t project_id = project_repo_->Create(user_id, name, description, err);
+
+        io_loop->RunInLoop([this, weak_conn, project_id, err]()
+        {
+            auto sp = weak_conn.lock();
+            if (!sp) return;
+
+            HttpResponse resp;
+            if (project_id > 0)
+            {
+                Json::Value out;
+                out["code"]       = 0;
+                out["message"]    = "ok";
+                out["project_id"] = static_cast<Json::UInt64>(project_id);
+
+                Json::StreamWriterBuilder writer;
+                writer["indentation"] = "";
+                writer["emitUTF8"]    = true;
+
+                resp.SetStatusCode(200);
+                resp.SetStatusMessage("OK");
+                resp.SetHeader("Content-Type", "application/json");
+                resp.SetBody(Json::writeString(writer, out));
+
+                LOG_INFO << "Project created id=" << project_id;
+            }
+            else
+            {
+                resp.SetStatusCode(500);
+                resp.SetStatusMessage("Internal Server Error");
+                resp.SetHeader("Content-Type", "application/json");
+                resp.SetBody(BuildJsonResponse(500, "Internal Server Error", err));
+
+                LOG_ERROR << "Project create failed: " << err;
+            }
+
+            PrepareShortResponse(resp);
+            SendAndClose(sp, resp.ToString());
+        });
+    });
+}
+
+// =============================================================
+// /project/list
+// =============================================================
+void AIServer::HandleProjectList(const network::TcpConnectionPtr &conn,
+                                 const HttpRequest &req)
+{
+    if (!project_repo_)
+    {
+        SendError(conn, 503, "project service not initialized");
+        return;
+    }
+
+    uint64_t user_id = 0;
+    std::string username, token_err;
+    if (!ParseAuthToken(req, user_id, username, token_err))
+    {
+        SendError(conn, 401, token_err);
+        return;
+    }
+
+    LOG_INFO << "HandleProjectList user_id=" << user_id;
+
+    std::weak_ptr<network::TcpConnection> weak_conn = conn;
+    network::EventLoop *io_loop = conn->GetLoop();
+
+    thread_pool_.AddTask([this, weak_conn, io_loop, user_id]()
+    {
+        std::string err;
+        std::vector<ProjectRecord> records;
+        bool ok = project_repo_->ListByUser(user_id, records, err);
+
+        io_loop->RunInLoop([this, weak_conn, ok, records, err]()
+        {
+            auto sp = weak_conn.lock();
+            if (!sp) return;
+
+            HttpResponse resp;
+            if (ok)
+            {
+                Json::Value out;
+                out["code"]     = 0;
+                out["message"]  = "ok";
+                out["projects"] = Json::Value(Json::arrayValue);
+
+                for (auto &r : records)
+                {
+                    Json::Value item;
+                    item["id"]          = static_cast<Json::UInt64>(r.id);
+                    item["name"]        = r.name;
+                    item["description"] = r.description;
+                    item["created_at"]  = r.created_at;
+                    item["updated_at"]  = r.updated_at;
+                    out["projects"].append(item);
+                }
+
+                Json::StreamWriterBuilder writer;
+                writer["indentation"] = "";
+                writer["emitUTF8"]    = true;
+
+                resp.SetStatusCode(200);
+                resp.SetStatusMessage("OK");
+                resp.SetHeader("Content-Type", "application/json");
+                resp.SetBody(Json::writeString(writer, out));
+            }
+            else
+            {
+                resp.SetStatusCode(500);
+                resp.SetStatusMessage("Internal Server Error");
+                resp.SetHeader("Content-Type", "application/json");
+                resp.SetBody(BuildJsonResponse(500, "Internal Server Error", err));
+            }
+
+            PrepareShortResponse(resp);
+            SendAndClose(sp, resp.ToString());
+        });
+    });
+}
+
+// =============================================================
+// /project/delete
+// =============================================================
+void AIServer::HandleProjectDelete(const network::TcpConnectionPtr &conn,
+                                   const HttpRequest &req)
+{
+    if (!project_repo_)
+    {
+        SendError(conn, 503, "project service not initialized");
+        return;
+    }
+
+    uint64_t user_id = 0;
+    std::string username, token_err;
+    if (!ParseAuthToken(req, user_id, username, token_err))
+    {
+        SendError(conn, 401, token_err);
+        return;
+    }
+
+    Json::Value body;
+    std::string parse_err;
+    if (!ParseJsonBody(req.Body(), body, parse_err))
+    {
+        SendError(conn, 400, "invalid json: " + parse_err);
+        return;
+    }
+
+    if (!body.isMember("project_id") || !body["project_id"].isUInt64())
+    {
+        SendError(conn, 400, "missing or invalid 'project_id'");
+        return;
+    }
+
+    uint64_t project_id = body["project_id"].asUInt64();
+
+    LOG_INFO << "HandleProjectDelete user_id=" << user_id
+             << " project_id=" << project_id;
+
+    std::weak_ptr<network::TcpConnection> weak_conn = conn;
+    network::EventLoop *io_loop = conn->GetLoop();
+
+    thread_pool_.AddTask(
+        [this, weak_conn, io_loop, user_id, project_id]()
+    {
+        std::string err;
+
+        // 1. 校验项目归属
+        if (!project_repo_->Exists(project_id, user_id, err))
+        {
+            io_loop->RunInLoop([this, weak_conn]()
+            {
+                auto sp = weak_conn.lock();
+                if (!sp) return;
+                SendError(sp, 404, "project not found or not owned by you");
+            });
+            return;
+        }
+
+        // 2. 删除该项目下所有知识片段（SQLite）
+        std::string del_err;
+        vector_store_.DeleteByScope(user_id, "project", (int64_t)project_id, del_err);
+        if (!del_err.empty())
+        {
+            LOG_WARN << "ProjectDelete: delete chunks failed: " << del_err;
+        }
+
+        // 3. 解绑所有关联该项目的会话
+        if (conv_repo_)
+        {
+            std::string unbind_err;
+            conv_repo_->ClearProjectBinding(user_id, project_id, unbind_err);
+            if (!unbind_err.empty())
+            {
+                LOG_WARN << "ProjectDelete: clear binding failed: " << unbind_err;
+            }
+        }
+
+        // 4. 删除项目本身（MySQL）
+        bool ok = project_repo_->Delete(project_id, user_id, err);
+
+        io_loop->RunInLoop([this, weak_conn, ok, err, project_id]()
+        {
+            auto sp = weak_conn.lock();
+            if (!sp) return;
+
+            HttpResponse resp;
+            if (ok)
+            {
+                Json::Value out;
+                out["code"]    = 0;
+                out["message"] = "ok";
+
+                Json::StreamWriterBuilder writer;
+                writer["indentation"] = "";
+                writer["emitUTF8"]    = true;
+
+                resp.SetStatusCode(200);
+                resp.SetStatusMessage("OK");
+                resp.SetHeader("Content-Type", "application/json");
+                resp.SetBody(Json::writeString(writer, out));
+
+                LOG_INFO << "Project deleted id=" << project_id;
+            }
+            else
+            {
+                resp.SetStatusCode(500);
+                resp.SetStatusMessage("Internal Server Error");
+                resp.SetHeader("Content-Type", "application/json");
+                resp.SetBody(BuildJsonResponse(500, "Internal Server Error", err));
+
+                LOG_ERROR << "Project delete failed: " << err;
+            }
+
+            PrepareShortResponse(resp);
+            SendAndClose(sp, resp.ToString());
+        });
+    });
+}
 
     } // namespace ai
 } // namespace tmms

@@ -54,9 +54,22 @@ namespace tmms
                        << tmms::base::TTime::NowMS()
                        << "_" << cnt;
 
+                // 适配新的 InsertParams
+                IVectorStore::InsertParams params;
+                params.id = id_oss.str();
+                params.user_id = 0; // 当前兼容模式：匿名全局知识库
+                params.project_id = -1;
+                params.conversation_id = -1;
+                params.filename = "";
+                params.chunk_type = "text";
+                params.start_line = 0;
+                params.end_line = 0;
+                params.content = chunks[i];
+                params.content_hash = ""; // 当前先不做 hash，下一阶段再加
+                params.source = source;
+
                 std::string insert_err;
-                if (!store_->Insert(id_oss.str(), chunks[i],
-                                    embedding, source, insert_err))
+                if (!store_->Insert(params, embedding, insert_err))
                 {
                     LOG_WARN << "RAGService: insert chunk " << i
                              << " failed: " << insert_err;
@@ -91,11 +104,18 @@ namespace tmms
                 return false;
             }
 
+            // 适配新的 SearchParams
+            IVectorStore::SearchParams params;
+            params.user_id = 0; // 当前兼容模式：匿名全局知识库
+            params.project_id = -1;
+            params.conversation_id = -1;
+            params.top_k_session = 0;
+            params.top_k_project = 0;
+            params.top_k_global = config_.top_k;
+            params.min_similarity = config_.min_similarity;
+
             std::vector<VectorSearchResult> results;
-            if (!store_->Search(query_emb,
-                                config_.top_k,
-                                config_.min_similarity,
-                                results, err))
+            if (!store_->Search(query_emb, params, results, err))
             {
                 LOG_ERROR << "RAGService::Retrieve search failed: " << err;
                 return false;
@@ -109,7 +129,9 @@ namespace tmms
             {
                 contexts.push_back(r.content);
                 LOG_DEBUG << "  hit score=" << r.score
-                          << " source=" << r.source;
+                          << " source=" << r.source
+                          << " file=" << r.filename
+                          << " lines=" << r.start_line << "-" << r.end_line;
             }
 
             return true;

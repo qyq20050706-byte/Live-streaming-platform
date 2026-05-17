@@ -10,11 +10,11 @@ namespace tmms
     {
         struct ConversationRecord
         {
-            uint64_t    id{0};
-            uint64_t    user_id{0};
+            uint64_t id{0};
+            uint64_t user_id{0};
             std::string title;
             std::string mode;
-            int         status{1};
+            int status{1};
             std::string created_at;
             std::string updated_at;
         };
